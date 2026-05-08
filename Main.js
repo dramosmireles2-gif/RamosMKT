@@ -23,6 +23,20 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+// ---- FAQ ACCORDION ----
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question').forEach(b => b.classList.remove('open'));
+        if (!isOpen) {
+            answer.classList.add('open');
+            btn.classList.add('open');
+        }
+    });
+});
+
 // ---- FORMULARIO → WHATSAPP ----
 function enviarFormulario() {
     const nombre   = document.querySelectorAll('.form-input')[0].value.trim();
