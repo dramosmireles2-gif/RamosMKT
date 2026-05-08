@@ -26,7 +26,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
 
 /* HERO */
 .hero { min-height: 100vh; padding: 140px 40px 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden; }
-.hero-content { width: 100%; max-width: 1320px; }
+.hero-content { width: 100%; max-width: 1100px; }
 .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px); background-size: 60px 60px; }
 .hero-glow { position: absolute; top: 20%; left: -10%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 70%); pointer-events: none; }
 .hero-content { position: relative; max-width: 900px; }
@@ -48,7 +48,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
 .hero-stat-label { font-size: 13px; color: var(--gray); margin-top: 4px; }
 
 /* SERVICES */
-section { padding: 100px 40px; max-width: 1320px; margin-left: auto; margin-right: auto; }
+section { padding: 100px 40px; max-width: 1100px; margin-left: auto; margin-right: auto; }
 .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--green); text-transform: uppercase; margin-bottom: 16px; }
 .section-title { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -2px; margin-bottom: 16px; line-height: 1.05; }
 .section-sub { font-size: 17px; color: var(--gray); max-width: 480px; line-height: 1.6; margin-bottom: 64px; }
@@ -67,7 +67,7 @@ section { padding: 100px 40px; max-width: 1320px; margin-left: auto; margin-righ
 .service-features li::before { content: '→'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
 
 /* CASE STUDY */
-.case-section { background: var(--black2); border-radius: 24px; max-width: 1240px; margin: 0 auto; padding: 80px; }
+.case-section { background: var(--black2); border-radius: 24px; max-width: 1020px; margin: 0 auto; padding: 80px; }
 .case-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; margin-bottom: 64px; }
 .case-tag { display: inline-block; background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.2); color: var(--green); padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; }
 .case-title { font-family: 'Syne', sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -2px; line-height: 1.05; }
@@ -110,7 +110,7 @@ section { padding: 100px 40px; max-width: 1320px; margin-left: auto; margin-righ
 .package-btn.outline:hover { border-color: var(--green); }
 
 /* CONTACT */
-.contact-section { background: var(--black2); border-radius: 24px; max-width: 1240px; margin: 0 auto 80px; padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.contact-section { background: var(--black2); border-radius: 24px; max-width: 1020px; margin: 0 auto 80px; padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .contact-title { font-family: 'Syne', sans-serif; font-size: 44px; font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; }
 .contact-title span { color: var(--green); }
 .contact-desc { font-size: 16px; color: var(--gray); line-height: 1.6; margin-bottom: 32px; }
@@ -142,7 +142,7 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
 /* PROCESO */
-.proceso-section { max-width: 1320px; margin-left: auto; margin-right: auto; }
+.proceso-section { max-width: 1100px; margin-left: auto; margin-right: auto; }
 .proceso-steps { display: flex; align-items: flex-start; gap: 0; margin-top: 64px; }
 .proceso-step { flex: 1; text-align: center; padding: 0 16px; }
 .paso-num { font-family: 'Syne', sans-serif; font-size: 48px; font-weight: 800; color: rgba(0,255,136,0.15); line-height: 1; margin-bottom: 16px; }
