@@ -1,3 +1,19 @@
+// ---- HAMBURGER MENU ----
+const hamburger = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('navMobileMenu');
+
+hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+    });
+});
+
 // ---- SCROLL ANIMATIONS ----
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
