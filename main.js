@@ -49,3 +49,28 @@ function enviarFormulario() {
     const txt = `Hola RamosMKT! 👋\n\nNombre: ${nombre}\nNegocio: ${negocio || '—'}\nServicio: ${servicio || '—'}\n\n${mensaje || ''}`;
     window.open('https://wa.me/528148078309?text=' + encodeURIComponent(txt), '_blank');
 }
+window.addEventListener('scroll',()=>{
+
+  const scrolled=window.scrollY;
+
+  const grid=
+    document.querySelector('.hero-grid');
+
+  const glow=
+    document.querySelector('.hero-glow');
+
+  if(grid){
+
+    grid.style.transform=
+      `translateY(${scrolled * .15}px)`;
+
+  }
+
+  if(glow){
+
+    glow.style.transform=
+      `translateY(${scrolled * .25}px)`;
+
+  }
+
+});
