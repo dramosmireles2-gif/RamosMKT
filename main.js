@@ -50,28 +50,48 @@ function enviarFormulario() {
     window.open('https://wa.me/528148078309?text=' + encodeURIComponent(txt), '_blank');
     window.location.href = '/gracias';
 }
-window.addEventListener('scroll',()=>{
 
-  const scrolled=window.scrollY;
-
-  const grid=
-    document.querySelector('.hero-grid');
-
-  const glow=
-    document.querySelector('.hero-glow');
-
-  if(grid){
-
-    grid.style.transform=
-      `translateY(${scrolled * .15}px)`;
-
-  }
-
-  if(glow){
-
-    glow.style.transform=
-      `translateY(${scrolled * .25}px)`;
-
-  }
-
+// ---- HERO PARALLAX ----
+window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const grid = document.querySelector('.hero-grid');
+    const glow = document.querySelector('.hero-glow');
+    if (grid) grid.style.transform = `translateY(${scrolled * 0.15}px)`;
+    if (glow) glow.style.transform = `translateY(${scrolled * 0.25}px)`;
 });
+
+// ---- NAV ACTIVE STATE ----
+const navLinks = document.querySelectorAll('.nav-link');
+const navSections = document.querySelectorAll('section[id], div[id]');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            });
+        }
+    });
+}, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+
+navSections.forEach(s => sectionObserver.observe(s));
+
+// ---- COUNTER ANIMATION ----
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.count);
+            let start = 0;
+            const step = target / (1500 / 16);
+            const timer = setInterval(() => {
+                start = Math.min(start + step, target);
+                el.textContent = Math.floor(start);
+                if (start >= target) clearInterval(timer);
+            }, 16);
+            counterObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
