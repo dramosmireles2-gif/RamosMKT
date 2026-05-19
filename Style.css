@@ -56,6 +56,11 @@ section { padding: 100px 40px; max-width: 1100px; margin-left: auto; margin-righ
 .service-card { background: var(--black2); padding: 40px 32px; transition: background 0.3s; position: relative; overflow: hidden; }
 .service-card:hover { background: var(--black3); }
 .service-card:hover .service-icon { background: var(--green); color: var(--black); }
+.service-card--featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; border-top: 1px solid rgba(0,255,136,0.15); }
+.service-card--featured .service-features { columns: 2; gap: 8px; }
+.service-card-new { display: inline-flex; align-items: center; background: var(--green); color: var(--black); font-size: 10px; font-weight: 800; letter-spacing: 2px; padding: 4px 10px; border-radius: 100px; margin-bottom: 16px; }
+.service-card-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; color: var(--green); font-size: 14px; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(0,255,136,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
+.service-card-cta:hover { border-color: var(--green); }
 .service-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(0,255,136,0.1); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 24px; transition: background 0.3s, color 0.3s; }
 .service-name { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--white); }
 .service-name-en { font-size: 11px; color: var(--green); font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; }
@@ -213,6 +218,8 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .contact-section { grid-template-columns: 1fr; padding: 40px 24px; margin: 0 20px 60px; }
     footer { padding: 30px 20px; flex-direction: column; text-align: center; }
     .services-grid { grid-template-columns: 1fr 1fr; }
+    .service-card--featured { grid-template-columns: 1fr; }
+    .service-card--featured .service-features { columns: 1; }
     .service-card { padding: 28px 20px; }
     .packages-grid { grid-template-columns: 1fr; }
     .portfolio-grid { grid-template-columns: 1fr; }
