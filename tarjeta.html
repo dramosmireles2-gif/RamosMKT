@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RMKT — Tarjeta de Presentación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{font-family:'Jost',sans-serif;background:#0f0f0f;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:48px 24px;}
+@media print{body{display:none;}}
+
+/* ── CARD ── */
+#card{
+  width:1050px;height:600px;
+  background:#0a0a0a;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  outline:1px dashed rgba(0,230,118,.12);
+  box-shadow:0 40px 80px rgba(0,0,0,.7);
+}
+
+/* subtle grid */
+.grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,230,118,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,230,118,.035) 1px,transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+}
+
+/* ── LEFT PANEL ── */
+.left{
+  width:560px;flex-shrink:0;
+  padding:52px 56px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;z-index:1;
+  border-right:1px solid rgba(255,255,255,.05);
+}
+
+/* logo */
+.logo-block{display:flex;flex-direction:column;gap:0;}
+.logo-mark{font-size:64px;font-weight:900;line-height:.9;letter-spacing:-4px;}
+.logo-mark .r{color:#ffffff;}
+.logo-mark .mkt{color:#00e676;}
+.logo-accent{height:3px;width:100px;background:linear-gradient(90deg,#00e676,rgba(0,230,118,.1));border-radius:2px;margin-top:8px;}
+.logo-tagline{font-size:11px;font-weight:700;letter-spacing:4px;color:#3a3a3a;text-transform:uppercase;margin-top:8px;}
+
+/* role */
+.role-block{display:flex;flex-direction:column;gap:5px;}
+.role-title{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.3px;}
+.role-sub{font-size:14px;color:#555;font-weight:400;letter-spacing:.3px;}
+
+/* contact list */
+.contacts{display:flex;flex-direction:column;gap:12px;}
+.c-row{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer;}
+.c-ico{
+  width:36px;height:36px;flex-shrink:0;
+  background:rgba(0,230,118,.08);
+  border:1px solid rgba(0,230,118,.15);
+  border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+}
+.c-ico svg{width:17px;height:17px;}
+.c-val{font-size:14px;color:#aaa;font-weight:500;letter-spacing:.2px;}
+.c-val strong{color:#ddd;font-weight:600;}
+
+/* location */
+.location{display:flex;align-items:center;gap:8px;}
+.loc-dot{width:6px;height:6px;background:#00e676;border-radius:50%;}
+.loc-txt{font-size:11px;color:#3a3a3a;font-weight:600;letter-spacing:2px;text-transform:uppercase;}
+
+/* ── RIGHT PANEL ── */
+.right{
+  flex:1;
+  padding:52px 48px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;z-index:1;
+  gap:16px;
+}
+.right-glow{
+  position:absolute;
+  width:360px;height:360px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(0,230,118,.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.qr-label{font-size:10px;font-weight:700;color:#3a3a3a;letter-spacing:3px;text-transform:uppercase;position:relative;z-index:1;}
+.qr-box{
+  background:#fff;
+  padding:12px;
+  border-radius:12px;
+  line-height:0;
+  box-shadow:0 0 40px rgba(0,230,118,.15),0 0 0 1px rgba(0,230,118,.2);
+  position:relative;z-index:1;
+}
+.qr-cta{font-size:13px;color:#555;font-weight:500;position:relative;z-index:1;letter-spacing:.3px;}
+.qr-cta em{color:#00e676;font-style:normal;font-weight:600;}
+.qr-domain{
+  font-size:11px;font-weight:700;color:#2a2a2a;
+  letter-spacing:2px;text-transform:uppercase;
+  position:relative;z-index:1;
+}
+
+/* top-right arrow mark */
+.arrow-mark{
+  position:absolute;top:28px;right:32px;
+  width:36px;height:36px;
+  background:#00e676;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;
+}
+.arrow-mark svg{width:18px;height:18px;}
+
+/* bottom accent line */
+.bottom-line{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00e676,rgba(0,230,118,.3),transparent);}
+
+/* ── DOWNLOAD BUTTON ── */
+.dl-btn{
+  width:1050px;padding:14px;
+  background:#00e676;color:#0a0a0a;
+  font-family:'Jost',sans-serif;font-weight:700;font-size:15px;
+  border:none;border-radius:10px;cursor:pointer;
+  transition:opacity .2s;letter-spacing:.3px;
+}
+.dl-btn:hover{opacity:.85;}
+</style>
+</head>
+<body>
+
+<div id="card">
+  <div class="grid"></div>
+
+  <!-- Arrow mark top-right -->
+  <div class="arrow-mark">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+    </svg>
+  </div>
+
+  <!-- LEFT -->
+  <div class="left">
+
+    <!-- Logo -->
+    <div class="logo-block">
+      <div class="logo-mark"><span class="r">R</span><span class="mkt">MKT</span></div>
+      <div class="logo-accent"></div>
+      <div class="logo-tagline">Ramos · Digital</div>
+    </div>
+
+    <!-- Role -->
+    <div class="role-block">
+      <div class="role-title">Agencia Digital</div>
+      <div class="role-sub">Webs · Sistemas · Apps · Publicidad</div>
+    </div>
+
+    <!-- Contacts -->
+    <div class="contacts">
+      <a class="c-row" href="https://wa.me/528148078309" target="_blank">
+        <div class="c-ico">
+          <svg viewBox="0 0 24 24" fill="#00e676"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        </div>
+        <div class="c-val"><strong>+52 814 807 8309</strong></div>
+      </a>
+      <a class="c-row" href="https://ramosmkt.lat" target="_blank">
+        <div class="c-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="c-val"><strong>ramosmkt.lat</strong></div>
+      </a>
+      <a class="c-row" href="https://instagram.com/ramos_mkt.rex" target="_blank">
+        <div class="c-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="c-val">@ramos_mkt.rex</div>
+      </a>
+      <a class="c-row" href="https://www.facebook.com/share/1BCvKbkZUP/" target="_blank">
+        <div class="c-ico">
+          <svg viewBox="0 0 24 24" fill="#00e676"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <div class="c-val">RMKT Web & Apps</div>
+      </a>
+    </div>
+
+    <!-- Location -->
+    <div class="location">
+      <div class="loc-dot"></div>
+      <div class="loc-txt">Reynosa, Tamaulipas · México</div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="right-glow"></div>
+    <div class="qr-label">Escríbenos ahora</div>
+    <div class="qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520cotizar%2520un%2520proyecto%2520web" width="200" height="200" crossorigin="anonymous" alt="WhatsApp QR">
+    </div>
+    <div class="qr-cta">Escanea · <em>WhatsApp</em></div>
+    <div class="qr-domain">ramosmkt.lat</div>
+  </div>
+
+  <div class="bottom-line"></div>
+</div>
+
+<button class="dl-btn" id="dlbtn">Descargar Tarjeta PNG</button>
+
+<script>
+document.getElementById('dlbtn').onclick = function() {
+  const btn = this;
+  const orig = btn.textContent;
+  btn.textContent = 'Generando…';
+  btn.disabled = true;
+  htmlToImage.toPng(document.getElementById('card'), { pixelRatio: 2, cacheBust: true })
+    .then(url => {
+      const a = document.createElement('a');
+      a.download = 'rmkt-tarjeta.png';
+      a.href = url;
+      a.click();
+      btn.textContent = orig;
+      btn.disabled = false;
+    })
+    .catch(err => {
+      console.error(err);
+      btn.textContent = 'Error — intenta de nuevo';
+      btn.disabled = false;
+    });
+};
+</script>
+</body>
+</html>
