@@ -290,11 +290,21 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .case-section { padding: 40px 24px; margin: 0 20px; }
     .case-stats { grid-template-columns: 1fr; }
     .case-header { flex-direction: column; }
-    .packages-grid { grid-template-columns: 1fr; }
+    .packages-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 12px; padding: 4px 20px 20px; margin: 0 -20px; scroll-padding-left: 20px; }
+    .packages-grid::-webkit-scrollbar { display: none; }
+    .package-card { flex: 0 0 280px; scroll-snap-align: start; }
     .contact-section { grid-template-columns: 1fr; padding: 40px 24px; margin: 0 20px 60px; }
     footer { padding: 30px 20px; flex-direction: column; text-align: center; }
-    .proceso-steps { flex-direction: column; align-items: center; gap: 32px; }
-    .proceso-connector { width: 2px; height: 32px; background: linear-gradient(180deg, rgba(0,255,136,0.3), rgba(0,255,136,0.1)); margin-top: 0; }
+    .proceso-steps { flex-direction: column; align-items: flex-start; gap: 0; position: relative; padding-left: 40px; }
+    .proceso-steps::before { content: ''; position: absolute; left: 12px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, var(--green), rgba(0,255,136,0.1)); border-radius: 2px; }
+    .proceso-connector { display: none; }
+    .proceso-step { text-align: left; padding: 0 0 36px; position: relative; width: 100%; }
+    .proceso-step:last-child { padding-bottom: 0; }
+    .proceso-step::before { content: ''; position: absolute; left: -28px; top: 8px; width: 10px; height: 10px; background: var(--green); border-radius: 50%; border: 2px solid var(--black); box-shadow: 0 0 0 3px rgba(0,255,136,0.2); }
+    .paso-num { font-size: 10px; font-weight: 700; color: var(--green); letter-spacing: 2px; margin-bottom: 6px; line-height: 1; }
+    .paso-icon { display: none; }
+    .paso-name { font-size: 17px; margin-bottom: 6px; text-align: left; }
+    .paso-desc { max-width: 100%; margin: 0; text-align: left; }
     .case-features { grid-template-columns: 1fr 1fr; }
     .wa-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
     .wa-float svg { width: 24px; height: 24px; }
