@@ -27,7 +27,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
 .nav-cta:hover { transform: scale(1.04); background: #00ee7a; }
 
 /* HERO */
-.hero { min-height: 100vh; padding: 140px 40px 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden; max-width: none; width: 100%; }
+.hero { min-height: 100vh; padding: 120px 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden; max-width: none; width: 100%; }
 .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px); background-size: 60px 60px; will-change: transform; }
 .hero-glow { position: absolute; top: 20%; left: -10%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 70%); pointer-events: none; will-change: transform; }
 .hero-content { width: 100%; max-width: 1200px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
@@ -103,13 +103,14 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
 .about-value-desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
 
 /* SECTIONS */
-section { padding: 72px 40px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+section { padding: 60px 40px; max-width: 1100px; margin-left: auto; margin-right: auto; }
 .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--green); text-transform: uppercase; margin-bottom: 16px; }
 .section-title { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -2px; margin-bottom: 16px; line-height: 1.05; }
 .section-sub { font-size: 17px; color: var(--gray); max-width: 480px; line-height: 1.6; margin-bottom: 64px; }
 
 /* SERVICES */
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--gray2); border-radius: 20px; overflow: hidden; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--gray2); border-radius: 20px; overflow: hidden; }
+.services-grid .service-card:last-child { grid-column: span 2; }
 .service-card { background: var(--black2); padding: 40px 32px; transition: background 0.3s; position: relative; overflow: hidden; }
 .service-card:hover { background: var(--black3); }
 .service-card:hover .service-icon { background: var(--green); color: var(--black); }
@@ -266,6 +267,8 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .mockup-browser { transform: none; }
     .hero-mockup:hover .mockup-browser { transform: none; }
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 100px 32px 52px; }
+    section { padding: 52px 32px; }
 }
 
 @media (max-width: 768px) {
