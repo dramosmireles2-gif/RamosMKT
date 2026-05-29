@@ -286,7 +286,11 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .service-card--featured { flex: 0 0 300px; grid-template-columns: 1fr; }
     .about-values { grid-template-columns: 1fr 1fr; }
     .service-card { padding: 28px 20px; }
-    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .portfolio-info { padding: 14px 16px; }
+    .portfolio-desc { display: none; }
+    .portfolio-title { font-size: 15px; margin-bottom: 6px; }
+    .portfolio-btn { font-size: 12px; padding: 8px 14px; margin-top: 10px; }
     .case-section { padding: 40px 24px; margin: 0 20px; }
     .case-stats { grid-template-columns: 1fr; }
     .case-header { flex-direction: column; }
