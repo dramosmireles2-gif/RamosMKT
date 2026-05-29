@@ -280,8 +280,10 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .hero h1 { font-size: clamp(40px, 12vw, 64px); letter-spacing: -2px; }
     .hero-stats { gap: 24px; flex-wrap: wrap; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .service-card--featured { grid-template-columns: 1fr; }
+    .services-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 12px; padding: 4px 20px 20px; margin: 0 -20px; background: transparent; border-radius: 0; scroll-padding-left: 20px; }
+    .services-grid::-webkit-scrollbar { display: none; }
+    .service-card { flex: 0 0 260px; scroll-snap-align: start; border-radius: 16px; border: 1px solid var(--gray2); padding: 28px 24px; }
+    .service-card--featured { flex: 0 0 300px; grid-template-columns: 1fr; }
     .about-values { grid-template-columns: 1fr 1fr; }
     .service-card { padding: 28px 20px; }
     .portfolio-grid { grid-template-columns: 1fr; }
