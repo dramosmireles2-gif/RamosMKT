@@ -113,8 +113,9 @@ section { padding: 72px 40px; max-width: 1100px; margin-left: auto; margin-right
 .service-card { background: var(--black2); padding: 40px 32px; transition: background 0.3s; position: relative; overflow: hidden; }
 .service-card:hover { background: var(--black3); }
 .service-card:hover .service-icon { background: var(--green); color: var(--black); }
-.service-card--featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; border-top: 1px solid rgba(0,255,136,0.15); }
-.service-card--featured .service-features { columns: 2; gap: 8px; }
+.service-card--featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; border-top: 1px solid rgba(0,255,136,0.15); }
+.featured-col { display: flex; flex-direction: column; }
+.featured-col--right { padding-top: 4px; gap: 24px; }
 .service-card-new { display: inline-flex; align-items: center; background: var(--green); color: var(--black); font-size: 10px; font-weight: 800; letter-spacing: 2px; padding: 4px 10px; border-radius: 100px; margin-bottom: 16px; }
 .service-card-cta, .service-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; color: var(--green); font-size: 14px; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(0,255,136,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
 .service-card-cta:hover, .service-link:hover { border-color: var(--green); }
@@ -279,9 +280,9 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .hero h1 { font-size: clamp(40px, 12vw, 64px); letter-spacing: -2px; }
     .hero-stats { gap: 24px; flex-wrap: wrap; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
     .service-card--featured { grid-template-columns: 1fr; }
-    .service-card--featured .service-features { columns: 1; }
+    .about-values { grid-template-columns: 1fr 1fr; }
     .service-card { padding: 28px 20px; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .case-section { padding: 40px 24px; margin: 0 20px; }
