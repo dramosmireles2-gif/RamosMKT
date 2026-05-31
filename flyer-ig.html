@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RMKT — Flyers Linaje Escogido</title>
+<title>RMKT — Flyers ramosmkt.lat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,738 +14,625 @@ html,body{font-family:'Jost',system-ui,sans-serif;}
 body{background:#111;padding:48px 24px;display:flex;flex-direction:column;align-items:center;gap:24px;}
 @media print{body{display:none;}}
 
-.lbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#333;padding-bottom:10px;border-bottom:1px solid #1e1e1e;}
+/* UI CHROME */
+.lbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2e2e2e;padding-bottom:10px;border-bottom:1px solid #1e1e1e;}
 .dl{padding:14px;background:#00e676;color:#0a0a0a;font-family:'Jost',system-ui,sans-serif;font-weight:700;font-size:15px;border:none;border-radius:8px;cursor:pointer;transition:opacity .18s;letter-spacing:.3px;}
 .dl:hover{opacity:.82;}
 
-/* ── SHARED DECORATIONS ── */
-.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,230,118,.032) 1px,transparent 1px),linear-gradient(90deg,rgba(0,230,118,.032) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+/* SHARED DECORATION */
+.bgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,230,118,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,230,118,.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(0,230,118,.09) 0%,transparent 65%);pointer-events:none;}
 
-/* ── RMKT LOGO WORDMARK (fallback) ── */
-.rmkt-wm{font-family:'Jost',system-ui,sans-serif;font-weight:900;letter-spacing:-1.5px;line-height:1;display:inline-flex;align-items:baseline;}
-.rmkt-wm .r{color:#fff;}
-.rmkt-wm .mkt{color:#00e676;}
-.rmkt-bar{height:2px;background:linear-gradient(90deg,#00e676,rgba(0,230,118,.08));border-radius:2px;margin-top:3px;}
-.rmkt-sub-txt{font-family:'Jost',system-ui,sans-serif;font-weight:700;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#2e2e2e;margin-top:2px;}
+/* RMKT WORDMARK */
+.wm{display:inline-flex;flex-direction:column;gap:1px;}
+.wm-row{font-family:'Jost',system-ui,sans-serif;font-weight:900;letter-spacing:-1.5px;line-height:1;display:flex;align-items:baseline;}
+.wm-r{color:#fff;}.wm-mkt{color:#00e676;}
+.wm-bar{height:2px;background:linear-gradient(90deg,#00e676,rgba(0,230,118,.06));border-radius:2px;}
+.wm-sub{font-family:'Jost',system-ui,sans-serif;font-weight:700;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#2a2a2a;margin-top:2px;}
 
-/* ── GREEN PILL TAG ── */
+/* GREEN PILL */
 .pill{display:inline-flex;align-items:center;gap:5px;background:rgba(0,230,118,.09);border:1px solid rgba(0,230,118,.2);color:#00e676;padding:4px 12px;border-radius:100px;font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
 .pill-dot{width:5px;height:5px;background:#00e676;border-radius:50%;flex-shrink:0;}
 
-/* ── QR BOX ── */
+/* QR BOX */
 .qr{background:#fff;padding:10px;border-radius:8px;display:inline-block;line-height:0;}
-.qr.hi{border:2px solid rgba(0,230,118,.45);box-shadow:0 0 20px rgba(0,230,118,.1);}
-.qr-lbl{font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#3a3a3a;letter-spacing:.5px;text-align:center;margin-top:6px;display:block;}
+.qr.hi{border:2px solid rgba(0,230,118,.4);box-shadow:0 0 20px rgba(0,230,118,.1);}
+.qrl{font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#3a3a3a;letter-spacing:.5px;text-align:center;margin-top:6px;display:block;}
 
-/* ── PHONE FRAME ── */
-.phone{background:#1c1c1e;border-radius:36px;padding:8px;border:1.5px solid rgba(255,255,255,.13);box-shadow:0 24px 64px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.06);}
-.phone-scr{border-radius:28px;overflow:hidden;position:relative;}
-.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:76px;height:22px;background:#1c1c1e;border-radius:0 0 14px 14px;z-index:5;display:flex;align-items:center;justify-content:center;}
-.notch::after{content:'';width:9px;height:9px;background:#0a0a0a;border-radius:50%;}
-
-/* ── BROWSER FRAME ── */
+/* BROWSER FRAME */
 .browser{background:#141414;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 56px rgba(0,0,0,.8);}
-.bbar{background:#1c1c1c;padding:9px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.05);}
+.bbar{background:#1c1c1c;padding:9px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.06);}
 .bdots{display:flex;gap:5px;flex-shrink:0;}
 .bdots span{width:9px;height:9px;border-radius:50%;}
 .bdots span:nth-child(1){background:#ff5f57;}
 .bdots span:nth-child(2){background:#ffbd2e;}
 .bdots span:nth-child(3){background:#28c840;}
-.burl{background:rgba(255,255,255,.05);border-radius:4px;padding:3px 10px;font-size:10px;font-family:'Jost',system-ui,sans-serif;color:#3a3a3a;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.burl{background:rgba(255,255,255,.05);border-radius:4px;padding:3px 10px;font-family:'Jost',system-ui,sans-serif;font-size:10px;color:#3a3a3a;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
-/* ── ADMIN UI ── */
-.adm{display:flex;height:100%;}
-.aside{width:110px;flex-shrink:0;background:#111;border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;}
-.aside-logo{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Jost',system-ui,sans-serif;font-weight:900;font-size:13px;display:flex;gap:3px;}
-.aside-logo .r{color:#fff;} .aside-logo .k{color:#00e676;}
-.nav-item{padding:7px 12px;font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:600;color:#444;display:flex;align-items:center;gap:6px;}
-.nav-item.on{background:rgba(0,230,118,.08);color:#00e676;border-right:2px solid #00e676;}
-.nav-dot{width:4px;height:4px;border-radius:50%;background:currentColor;flex-shrink:0;}
-.acontent{flex:1;background:#0d0d0d;padding:12px 14px;overflow:hidden;}
-.atop{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:10px;}
-.atitle{font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:700;color:#fff;}
-.abtn{background:#00e676;color:#0a0a0a;font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;padding:5px 10px;border-radius:5px;border:none;}
-.atbl{width:100%;border-collapse:collapse;}
-.atbl th{font-family:'Jost',system-ui,sans-serif;font-size:8px;font-weight:700;color:#333;letter-spacing:1.5px;text-transform:uppercase;padding:4px 8px;text-align:left;}
-.atbl td{font-family:'Jost',system-ui,sans-serif;font-size:10px;color:#666;padding:7px 8px;border-top:1px solid rgba(255,255,255,.04);}
-.atbl td.hi{color:#ccc;font-weight:600;}
-.abadge{display:inline-block;background:rgba(0,230,118,.1);color:#00e676;font-size:8px;font-weight:700;padding:2px 7px;border-radius:20px;font-family:'Jost',system-ui,sans-serif;}
-.abadge2{display:inline-block;background:rgba(255,255,255,.06);color:#555;font-size:8px;font-weight:700;padding:2px 7px;border-radius:20px;font-family:'Jost',system-ui,sans-serif;}
-
-/* ── CONTACT ROW ── */
+/* CONTACT ROW */
 .crow{display:flex;align-items:center;gap:10px;}
-.cico{width:36px;height:36px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cico{width:36px;height:36px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .cico svg{width:17px;height:17px;}
 .ctxt{font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:600;color:#ccc;}
 
-/* ── FEATURE ROW ── */
-.feat{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.feat:last-child{border-bottom:none;}
-.feat-em{font-size:17px;line-height:1;flex-shrink:0;width:26px;text-align:center;}
-.feat-txt{font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:600;color:#bbb;}
-
-/* ── GRID FEAT (story) ── */
-.gfeat{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:9px 12px;}
-.gfeat-em{font-size:17px;line-height:1;flex-shrink:0;}
-.gfeat-txt{font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:600;color:#bbb;}
-
-/* ── MODULE CHIP ── */
-.chip{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:100px;font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:700;}
+/* CHIP */
+.chip{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:100px;font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:700;}
 .chip.g{background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);color:#00e676;}
 .chip.d{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#888;}
 
-/* ── CAP CARD (story admin) ── */
+/* GRID FEAT (story) */
+.gf{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:9px 13px;}
+.gf-em{font-size:17px;line-height:1;flex-shrink:0;}
+.gf-tx{font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:600;color:#bbb;}
+
+/* CAP CARD */
 .cap{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px 16px;}
 .cap.g{background:rgba(0,230,118,.04);border-color:rgba(0,230,118,.12);}
 .cap-ic{font-size:20px;line-height:1;margin-bottom:7px;}
 .cap-nm{font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:700;color:#fff;margin-bottom:2px;}
 .cap-ds{font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;color:#666;}
 
-/* ── MA SERVICES GRID ── */
-.ma-svc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;}
-.ma-svc.g{background:rgba(0,230,118,.05);border-color:rgba(0,230,118,.12);}
-.ma-svc-lbl{font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#00e676;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
-.ma-svc-val{font-family:'Jost',system-ui,sans-serif;font-size:16px;font-weight:700;color:#fff;}
-.ma-svc-ds{font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:500;color:#666;margin-top:1px;}
+/* MA SERVICE BOX */
+.svc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;}
+.svc.g{background:rgba(0,230,118,.05);border-color:rgba(0,230,118,.12);}
+.svc-lbl{font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#00e676;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+.svc-val{font-family:'Jost',system-ui,sans-serif;font-size:16px;font-weight:700;color:#fff;}
+.svc-ds{font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:500;color:#666;margin-top:1px;}
 
-/* ── MA CHECKLIST ── */
-.ma-chk{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.ma-chk li{font-family:'Jost',system-ui,sans-serif;font-size:14px;font-weight:600;color:#aaa;display:flex;align-items:center;gap:10px;}
-.ma-chk li::before{content:'✓';min-width:20px;height:20px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#00e676;text-align:center;line-height:20px;flex-shrink:0;}
+/* MA CHECKLIST */
+.chk{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.chk li{font-family:'Jost',system-ui,sans-serif;font-size:14px;font-weight:600;color:#aaa;display:flex;align-items:center;gap:10px;}
+.chk li::before{content:'✓';min-width:20px;height:20px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#00e676;text-align:center;line-height:20px;flex-shrink:0;}
 
 /* ═══════════════════════════════════════════════
-   DESIGN 1 · post-1 · 600×600 · WEB SHOWCASE
+   01 · post-1 · 600×600 · WEB SHOWCASE
 ═══════════════════════════════════════════════ */
 #post-1{width:600px;height:600px;background:#0a0a0a;position:relative;overflow:hidden;outline:1px dashed rgba(0,230,118,.15);display:flex;flex-direction:column;}
-
-#post-1 .p-top{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
-#post-1 .p-body{flex:1;display:flex;overflow:hidden;position:relative;z-index:1;}
-#post-1 .p-left{width:244px;flex-shrink:0;padding:14px 12px 14px 18px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,.05);}
-#post-1 .p-right{flex:1;padding:16px 20px;display:flex;flex-direction:column;justify-content:space-between;}
-#post-1 .p-foot{padding:10px 22px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;}
+#post-1 .top{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
+#post-1 .body{flex:1;display:flex;overflow:hidden;position:relative;z-index:1;}
+#post-1 .left{width:52%;flex-shrink:0;padding:12px 10px 12px 16px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,.05);}
+#post-1 .right{flex:1;padding:14px 18px;display:flex;flex-direction:column;justify-content:space-between;}
+#post-1 .foot{padding:10px 22px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;}
 
 /* ═══════════════════════════════════════════════
-   DESIGN 2 · post-2 · 600×600 · WEB CTA
+   02 · post-2 · 600×600 · WEB CTA
 ═══════════════════════════════════════════════ */
 #post-2{width:600px;height:600px;background:#0a0a0a;position:relative;overflow:hidden;outline:1px dashed rgba(0,230,118,.15);display:flex;flex-direction:column;}
-
 #post-2 .bg{position:absolute;inset:0;z-index:0;}
-#post-2 .bg img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.15;display:block;}
-#post-2 .p-top{display:flex;align-items:center;justify-content:space-between;padding:15px 24px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
-#post-2 .p-body{flex:1;padding:22px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
-#post-2 .strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;height:82px;border-radius:10px;overflow:hidden;}
-#post-2 .strip-c{overflow:hidden;position:relative;}
-#post-2 .strip-c img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
-#post-2 .strip-c::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.4));}
-#post-2 .contacts{display:flex;flex-direction:column;gap:8px;}
-#post-2 .bottom-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;}
-#post-2 .p-foot{padding:10px 28px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;gap:24px;flex-shrink:0;position:relative;z-index:1;}
+#post-2 .bg img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.13;display:block;}
+#post-2 .top{display:flex;align-items:center;justify-content:space-between;padding:15px 24px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
+#post-2 .body{flex:1;padding:22px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
+#post-2 .strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;height:80px;border-radius:10px;overflow:hidden;}
+#post-2 .sc{overflow:hidden;position:relative;}
+#post-2 .sc img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+#post-2 .sc::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.45));}
+#post-2 .brow{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;}
+#post-2 .foot{padding:10px 28px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;gap:22px;flex-shrink:0;position:relative;z-index:1;}
 
 /* ═══════════════════════════════════════════════
-   DESIGN 3 · story-web · 600×1067 · WEB STORY
+   03 · story-web · 600×1067 · WEB STORY
 ═══════════════════════════════════════════════ */
 #story-web{width:600px;height:1067px;background:#0a0a0a;position:relative;overflow:hidden;outline:1px dashed rgba(0,230,118,.15);display:flex;flex-direction:column;}
 
 /* ═══════════════════════════════════════════════
-   DESIGN 4 · post-admin-1 · 600×600 · ADMIN SHOWCASE
+   04 · post-admin-1 · 600×600 · ADMIN SHOWCASE
 ═══════════════════════════════════════════════ */
 #post-admin-1{width:600px;height:600px;background:#0a0a0a;position:relative;overflow:hidden;outline:1px dashed rgba(0,230,118,.15);display:flex;flex-direction:column;}
-
-#post-admin-1 .p-top{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
-#post-admin-1 .p-body{flex:1;padding:14px 22px;display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;}
-#post-admin-1 .p-foot{padding:10px 22px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;}
+#post-admin-1 .top{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
+#post-admin-1 .body{flex:1;padding:14px 22px;display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;}
+#post-admin-1 .foot{padding:10px 22px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;}
 
 /* ═══════════════════════════════════════════════
-   DESIGN 5 · post-admin-2 · 600×600 · ADMIN CTA
+   05 · post-admin-2 · 600×600 · ADMIN CTA
 ═══════════════════════════════════════════════ */
 #post-admin-2{width:600px;height:600px;background:#0a0a0a;position:relative;overflow:hidden;outline:1px dashed rgba(0,230,118,.15);display:flex;flex-direction:column;}
-
-#post-admin-2 .p-top{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
-#post-admin-2 .p-body{flex:1;padding:22px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
-#post-admin-2 .bottom-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;}
-#post-admin-2 .contacts{display:flex;flex-direction:column;gap:9px;}
-#post-admin-2 .p-foot{padding:10px 28px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;gap:24px;flex-shrink:0;position:relative;z-index:1;}
+#post-admin-2 .top{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;}
+#post-admin-2 .body{flex:1;padding:22px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
+#post-admin-2 .brow{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;}
+#post-admin-2 .foot{padding:10px 28px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;gap:22px;flex-shrink:0;position:relative;z-index:1;}
 
 /* ═══════════════════════════════════════════════
-   DESIGN 6 · story-admin · 600×1067 · ADMIN STORY
+   06 · story-admin · 600×1067 · ADMIN STORY
 ═══════════════════════════════════════════════ */
 #story-admin{width:600px;height:1067px;background:#0a0a0a;position:relative;overflow:hidden;outline:1px dashed rgba(0,230,118,.15);display:flex;flex-direction:column;}
 
 /* ═══════════════════════════════════════════════
-   META ADS · meta-1 · 1080×1080
+   07 · meta-1 · 1080×1080 · META ADS
 ═══════════════════════════════════════════════ */
 #meta-1{width:1080px;height:1080px;background:#0a0a0a;position:relative;overflow:hidden;outline:1px dashed rgba(0,230,118,.15);display:flex;flex-direction:column;}
 </style>
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════
-     01 · POST 600×600 — SITIO WEB SHOWCASE
-════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════
+     01 · POST 600×600 — WEB SHOWCASE
+══════════════════════════════════════════════ -->
 <p class="lbl" style="width:600px;">01 · Post IG 600 × 600 — Sitio Web Showcase</p>
 
 <div id="post-1">
-  <div class="grid-bg"></div>
-  <div class="glow" style="width:400px;height:400px;top:-120px;right:-120px;"></div>
+  <div class="bgrid"></div>
+  <div class="glow" style="width:380px;height:380px;top:-100px;right:-80px;"></div>
 
   <!-- TOP -->
-  <div class="p-top">
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="rmkt-wm" style="font-size:21px;"><span class="r">R</span><span class="mkt">MKT</span></div>
-      <div class="rmkt-bar" style="width:58px;"></div>
+  <div class="top">
+    <div class="wm">
+      <div class="wm-row" style="font-size:21px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
+      <div class="wm-bar" style="width:58px;"></div>
     </div>
-    <div class="pill"><div class="pill-dot"></div>SITIO WEB · IGLESIAS</div>
+    <div class="pill"><div class="pill-dot"></div>DISEÑO WEB · AGENCIA</div>
   </div>
 
   <!-- BODY -->
-  <div class="p-body">
-
-    <!-- LEFT: phone mockup -->
-    <div class="p-left">
-      <div class="phone" style="width:186px;">
-        <div class="phone-scr" style="height:342px;">
-          <div class="notch"></div>
-          <img src="linaje.png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+  <div class="body">
+    <!-- LEFT: browser mockup of ramosmkt.lat -->
+    <div class="left">
+      <div class="browser" style="width:100%;">
+        <div class="bbar">
+          <div class="bdots"><span></span><span></span><span></span></div>
+          <div class="burl">ramosmkt.lat</div>
+        </div>
+        <div style="overflow:hidden;height:418px;">
+          <img src="ramosmkt.lat_ (1).png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: text -->
-    <div class="p-right">
+    <!-- RIGHT: copy + features + QRs -->
+    <div class="right">
       <div>
-        <div style="font-size:11px;font-weight:700;font-family:'Jost',system-ui,sans-serif;color:#00e676;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">// Hecho por RMKT</div>
-        <div style="font-family:'Jost',system-ui,sans-serif;font-size:26px;font-weight:900;line-height:1.0;letter-spacing:-.6px;color:#fff;margin-bottom:8px;">Así queda el<br>sitio web de<br>tu <span style="color:#00e676;">iglesia</span></div>
-        <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:500;color:#888;line-height:1.55;margin-bottom:16px;">Diseño a la medida. Administrable desde tu teléfono.</div>
-        <div class="feat"><div class="feat-em">📅</div><div class="feat-txt">Horarios dinámicos</div></div>
-        <div class="feat"><div class="feat-em">📣</div><div class="feat-txt">Anuncios y noticias</div></div>
-        <div class="feat"><div class="feat-em">📝</div><div class="feat-txt">Registro a eventos</div></div>
-        <div class="feat"><div class="feat-em">🙏</div><div class="feat-txt">Peticiones de oración</div></div>
-        <div class="feat" style="border-bottom:none;"><div class="feat-em">🖼</div><div class="feat-txt">Galería fotográfica</div></div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;">
-        <div class="qr hi" style="display:inline-block;">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Flinajeescogidoreynosa.org" width="76" height="76" crossorigin="anonymous" alt="Sitio">
+        <div style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:700;color:#00e676;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">// Hecho por RMKT</div>
+        <div style="font-family:'Jost',system-ui,sans-serif;font-size:24px;font-weight:900;line-height:1.0;letter-spacing:-.5px;color:#fff;margin-bottom:8px;">Sitios web que<br>trabajan por ti<br><span style="color:#00e676;">24 / 7</span></div>
+        <div style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:500;color:#888;line-height:1.55;margin-bottom:14px;">Diseño a la medida. Optimizado para móvil. Entregado en días.</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+          <div style="display:flex;align-items:center;gap:7px;font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:600;color:#999;"><span style="display:inline-flex;width:16px;height:16px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);border-radius:50%;align-items:center;justify-content:center;font-size:9px;color:#00e676;flex-shrink:0;">✓</span>Diseño profesional a la medida</div>
+          <div style="display:flex;align-items:center;gap:7px;font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:600;color:#999;"><span style="display:inline-flex;width:16px;height:16px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);border-radius:50%;align-items:center;justify-content:center;font-size:9px;color:#00e676;flex-shrink:0;">✓</span>100% responsive y rápido</div>
+          <div style="display:flex;align-items:center;gap:7px;font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:600;color:#999;"><span style="display:inline-flex;width:16px;height:16px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);border-radius:50%;align-items:center;justify-content:center;font-size:9px;color:#00e676;flex-shrink:0;">✓</span>SEO + WhatsApp integrado</div>
+          <div style="display:flex;align-items:center;gap:7px;font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:600;color:#999;"><span style="display:inline-flex;width:16px;height:16px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);border-radius:50%;align-items:center;justify-content:center;font-size:9px;color:#00e676;flex-shrink:0;">✓</span>Entrega en 5–10 días</div>
         </div>
-        <span class="qr-lbl">linajeescogidoreynosa.org</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-end;">
+        <div>
+          <div class="qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Framosmkt.lat" width="68" height="68" crossorigin="anonymous" alt="ramosmkt.lat">
+          </div>
+          <span class="qrl" style="font-size:9px;">ramosmkt.lat</span>
+        </div>
+        <div>
+          <div class="qr hi">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520cotizar%2520un%2520sitio%2520web" width="76" height="76" crossorigin="anonymous" alt="WhatsApp">
+          </div>
+          <span class="qrl" style="font-size:9px;">WhatsApp</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <div class="p-foot">
+  <div class="foot">
     <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#444;font-weight:600;">ramosmkt.lat · @ramos_mkt.rex</span>
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;color:#2e2e2e;font-weight:600;">Reynosa, México</span>
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;color:#2a2a2a;font-weight:600;">Reynosa, México</span>
   </div>
 </div>
 
 <button class="dl" id="dl1" style="width:600px;">Descargar Post Showcase PNG</button>
 
-<!-- ════════════════════════════════════════════
-     02 · POST 600×600 — SITIO WEB CTA
-════════════════════════════════════════════ -->
-<p class="lbl" style="width:600px;">02 · Post IG 600 × 600 — Sitio Web CTA</p>
+<!-- ══════════════════════════════════════════════
+     02 · POST 600×600 — WEB CTA
+══════════════════════════════════════════════ -->
+<p class="lbl" style="width:600px;">02 · Post IG 600 × 600 — Web CTA</p>
 
 <div id="post-2">
-  <div class="bg"><img src="linaje.png" alt=""></div>
-  <div class="grid-bg"></div>
+  <div class="bg"><img src="ramosmkt.lat_ (1).png" alt=""></div>
+  <div class="bgrid"></div>
 
   <!-- TOP -->
-  <div class="p-top">
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="rmkt-wm" style="font-size:21px;"><span class="r">R</span><span class="mkt">MKT</span></div>
-      <div class="rmkt-bar" style="width:58px;"></div>
+  <div class="top">
+    <div class="wm">
+      <div class="wm-row" style="font-size:21px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
+      <div class="wm-bar" style="width:58px;"></div>
     </div>
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:600;color:#333;letter-spacing:2px;text-transform:uppercase;">Reynosa · México</span>
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:600;color:#2e2e2e;letter-spacing:2px;text-transform:uppercase;">Reynosa · México</span>
   </div>
 
   <!-- BODY -->
-  <div class="p-body">
+  <div class="body">
     <div>
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:36px;font-weight:900;line-height:1.0;letter-spacing:-1.2px;color:#fff;">¿Tu iglesia<br>ya tiene <span style="color:#00e676;">sitio</span><br>web propio?</div>
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;color:#888;line-height:1.55;margin-top:9px;max-width:340px;">RMKT diseña y administra tu sitio para que te concentres en lo que importa: tu ministerio.</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:38px;font-weight:900;line-height:.97;letter-spacing:-1.5px;color:#fff;">¿Tu negocio<br>sin <span style="color:#00e676;">presencia</span><br>digital?</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;color:#888;line-height:1.55;margin-top:10px;max-width:340px;">RMKT diseña webs, sistemas admin y campañas que traen clientes reales a tu negocio.</div>
     </div>
 
-    <!-- IMAGE STRIP -->
+    <!-- PORTFOLIO IMAGE STRIP -->
     <div class="strip">
-      <div class="strip-c"><img src="linaje.png" alt=""></div>
-      <div class="strip-c"><img src="Linaje1.png" alt=""></div>
-      <div class="strip-c"><img src="p-linaje.png" alt=""></div>
+      <div class="sc"><img src="p-ecommerce.png" alt="Ecommerce RMKT"></div>
+      <div class="sc"><img src="p-restaurante.png" alt="Restaurante RMKT"></div>
+      <div class="sc"><img src="p-invitacion.png" alt="Invitación RMKT"></div>
     </div>
 
     <!-- CONTACTS + QR -->
-    <div class="bottom-row">
-      <div class="contacts">
+    <div class="brow">
+      <div style="display:flex;flex-direction:column;gap:8px;">
         <div class="crow">
-          <div class="cico">
-            <svg viewBox="0 0 24 24" fill="#00e676"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          </div>
+          <div class="cico"><svg viewBox="0 0 24 24" fill="#00e676"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></div>
           <div class="ctxt">+52 814 807 8309</div>
         </div>
         <div class="crow">
-          <div class="cico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </div>
+          <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
           <div class="ctxt">@ramos_mkt.rex</div>
         </div>
         <div class="crow">
-          <div class="cico">
-            <svg viewBox="0 0 24 24" fill="#00e676"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </div>
+          <div class="cico"><svg viewBox="0 0 24 24" fill="#00e676"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
           <div class="ctxt">/ramosmkt</div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
         <div class="qr hi">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520cotizar%2520un%2520sitio%2520web%2520para%2520mi%2520iglesia" width="136" height="136" crossorigin="anonymous" alt="WhatsApp">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520cotizar%2520un%2520sitio%2520web" width="136" height="136" crossorigin="anonymous" alt="WhatsApp">
         </div>
-        <span class="qr-lbl" style="font-size:11px;">Escanéame · WhatsApp</span>
+        <span class="qrl" style="font-size:11px;">Escanéame · WhatsApp</span>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <div class="p-foot">
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#444;font-weight:600;">ramosmkt.lat</span>
+  <div class="foot">
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#3a3a3a;font-weight:600;">ramosmkt.lat</span>
     <span style="width:1px;height:12px;background:#222;display:inline-block;"></span>
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#3a3a3a;font-weight:600;">@ramos_mkt.rex</span>
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#333;font-weight:600;">@ramos_mkt.rex</span>
     <span style="width:1px;height:12px;background:#222;display:inline-block;"></span>
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#333;font-weight:600;">+52 814 807 8309</span>
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#2e2e2e;font-weight:600;">+52 814 807 8309</span>
   </div>
 </div>
 
 <button class="dl" id="dl2" style="width:600px;">Descargar Post CTA PNG</button>
 
-<!-- ════════════════════════════════════════════
-     03 · STORY 600×1067 — SITIO WEB
-════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════
+     03 · STORY 600×1067 — WEB
+══════════════════════════════════════════════ -->
 <p class="lbl" style="width:600px;">03 · Story IG 600 × 1067 — Sitio Web</p>
 
 <div id="story-web">
-  <div class="grid-bg"></div>
+  <div class="bgrid"></div>
   <div class="glow" style="width:500px;height:500px;top:-100px;right:-120px;"></div>
-  <div class="glow" style="width:400px;height:400px;bottom:-80px;left:-100px;opacity:.5;"></div>
+  <div class="glow" style="width:400px;height:400px;bottom:-80px;left:-80px;opacity:.4;"></div>
 
-  <!-- HEADER (68px) -->
+  <!-- HEADER ~68px -->
   <div style="display:flex;align-items:center;justify-content:space-between;padding:19px 30px 17px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="rmkt-wm" style="font-size:24px;"><span class="r">R</span><span class="mkt">MKT</span></div>
-      <div class="rmkt-bar" style="width:66px;"></div>
-      <div class="rmkt-sub-txt">RAMOS · DIGITAL</div>
+    <div class="wm">
+      <div class="wm-row" style="font-size:24px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
+      <div class="wm-bar" style="width:66px;"></div>
+      <div class="wm-sub">RAMOS · DIGITAL</div>
     </div>
-    <div class="pill" style="font-size:9px;padding:4px 11px;"><div class="pill-dot"></div>WEB IGLESIAS</div>
+    <div class="pill" style="font-size:9px;padding:4px 11px;"><div class="pill-dot"></div>DISEÑO WEB</div>
   </div>
 
-  <!-- HERO TEXT (112px) -->
+  <!-- HERO TEXT ~118px -->
   <div style="padding:17px 30px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#00e676;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">// Tu comunidad te busca en línea</div>
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:30px;font-weight:900;line-height:1.0;letter-spacing:-1px;color:#fff;margin-bottom:6px;">Así hacemos<br>el sitio web de<br>tu <span style="color:#00e676;">iglesia</span></div>
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:500;color:#888;line-height:1.5;">Diseño profesional + panel de administración incluido.</div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#00e676;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">// Desde Reynosa para el mundo</div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:30px;font-weight:900;line-height:1.0;letter-spacing:-1px;color:#fff;margin-bottom:6px;">Tu negocio con<br>el sitio web que<br><span style="color:#00e676;">merece</span></div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:500;color:#888;line-height:1.5;">Diseño profesional, entregado en días, con soporte incluido.</div>
   </div>
 
-  <!-- PHONE MOCKUP (flex:1) -->
+  <!-- BROWSER MOCKUP flex:1 -->
   <div style="flex:1;padding:14px 30px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;">
-    <div class="phone" style="width:210px;">
-      <div class="phone-scr" style="height:360px;">
-        <div class="notch"></div>
-        <img src="linaje.png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+    <div class="browser" style="width:100%;">
+      <div class="bbar">
+        <div class="bdots"><span></span><span></span><span></span></div>
+        <div class="burl">ramosmkt.lat</div>
+      </div>
+      <div style="overflow:hidden;height:260px;">
+        <img src="ramosmkt.lat_ (1).png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
       </div>
     </div>
   </div>
 
-  <!-- FEATURES 2×3 (162px) -->
+  <!-- FEATURES 2×3 ~158px -->
   <div style="padding:14px 30px;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
-      <div class="gfeat"><div class="gfeat-em">📅</div><div class="gfeat-txt">Horarios dinámicos</div></div>
-      <div class="gfeat"><div class="gfeat-em">📣</div><div class="gfeat-txt">Anuncios y noticias</div></div>
-      <div class="gfeat"><div class="gfeat-em">📝</div><div class="gfeat-txt">Registro a eventos</div></div>
-      <div class="gfeat"><div class="gfeat-em">🙏</div><div class="gfeat-txt">Peticiones de oración</div></div>
-      <div class="gfeat"><div class="gfeat-em">🖼</div><div class="gfeat-txt">Galería fotográfica</div></div>
-      <div class="gfeat"><div class="gfeat-em">📱</div><div class="gfeat-txt">100% responsive</div></div>
+      <div class="gf"><div class="gf-em">🎨</div><div class="gf-tx">Diseño a la medida</div></div>
+      <div class="gf"><div class="gf-em">📱</div><div class="gf-tx">100% responsive</div></div>
+      <div class="gf"><div class="gf-em">⚡</div><div class="gf-tx">Carga ultrarrápida</div></div>
+      <div class="gf"><div class="gf-em">🔍</div><div class="gf-tx">SEO optimizado</div></div>
+      <div class="gf"><div class="gf-em">💬</div><div class="gf-tx">WhatsApp integrado</div></div>
+      <div class="gf"><div class="gf-em">📊</div><div class="gf-tx">Analytics incluido</div></div>
     </div>
   </div>
 
-  <!-- QR SECTION (182px) -->
+  <!-- QR SECTION ~178px -->
   <div style="padding:16px 30px;display:flex;justify-content:center;align-items:flex-start;gap:44px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
     <div style="display:flex;flex-direction:column;align-items:center;gap:7px;">
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#333;letter-spacing:2px;text-transform:uppercase;">Ver sitio</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#2e2e2e;letter-spacing:2px;text-transform:uppercase;">Ver portafolio</div>
       <div class="qr">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Flinajeescogidoreynosa.org" width="112" height="112" crossorigin="anonymous" alt="Sitio">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Framosmkt.lat" width="112" height="112" crossorigin="anonymous" alt="ramosmkt.lat">
       </div>
-      <span class="qr-lbl" style="font-size:10px;">linajeescogidoreynosa.org</span>
+      <span class="qrl" style="font-size:10px;">ramosmkt.lat</span>
     </div>
     <div style="width:1px;align-self:stretch;background:rgba(255,255,255,.05);"></div>
     <div style="display:flex;flex-direction:column;align-items:center;gap:7px;">
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#333;letter-spacing:2px;text-transform:uppercase;">Cotizar</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#2e2e2e;letter-spacing:2px;text-transform:uppercase;">Cotizar ahora</div>
       <div class="qr hi">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520cotizar%2520un%2520sitio%2520web%2520para%2520mi%2520iglesia" width="132" height="132" crossorigin="anonymous" alt="WhatsApp">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520cotizar%2520un%2520sitio%2520web" width="132" height="132" crossorigin="anonymous" alt="WhatsApp">
       </div>
-      <span class="qr-lbl" style="font-size:11px;">Escanéame · WhatsApp</span>
+      <span class="qrl" style="font-size:11px;">Escanéame · WhatsApp</span>
     </div>
   </div>
 
-  <!-- FOOTER (42px) -->
+  <!-- FOOTER ~42px -->
   <div style="padding:12px 30px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;">
-    <div class="rmkt-wm" style="font-size:17px;"><span class="r">R</span><span class="mkt">MKT</span></div>
+    <div class="wm-row" style="font-size:17px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
     <div style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#333;font-weight:600;">ramosmkt.lat · @<span style="color:#3a3a3a;">ramos_mkt.rex</span></div>
   </div>
 </div>
 
-<button class="dl" id="dl3" style="width:600px;">Descargar Story Sitio Web PNG</button>
+<button class="dl" id="dl3" style="width:600px;">Descargar Story Web PNG</button>
 
-<!-- ════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════
      04 · POST 600×600 — ADMIN SHOWCASE
-════════════════════════════════════════════ -->
+══════════════════════════════════════════════ -->
 <p class="lbl" style="width:600px;">04 · Post IG 600 × 600 — Panel Admin Showcase</p>
 
 <div id="post-admin-1">
-  <div class="grid-bg"></div>
-  <div class="glow" style="width:420px;height:420px;top:-100px;right:-100px;"></div>
+  <div class="bgrid"></div>
+  <div class="glow" style="width:400px;height:400px;top:-100px;right:-80px;"></div>
 
   <!-- TOP -->
-  <div class="p-top">
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="rmkt-wm" style="font-size:21px;"><span class="r">R</span><span class="mkt">MKT</span></div>
-      <div class="rmkt-bar" style="width:58px;"></div>
+  <div class="top">
+    <div class="wm">
+      <div class="wm-row" style="font-size:21px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
+      <div class="wm-bar" style="width:58px;"></div>
     </div>
     <div class="pill"><div class="pill-dot"></div>PANEL ADMIN</div>
   </div>
 
   <!-- BODY -->
-  <div class="p-body">
+  <div class="body">
     <div>
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:20px;font-weight:900;line-height:1.05;letter-spacing:-.3px;color:#fff;margin-bottom:4px;">Administra tu iglesia<br>desde <span style="color:#00e676;">cualquier lugar</span></div>
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:500;color:#888;">Panel de control completo. Sin conocimientos técnicos.</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:19px;font-weight:900;line-height:1.05;letter-spacing:-.3px;color:#fff;margin-bottom:4px;">Tu negocio bajo control<br>desde <span style="color:#00e676;">cualquier dispositivo</span></div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:500;color:#888;">Paneles de administración a la medida. Sin código. Sin Excel.</div>
     </div>
 
-    <!-- BROWSER MOCKUP -->
-    <div class="browser" style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+    <!-- BROWSER MOCKUP with admin screenshot -->
+    <div class="browser" style="flex:1;overflow:hidden;">
       <div class="bbar">
         <div class="bdots"><span></span><span></span><span></span></div>
-        <div class="burl">admin · Linaje Escogido</div>
+        <div class="burl">admin.ramosmkt.lat — Dashboard de Control</div>
       </div>
-      <div class="adm" style="flex:1;">
-        <div class="aside">
-          <div class="aside-logo"><span class="r">L</span><span class="k">INAJE</span></div>
-          <div class="nav-item on"><div class="nav-dot"></div>Anuncios</div>
-          <div class="nav-item"><div class="nav-dot"></div>Hero</div>
-          <div class="nav-item"><div class="nav-dot"></div>Galería</div>
-          <div class="nav-item"><div class="nav-dot"></div>Horarios</div>
-          <div class="nav-item"><div class="nav-dot"></div>Registros</div>
-          <div class="nav-item"><div class="nav-dot"></div>Pastores</div>
-          <div class="nav-item"><div class="nav-dot"></div>Oración</div>
-        </div>
-        <div class="acontent">
-          <div class="atop">
-            <div class="atitle">Gestión de Anuncios</div>
-            <button class="abtn">+ Nuevo anuncio</button>
-          </div>
-          <table class="atbl">
-            <thead><tr><th>Título</th><th>Fecha</th><th>Estado</th></tr></thead>
-            <tbody>
-              <tr><td class="hi">Evento especial</td><td>Jun 15</td><td><span class="abadge">Activo</span></td></tr>
-              <tr><td class="hi">Culto de jóvenes</td><td>Jun 22</td><td><span class="abadge">Activo</span></td></tr>
-              <tr><td>Retiro matrimonial</td><td style="color:#444;">Jul 5</td><td><span class="abadge2">Borrador</span></td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div style="overflow:hidden;flex:1;height:100%;">
+        <img src="p-admininvitacion.png" style="width:100%;height:380px;object-fit:cover;object-position:top;display:block;">
       </div>
     </div>
 
     <!-- FEATURE CHIPS -->
     <div style="display:flex;flex-wrap:wrap;gap:7px;">
-      <div class="chip g">📸 Subir fotos</div>
-      <div class="chip g">📣 Publicar anuncios</div>
-      <div class="chip g">🕐 Gestionar horarios</div>
-      <div class="chip d">📋 Ver registros</div>
-      <div class="chip d">📥 Exportar CSV</div>
+      <div class="chip g">📊 Control total</div>
+      <div class="chip g">📱 Desde tu cel</div>
+      <div class="chip g">📥 Exportar datos</div>
+      <div class="chip d">🔒 Acceso seguro</div>
+      <div class="chip d">⚡ Tiempo real</div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <div class="p-foot">
+  <div class="foot">
     <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#444;font-weight:600;">ramosmkt.lat · @ramos_mkt.rex</span>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
-      <div class="qr">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520el%2520panel%2520admin" width="42" height="42" crossorigin="anonymous" alt="WA">
-      </div>
+    <div class="qr" style="display:inline-block;">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520un%2520panel%2520de%2520administraci%25C3%25B3n" width="42" height="42" crossorigin="anonymous" alt="WA">
     </div>
   </div>
 </div>
 
 <button class="dl" id="dl4" style="width:600px;">Descargar Post Admin Showcase PNG</button>
 
-<!-- ════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════
      05 · POST 600×600 — ADMIN CTA
-════════════════════════════════════════════ -->
-<p class="lbl" style="width:600px;">05 · Post IG 600 × 600 — Panel Admin CTA</p>
+══════════════════════════════════════════════ -->
+<p class="lbl" style="width:600px;">05 · Post IG 600 × 600 — Admin CTA</p>
 
 <div id="post-admin-2">
-  <div class="grid-bg"></div>
+  <div class="bgrid"></div>
   <div class="glow" style="width:420px;height:420px;bottom:-80px;left:-80px;"></div>
 
   <!-- TOP -->
-  <div class="p-top">
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="rmkt-wm" style="font-size:21px;"><span class="r">R</span><span class="mkt">MKT</span></div>
-      <div class="rmkt-bar" style="width:58px;"></div>
+  <div class="top">
+    <div class="wm">
+      <div class="wm-row" style="font-size:21px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
+      <div class="wm-bar" style="width:58px;"></div>
     </div>
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:600;color:#333;letter-spacing:2px;text-transform:uppercase;">Reynosa · México</span>
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:600;color:#2e2e2e;letter-spacing:2px;text-transform:uppercase;">Reynosa · México</span>
   </div>
 
   <!-- BODY -->
-  <div class="p-body">
-
-    <!-- HEADLINE -->
+  <div class="body">
     <div>
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:35px;font-weight:900;line-height:1.0;letter-spacing:-1.2px;color:#fff;">¿Adminis&shy;tras<br>tu iglesia por<br><span style="color:#00e676;">WhatsApp</span>?</div>
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;color:#888;line-height:1.55;margin-top:9px;max-width:360px;">RMKT te da un panel de control completo. Publica, edita y gestiona todo desde tu celular.</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:35px;font-weight:900;line-height:1.0;letter-spacing:-1.2px;color:#fff;">¿Aún usas<br><span style="color:#00e676;">Excel</span> para<br>tu negocio?</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;color:#888;line-height:1.55;margin-top:9px;max-width:350px;">RMKT te diseña un panel de administración propio. Inventario, pedidos, clientes y reportes desde tu celular.</div>
     </div>
 
-    <!-- MODULE CHIPS -->
+    <!-- CHIPS -->
     <div>
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#2e2e2e;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Módulos incluidos</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#2a2a2a;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Lo que incluye</div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <div class="chip g">📣 Anuncios</div>
-        <div class="chip g">🖼 Galería</div>
-        <div class="chip g">🕐 Horarios</div>
-        <div class="chip d">🌟 Hero</div>
-        <div class="chip d">📋 Registros</div>
-        <div class="chip d">🙏 Peticiones</div>
+        <div class="chip g">📦 Inventario</div>
+        <div class="chip g">📋 Pedidos</div>
+        <div class="chip g">👥 Clientes</div>
+        <div class="chip d">📈 Reportes</div>
+        <div class="chip d">🔔 Notificaciones</div>
+        <div class="chip d">📥 Exportar CSV</div>
       </div>
     </div>
 
     <!-- CONTACTS + QR -->
-    <div class="bottom-row">
-      <div class="contacts">
+    <div class="brow">
+      <div style="display:flex;flex-direction:column;gap:8px;">
         <div class="crow">
-          <div class="cico">
-            <svg viewBox="0 0 24 24" fill="#00e676"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          </div>
+          <div class="cico"><svg viewBox="0 0 24 24" fill="#00e676"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></div>
           <div class="ctxt">+52 814 807 8309</div>
         </div>
         <div class="crow">
-          <div class="cico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </div>
+          <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
           <div class="ctxt">@ramos_mkt.rex</div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
         <div class="qr hi">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520el%2520panel%2520admin%2520para%2520mi%2520iglesia" width="136" height="136" crossorigin="anonymous" alt="WhatsApp">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520un%2520panel%2520de%2520administraci%25C3%25B3n" width="136" height="136" crossorigin="anonymous" alt="WhatsApp">
         </div>
-        <span class="qr-lbl" style="font-size:11px;">Escanéame · WhatsApp</span>
+        <span class="qrl" style="font-size:11px;">Escanéame · WhatsApp</span>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <div class="p-foot">
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#444;font-weight:600;">ramosmkt.lat</span>
+  <div class="foot">
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#3a3a3a;font-weight:600;">ramosmkt.lat</span>
     <span style="width:1px;height:12px;background:#222;display:inline-block;"></span>
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#3a3a3a;font-weight:600;">@ramos_mkt.rex</span>
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#333;font-weight:600;">@ramos_mkt.rex</span>
     <span style="width:1px;height:12px;background:#222;display:inline-block;"></span>
-    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#333;font-weight:600;">+52 814 807 8309</span>
+    <span style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#2e2e2e;font-weight:600;">+52 814 807 8309</span>
   </div>
 </div>
 
 <button class="dl" id="dl5" style="width:600px;">Descargar Post Admin CTA PNG</button>
 
-<!-- ════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════
      06 · STORY 600×1067 — ADMIN
-════════════════════════════════════════════ -->
+══════════════════════════════════════════════ -->
 <p class="lbl" style="width:600px;">06 · Story IG 600 × 1067 — Panel Admin</p>
 
 <div id="story-admin">
-  <div class="grid-bg"></div>
+  <div class="bgrid"></div>
   <div class="glow" style="width:500px;height:500px;top:-80px;left:-100px;"></div>
   <div class="glow" style="width:400px;height:400px;bottom:-80px;right:-80px;opacity:.4;"></div>
 
-  <!-- HEADER (68px) -->
+  <!-- HEADER ~68px -->
   <div style="display:flex;align-items:center;justify-content:space-between;padding:19px 30px 17px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="rmkt-wm" style="font-size:24px;"><span class="r">R</span><span class="mkt">MKT</span></div>
-      <div class="rmkt-bar" style="width:66px;"></div>
-      <div class="rmkt-sub-txt">RAMOS · DIGITAL</div>
+    <div class="wm">
+      <div class="wm-row" style="font-size:24px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
+      <div class="wm-bar" style="width:66px;"></div>
+      <div class="wm-sub">RAMOS · DIGITAL</div>
     </div>
     <div class="pill" style="font-size:9px;padding:4px 11px;"><div class="pill-dot"></div>PANEL ADMIN</div>
   </div>
 
-  <!-- HERO TEXT (118px) -->
+  <!-- HERO TEXT ~118px -->
   <div style="padding:16px 30px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#00e676;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">// Gestión digital</div>
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:28px;font-weight:900;line-height:1.0;letter-spacing:-.8px;color:#fff;margin-bottom:6px;">Tu panel de<br>control <span style="color:#00e676;">iglesia</span></div>
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:500;color:#888;line-height:1.5;">Publica, edita y gestiona todo sin saber de código.<br>Desde tu celular, en cualquier momento.</div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:700;color:#00e676;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">// Sistemas a la medida</div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:28px;font-weight:900;line-height:1.0;letter-spacing:-.8px;color:#fff;margin-bottom:6px;">Tu negocio,<br>bajo <span style="color:#00e676;">control total</span></div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:500;color:#888;line-height:1.5;">Paneles de administración propios. Sin Excel, sin caos,<br>sin depender de apps de terceros.</div>
   </div>
 
-  <!-- BROWSER MOCKUP (264px with padding) -->
+  <!-- ADMIN SCREENSHOT in browser ~270px -->
   <div style="padding:14px 30px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
     <div class="browser" style="width:100%;">
       <div class="bbar">
         <div class="bdots"><span></span><span></span><span></span></div>
-        <div class="burl">admin · Linaje Escogido</div>
+        <div class="burl">admin · RMKT — Dashboard de Control</div>
       </div>
-      <div class="adm" style="height:188px;">
-        <div class="aside" style="width:100px;">
-          <div class="aside-logo" style="font-size:11px;"><span class="r">L</span><span class="k">INAJE</span></div>
-          <div class="nav-item on" style="font-size:9px;padding:6px 10px;"><div class="nav-dot"></div>Anuncios</div>
-          <div class="nav-item" style="font-size:9px;padding:6px 10px;"><div class="nav-dot"></div>Galería</div>
-          <div class="nav-item" style="font-size:9px;padding:6px 10px;"><div class="nav-dot"></div>Horarios</div>
-          <div class="nav-item" style="font-size:9px;padding:6px 10px;"><div class="nav-dot"></div>Registros</div>
-          <div class="nav-item" style="font-size:9px;padding:6px 10px;"><div class="nav-dot"></div>Oración</div>
-        </div>
-        <div class="acontent">
-          <div class="atop">
-            <div class="atitle" style="font-size:11px;">Gestión de Anuncios</div>
-            <button class="abtn" style="font-size:8px;">+ Nuevo</button>
-          </div>
-          <table class="atbl">
-            <thead><tr><th>Título</th><th>Fecha</th><th>Estado</th></tr></thead>
-            <tbody>
-              <tr><td class="hi" style="font-size:9px;">Evento especial</td><td style="font-size:9px;">Jun 15</td><td><span class="abadge" style="font-size:7px;">Activo</span></td></tr>
-              <tr><td class="hi" style="font-size:9px;">Culto de jóvenes</td><td style="font-size:9px;">Jun 22</td><td><span class="abadge" style="font-size:7px;">Activo</span></td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div style="overflow:hidden;height:196px;">
+        <img src="p-admininvitacion.png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
       </div>
     </div>
   </div>
 
-  <!-- CAPS GRID 2×2 (200px) -->
+  <!-- CAP CARDS 2×2 ~190px -->
   <div style="padding:14px 30px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-      <div class="cap g"><div class="cap-ic">📣</div><div class="cap-nm">Anuncios y contenido</div><div class="cap-ds">Publica al instante</div></div>
-      <div class="cap"><div class="cap-ic">🖼</div><div class="cap-nm">Fotos y galería</div><div class="cap-ds">Sube imágenes fácil</div></div>
-      <div class="cap"><div class="cap-ic">📋</div><div class="cap-nm">Registros y formularios</div><div class="cap-ds">Exporta en CSV</div></div>
-      <div class="cap g"><div class="cap-ic">🙏</div><div class="cap-nm">Peticiones de oración</div><div class="cap-ds">Recibe solicitudes</div></div>
+      <div class="cap g"><div class="cap-ic">📦</div><div class="cap-nm">Inventario y stock</div><div class="cap-ds">Control en tiempo real</div></div>
+      <div class="cap"><div class="cap-ic">📋</div><div class="cap-nm">Pedidos y órdenes</div><div class="cap-ds">Gestión centralizada</div></div>
+      <div class="cap"><div class="cap-ic">👥</div><div class="cap-nm">Clientes y proveedores</div><div class="cap-ds">Base de datos propia</div></div>
+      <div class="cap g"><div class="cap-ic">📈</div><div class="cap-nm">Reportes y exportes</div><div class="cap-ds">CSV y análisis rápido</div></div>
     </div>
   </div>
 
-  <!-- CONTACTS + QR (flex:1) -->
+  <!-- CONTACTS + QR flex:1 -->
   <div style="flex:1;padding:16px 30px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;">
     <div style="display:flex;flex-direction:column;gap:10px;">
-      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#2e2e2e;letter-spacing:2px;text-transform:uppercase;margin-bottom:2px;">Contáctanos</div>
+      <div style="font-family:'Jost',system-ui,sans-serif;font-size:9px;font-weight:700;color:#2a2a2a;letter-spacing:2px;text-transform:uppercase;margin-bottom:2px;">Contáctanos</div>
       <div class="crow">
-        <div class="cico">
-          <svg viewBox="0 0 24 24" fill="#00e676"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        </div>
+        <div class="cico"><svg viewBox="0 0 24 24" fill="#00e676"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></div>
         <div class="ctxt">+52 814 807 8309</div>
       </div>
       <div class="crow">
-        <div class="cico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </div>
+        <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
         <div class="ctxt">@ramos_mkt.rex</div>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;gap:7px;">
       <div class="qr hi">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520el%2520panel%2520admin%2520para%2520mi%2520iglesia" width="140" height="140" crossorigin="anonymous" alt="WhatsApp">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520un%2520panel%2520de%2520administraci%25C3%25B3n" width="140" height="140" crossorigin="anonymous" alt="WhatsApp">
       </div>
-      <span class="qr-lbl" style="font-size:11px;">Escanéame · WhatsApp</span>
+      <span class="qrl" style="font-size:11px;">Escanéame · WhatsApp</span>
     </div>
   </div>
 
-  <!-- FOOTER (42px) -->
+  <!-- FOOTER ~42px -->
   <div style="padding:12px 30px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;">
-    <div class="rmkt-wm" style="font-size:17px;"><span class="r">R</span><span class="mkt">MKT</span></div>
+    <div class="wm-row" style="font-size:17px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
     <div style="font-family:'Jost',system-ui,sans-serif;font-size:11px;color:#333;font-weight:600;">ramosmkt.lat · @<span style="color:#3a3a3a;">ramos_mkt.rex</span></div>
   </div>
 </div>
 
 <button class="dl" id="dl6" style="width:600px;">Descargar Story Admin PNG</button>
 
-<!-- ════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════
      07 · META ADS 1080×1080
-════════════════════════════════════════════ -->
-<p class="lbl" style="width:1080px;">07 · Meta Ads 1080 × 1080 — Iglesias</p>
+══════════════════════════════════════════════ -->
+<p class="lbl" style="width:1080px;">07 · Meta Ads 1080 × 1080</p>
 
 <div id="meta-1">
-  <div class="grid-bg"></div>
-  <div class="glow" style="width:700px;height:700px;top:-200px;right:-200px;opacity:.7;"></div>
+  <div class="bgrid"></div>
+  <div class="glow" style="width:700px;height:700px;top:-200px;right:-180px;opacity:.7;"></div>
   <div class="glow" style="width:500px;height:500px;bottom:-150px;left:-100px;opacity:.4;"></div>
 
-  <!-- TOP BAR (72px) -->
+  <!-- TOP BAR ~80px -->
   <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 56px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:1;">
-    <div style="display:flex;flex-direction:column;gap:3px;">
-      <div class="rmkt-wm" style="font-size:30px;"><span class="r">R</span><span class="mkt">MKT</span></div>
-      <div class="rmkt-bar" style="width:84px;"></div>
-      <div class="rmkt-sub-txt" style="font-size:9px;">RAMOS · DIGITAL · REYNOSA</div>
+    <div class="wm">
+      <div class="wm-row" style="font-size:30px;"><span class="wm-r">R</span><span class="wm-mkt">MKT</span></div>
+      <div class="wm-bar" style="width:84px;"></div>
+      <div class="wm-sub" style="font-size:9px;">RAMOS · DIGITAL · REYNOSA</div>
     </div>
-    <div class="pill" style="font-size:11px;padding:7px 18px;gap:7px;"><div class="pill-dot" style="width:6px;height:6px;"></div>AGENCIA DIGITAL · SITIOS PARA IGLESIAS</div>
+    <div class="pill" style="font-size:11px;padding:7px 18px;gap:7px;"><div class="pill-dot" style="width:6px;height:6px;"></div>AGENCIA DIGITAL · REYNOSA, MX</div>
   </div>
 
-  <!-- BODY GRID (flex:1) -->
+  <!-- BODY 2-COL flex:1 -->
   <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;z-index:1;">
 
     <!-- LEFT: visuals -->
     <div style="border-right:1px solid rgba(255,255,255,.05);padding:44px 48px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
 
-      <!-- Phone + mini browser side by side -->
-      <div style="display:flex;gap:20px;align-items:flex-end;">
-        <div class="phone" style="width:210px;flex-shrink:0;">
-          <div class="phone-scr" style="height:370px;">
-            <div class="notch"></div>
-            <img src="linaje.png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
+      <!-- Browser mockup of ramosmkt.lat -->
+      <div class="browser" style="width:100%;">
+        <div class="bbar">
+          <div class="bdots"><span></span><span></span><span></span></div>
+          <div class="burl">ramosmkt.lat</div>
         </div>
-        <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
-          <div style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:700;color:#2a2a2a;letter-spacing:2px;text-transform:uppercase;">Panel Admin</div>
-          <div class="browser" style="width:100%;">
-            <div class="bbar" style="padding:7px 10px;">
-              <div class="bdots"><span></span><span></span><span></span></div>
-              <div class="burl" style="font-size:9px;">admin · Linaje…</div>
-            </div>
-            <div class="adm" style="height:220px;">
-              <div class="aside" style="width:90px;">
-                <div class="aside-logo" style="font-size:10px;"><span class="r">L</span><span class="k">INAJE</span></div>
-                <div class="nav-item on" style="font-size:9px;padding:5px 9px;"><div class="nav-dot"></div>Anuncios</div>
-                <div class="nav-item" style="font-size:9px;padding:5px 9px;"><div class="nav-dot"></div>Galería</div>
-                <div class="nav-item" style="font-size:9px;padding:5px 9px;"><div class="nav-dot"></div>Horarios</div>
-                <div class="nav-item" style="font-size:9px;padding:5px 9px;"><div class="nav-dot"></div>Oración</div>
-              </div>
-              <div class="acontent">
-                <div class="atop" style="margin-bottom:8px;padding-bottom:8px;">
-                  <div class="atitle" style="font-size:10px;">Anuncios</div>
-                  <button class="abtn" style="font-size:8px;padding:4px 8px;">+ Nuevo</button>
-                </div>
-                <table class="atbl">
-                  <thead><tr><th>Título</th><th>Estado</th></tr></thead>
-                  <tbody>
-                    <tr><td class="hi" style="font-size:9px;">Evento especial</td><td><span class="abadge" style="font-size:7px;">Activo</span></td></tr>
-                    <tr><td class="hi" style="font-size:9px;">Culto jóvenes</td><td><span class="abadge" style="font-size:7px;">Activo</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+        <div style="overflow:hidden;height:340px;">
+          <img src="ramosmkt.lat_ (1).png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
         </div>
       </div>
 
       <!-- Service grid 2×2 -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-        <div class="ma-svc g"><div class="ma-svc-lbl">Sitio Web</div><div class="ma-svc-val">Desde $2,000</div><div class="ma-svc-ds">Iglesia completa</div></div>
-        <div class="ma-svc g"><div class="ma-svc-lbl">Panel Admin</div><div class="ma-svc-val">Incluido</div><div class="ma-svc-ds">Sin código</div></div>
-        <div class="ma-svc"><div class="ma-svc-lbl">Entrega</div><div class="ma-svc-val">5–10 días</div><div class="ma-svc-ds">Siempre a tiempo</div></div>
-        <div class="ma-svc"><div class="ma-svc-lbl">Soporte</div><div class="ma-svc-val">Incluido</div><div class="ma-svc-ds">Post-entrega sin costo</div></div>
+        <div class="svc g"><div class="svc-lbl">Sitios Web</div><div class="svc-val">Desde $1,500</div><div class="svc-ds">Landing a plataforma</div></div>
+        <div class="svc g"><div class="svc-lbl">Sistemas Admin</div><div class="svc-val">Desde $5,000</div><div class="svc-ds">A la medida</div></div>
+        <div class="svc"><div class="svc-lbl">Ecommerce</div><div class="svc-val">Desde $4,500</div><div class="svc-ds">Tienda completa</div></div>
+        <div class="svc"><div class="svc-lbl">Paid Ads</div><div class="svc-val">Desde $2,000</div><div class="svc-ds">Meta + Google</div></div>
       </div>
     </div>
 
-    <!-- RIGHT: headline + checklist + CTA -->
+    <!-- RIGHT: copy + CTA -->
     <div style="padding:44px 56px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;">
       <div>
-        <div style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:700;color:#00e676;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px;">// Tu iglesia en línea</div>
-        <div style="font-family:'Jost',system-ui,sans-serif;font-size:52px;font-weight:900;line-height:.92;letter-spacing:-2.5px;color:#fff;margin-bottom:16px;">¿Tienes<br>una<br>iglesia?<br><span style="color:#00e676;">Hacemos</span><br>tu sitio web</div>
-        <div style="font-family:'Jost',system-ui,sans-serif;font-size:16px;font-weight:500;color:#888;line-height:1.6;max-width:360px;">Sitio web profesional + panel de administración completo. Tu comunidad, siempre conectada.</div>
+        <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:700;color:#00e676;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;">// Tu negocio online</div>
+        <div style="font-family:'Jost',system-ui,sans-serif;font-size:52px;font-weight:900;line-height:.92;letter-spacing:-2.5px;color:#fff;margin-bottom:14px;">¿Listo para<br>llevar tu<br>negocio<br>al <span style="color:#00e676;">siguiente</span><br>nivel?</div>
+        <div style="font-family:'Jost',system-ui,sans-serif;font-size:15px;font-weight:500;color:#888;line-height:1.6;max-width:360px;">Diseñamos webs, sistemas admin, ecommerce y campañas que generan resultados reales.</div>
       </div>
 
-      <ul class="ma-chk">
-        <li>Horarios y anuncios dinámicos</li>
-        <li>Registro a eventos y formularios</li>
-        <li>Galería y peticiones de oración</li>
-        <li>Panel admin sin conocimientos técnicos</li>
-        <li>100% responsive en móvil</li>
+      <ul class="chk">
+        <li>Sitios web desde $1,500 MXN</li>
+        <li>Paneles admin a la medida</li>
+        <li>Ecommerce con pagos integrados</li>
+        <li>Campañas Meta Ads y Google Ads</li>
+        <li>Entrega en 5–10 días hábiles</li>
       </ul>
 
       <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
@@ -753,25 +640,25 @@ body{background:#111;padding:48px 24px;display:flex;flex-direction:column;align-
         <div style="display:flex;gap:20px;align-items:flex-end;">
           <div style="display:flex;flex-direction:column;align-items:center;gap:7px;">
             <div class="qr hi">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520un%2520sitio%2520web%2520para%2520mi%2520iglesia" width="120" height="120" crossorigin="anonymous" alt="WhatsApp">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Fwa.me%2F528148078309%3Ftext%3DHola%252C%2520me%2520interesa%2520cotizar%2520un%2520proyecto" width="120" height="120" crossorigin="anonymous" alt="WhatsApp">
             </div>
-            <span class="qr-lbl" style="font-size:11px;">WhatsApp</span>
+            <span class="qrl" style="font-size:11px;">WhatsApp</span>
           </div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:7px;">
             <div class="qr">
               <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=https%3A%2F%2Framosmkt.lat" width="100" height="100" crossorigin="anonymous" alt="RMKT">
             </div>
-            <span class="qr-lbl" style="font-size:11px;">ramosmkt.lat</span>
+            <span class="qrl" style="font-size:11px;">ramosmkt.lat</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER (56px) -->
+  <!-- FOOTER ~56px -->
   <div style="padding:20px 56px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;">
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:600;color:#2e2e2e;">ramosmkt.lat · @ramos_mkt.rex · +52 814 807 8309</div>
-    <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:700;color:#222;letter-spacing:1px;">Reynosa, Tamaulipas · México</div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:600;color:#2a2a2a;">ramosmkt.lat · @ramos_mkt.rex · +52 814 807 8309</div>
+    <div style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:700;color:#1e1e1e;letter-spacing:1px;">Reynosa, Tamaulipas · México</div>
   </div>
 </div>
 
@@ -798,13 +685,13 @@ function dlPNG(id, filename, btnId, ratio) {
       btn.disabled = false;
     });
 }
-document.getElementById('dl1').onclick = () => dlPNG('post-1',       'rmkt-web-showcase.png',     'dl1', 2);
-document.getElementById('dl2').onclick = () => dlPNG('post-2',       'rmkt-web-cta.png',          'dl2', 2);
-document.getElementById('dl3').onclick = () => dlPNG('story-web',    'rmkt-web-story.png',        'dl3', 3);
-document.getElementById('dl4').onclick = () => dlPNG('post-admin-1', 'rmkt-admin-showcase.png',   'dl4', 2);
-document.getElementById('dl5').onclick = () => dlPNG('post-admin-2', 'rmkt-admin-cta.png',        'dl5', 2);
-document.getElementById('dl6').onclick = () => dlPNG('story-admin',  'rmkt-admin-story.png',      'dl6', 3);
-document.getElementById('dl7').onclick = () => dlPNG('meta-1',       'rmkt-meta-ads.png',         'dl7', 2);
+document.getElementById('dl1').onclick = () => dlPNG('post-1',       'rmkt-web-showcase.png',    'dl1', 2);
+document.getElementById('dl2').onclick = () => dlPNG('post-2',       'rmkt-web-cta.png',         'dl2', 2);
+document.getElementById('dl3').onclick = () => dlPNG('story-web',    'rmkt-web-story.png',       'dl3', 3);
+document.getElementById('dl4').onclick = () => dlPNG('post-admin-1', 'rmkt-admin-showcase.png',  'dl4', 2);
+document.getElementById('dl5').onclick = () => dlPNG('post-admin-2', 'rmkt-admin-cta.png',       'dl5', 2);
+document.getElementById('dl6').onclick = () => dlPNG('story-admin',  'rmkt-admin-story.png',     'dl6', 3);
+document.getElementById('dl7').onclick = () => dlPNG('meta-1',       'rmkt-meta-ads.png',        'dl7', 2);
 </script>
 </body>
 </html>
