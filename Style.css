@@ -315,17 +315,26 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .case-features { grid-template-columns: 1fr 1fr; }
     .wa-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
     .wa-float svg { width: 24px; height: 24px; }
-    .industries-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* INDUSTRIES */
-.industries-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 0; }
-.industry-card { background: var(--black2); border: 1px solid var(--gray2); border-radius: 20px; padding: 28px 24px 24px; display: flex; flex-direction: column; text-decoration: none; transition: border-color .2s, transform .2s; }
+/* INDUSTRIES — mobile first */
+.industries-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 0; }
+.industry-card { background: var(--black2); border: 1px solid var(--gray2); border-radius: 20px; padding: 24px 20px 20px; display: flex; flex-direction: column; text-decoration: none; transition: border-color .2s, transform .2s; }
 .industry-card:hover { border-color: rgba(0,255,136,.3); transform: translateY(-4px); }
 .industry-icon { width: 44px; height: 44px; background: rgba(0,255,136,.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--green); margin-bottom: 18px; flex-shrink: 0; }
 .industry-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.industry-sub { font-size: 13px; color: var(--gray); line-height: 1.55; flex: 1; margin-bottom: 20px; }
+.industry-sub { font-size: 13px; color: var(--gray); line-height: 1.55; flex: 1; margin-bottom: 16px; }
 .industry-link { font-size: 13px; font-weight: 700; color: var(--green); letter-spacing: .2px; }
+
+@media (min-width: 480px) {
+    .industries-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+@media (min-width: 769px) {
+    .industries-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+@media (min-width: 1100px) {
+    .industries-grid { grid-template-columns: repeat(5, 1fr); }
+}
 
 /* HERO TRUST STRIP */
 .hero-trust { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 20px; }
@@ -334,10 +343,3 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
 
 /* INDUSTRY PRICE */
 .industry-price { font-size: 12px; font-weight: 600; color: rgba(0,255,136,.55); letter-spacing: .3px; margin-top: -10px; margin-bottom: 14px; }
-
-@media (max-width: 1100px) {
-    .industries-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 1024px) {
-    .industries-grid { grid-template-columns: repeat(3, 1fr); }
-}
