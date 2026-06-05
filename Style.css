@@ -327,6 +327,14 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
 .industry-sub { font-size: 13px; color: var(--gray); line-height: 1.55; flex: 1; margin-bottom: 20px; }
 .industry-link { font-size: 13px; font-weight: 700; color: var(--green); letter-spacing: .2px; }
 
+/* HERO TRUST STRIP */
+.hero-trust { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 20px; }
+.hero-trust-item { font-size: 12px; font-weight: 500; color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 5px; letter-spacing: .2px; }
+.hero-trust-item::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 13px; }
+
+/* INDUSTRY PRICE */
+.industry-price { font-size: 12px; font-weight: 600; color: rgba(0,255,136,.55); letter-spacing: .3px; margin-top: -10px; margin-bottom: 14px; }
+
 @media (max-width: 1100px) {
     .industries-grid { grid-template-columns: repeat(3, 1fr); }
 }
