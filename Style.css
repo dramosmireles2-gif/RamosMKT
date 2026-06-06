@@ -314,17 +314,19 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .paso-desc { max-width: 100%; margin: 0; text-align: left; }
     .case-features { grid-template-columns: 1fr 1fr; }
     .wa-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    #industrias .section-sub { margin-bottom: 36px; }
     .wa-float svg { width: 24px; height: 24px; }
 }
 
 /* INDUSTRIES — mobile first */
 .industries-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 0; }
-.industry-card { background: var(--black2); border: 1px solid var(--gray2); border-radius: 20px; padding: 24px 20px 20px; display: flex; flex-direction: column; text-decoration: none; transition: border-color .2s, transform .2s; }
+.industry-card { background: var(--black2); border: 1px solid var(--gray2); border-radius: 20px; padding: 24px 20px 20px; display: flex; flex-direction: column; text-decoration: none; transition: border-color .2s, transform .2s, background .15s; }
 .industry-card:hover { border-color: rgba(0,255,136,.3); transform: translateY(-4px); }
+.industry-card:active { border-color: rgba(0,255,136,.55); transform: translateY(-2px); background: rgba(0,255,136,.04); }
 .industry-icon { width: 44px; height: 44px; background: rgba(0,255,136,.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--green); margin-bottom: 18px; flex-shrink: 0; }
 .industry-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .industry-sub { font-size: 13px; color: var(--gray); line-height: 1.55; flex: 1; margin-bottom: 16px; }
-.industry-link { font-size: 13px; font-weight: 700; color: var(--green); letter-spacing: .2px; }
+.industry-link { font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: .3px; display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px 5px 0; border-bottom: 1px solid rgba(0,255,136,.25); width: fit-content; }
 
 @media (min-width: 480px) {
     .industries-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -342,4 +344,4 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
 .hero-trust-item::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 13px; }
 
 /* INDUSTRY PRICE */
-.industry-price { font-size: 12px; font-weight: 600; color: rgba(0,255,136,.55); letter-spacing: .3px; margin-top: -10px; margin-bottom: 14px; }
+.industry-price { font-size: 12px; font-weight: 600; color: rgba(0,255,136,.55); letter-spacing: .3px; margin-top: 0; margin-bottom: 14px; }
