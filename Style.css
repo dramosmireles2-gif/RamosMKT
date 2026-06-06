@@ -199,7 +199,7 @@ section { padding: 60px 40px; max-width: 1100px; margin-left: auto; margin-right
 
 /* CONTACT */
 .contact-section { background: var(--black2); border-radius: 24px; max-width: 1020px; margin: 0 auto 56px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.contact-title { font-family: 'Syne', sans-serif; font-size: 44px; font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; }
+.contact-title { font-family: 'Syne', sans-serif; font-size: clamp(26px, 5.5vw, 44px); font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; overflow-wrap: break-word; }
 .contact-title span { color: var(--green); }
 .contact-desc { font-size: 16px; color: var(--gray); line-height: 1.6; margin-bottom: 32px; }
 .contact-methods { display: flex; flex-direction: column; gap: 16px; }
@@ -301,7 +301,6 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .packages-grid::-webkit-scrollbar { display: none; }
     .package-card { flex: 0 0 280px; scroll-snap-align: start; }
     .contact-section { grid-template-columns: 1fr; padding: 40px 24px; margin: 0 20px 60px; }
-    .contact-title { font-size: 30px; letter-spacing: -1px; }
     footer { padding: 30px 20px; flex-direction: column; text-align: center; }
     .proceso-steps { flex-direction: column; align-items: flex-start; gap: 0; position: relative; padding-left: 40px; }
     .proceso-steps::before { content: ''; position: absolute; left: 12px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, var(--green), rgba(0,255,136,0.1)); border-radius: 2px; }
