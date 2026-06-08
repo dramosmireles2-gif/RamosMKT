@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — RamosMKT | Cotiza tu proyecto</title>
+<meta name="description" content="Contáctanos para cotizar tu sitio web, tienda en línea, app o campaña digital. Respondemos en menos de 1 hora. Reynosa, México.">
+<link rel="icon" type="image/png" href="5.png">
+<script>
+  if (window.location.pathname.endsWith('.html')) {
+    history.replaceState(null, '', window.location.pathname.replace('.html', '') + window.location.search);
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+<style>
+  .contact-page { min-height: 100vh; padding: 120px 40px 80px; max-width: 1100px; margin: 0 auto; }
+  .contact-page-header { margin-bottom: 52px; }
+  .contact-page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 58px); font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 14px; }
+  .contact-page-header h1 span { color: var(--green); }
+  .contact-page-header p { font-size: 17px; color: var(--gray); line-height: 1.6; max-width: 500px; }
+  .contact-page-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: start; }
+  .contact-page .contact-section { background: transparent; border-radius: 0; padding: 0; margin: 0; max-width: none; display: block; }
+  .contact-info-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 28px; }
+  .contact-info-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: 36px; }
+  .contact-info-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px; background: var(--black2); border: 1px solid var(--gray2); border-radius: 14px; transition: border-color .2s; }
+  .contact-info-item:hover { border-color: rgba(0,255,136,.25); }
+  .contact-info-icon { width: 40px; height: 40px; background: rgba(0,255,136,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--green); flex-shrink: 0; }
+  .contact-info-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--green); margin-bottom: 3px; text-transform: uppercase; }
+  .contact-info-value { font-size: 14px; color: var(--white); font-weight: 500; }
+  .contact-info-value a { color: var(--white); text-decoration: none; transition: color .2s; }
+  .contact-info-value a:hover { color: var(--green); }
+  .contact-social-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; margin-bottom: 14px; }
+  .contact-social-row { display: flex; gap: 10px; }
+  .contact-social-icon { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--gray2); display: flex; align-items: center; justify-content: center; color: var(--gray); text-decoration: none; transition: border-color .2s, color .2s; }
+  .contact-social-icon:hover { border-color: var(--green); color: var(--green); }
+  @media (max-width: 768px) {
+    .contact-page { padding: 100px 20px 60px; }
+    .contact-page-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">↗</div>
+    <div class="nav-logo-text">Ramos<span>MKT</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+    <li><a href="index.html#industrias" class="nav-link">Industrias</a></li>
+    <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
+    <li><a href="index.html#paquetes" class="nav-link">Paquetes</a></li>
+    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+  </ul>
+  <a href="contacto.html" class="nav-cta">Cotiza gratis</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="index.html#nosotros">Nosotros</a>
+  <a href="index.html#servicios">Servicios</a>
+  <a href="index.html#industrias">Industrias</a>
+  <a href="index.html#proyectos">Proyectos</a>
+  <a href="index.html#paquetes">Paquetes</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="nav-mobile-cta">💬 Cotiza gratis</a>
+</div>
+
+<div class="contact-page">
+
+  <div class="contact-page-header">
+    <div class="section-tag">// Contacto · Get in touch</div>
+    <h1>Cuéntanos tu <span>proyecto.</span></h1>
+    <p>Respondemos en menos de 1 hora. Sin compromiso — solo platicamos y vemos cómo ayudarte a crecer.</p>
+  </div>
+
+  <div class="contact-page-grid">
+
+    <!-- Formulario -->
+    <div class="contact-form">
+      <input type="text" class="form-input" placeholder="Tu nombre / Your name">
+      <input type="text" class="form-input" placeholder="Tu negocio / Your business">
+      <select class="form-select">
+        <option value="" disabled selected>¿Qué necesitas? / What do you need?</option>
+        <option>Landing Express ($1,500)</option>
+        <option>Web Profesional ($3,500)</option>
+        <option>Web Empresarial ($7,500)</option>
+        <option>Ecommerce / Tienda en Línea</option>
+        <option>Sistema Administrativo</option>
+        <option>App Móvil iOS y Android</option>
+        <option>Publicidad en Meta Ads</option>
+        <option>Publicidad en Google Ads</option>
+        <option>Chatbot + Automatizaciones</option>
+        <option>Invitación Digital Estándar ($799)</option>
+        <option>Invitación Digital Premium ($1,499)</option>
+        <option>Invitación Platinum QR ($2,999)</option>
+        <option>No sé, necesito asesoría</option>
+      </select>
+      <textarea class="form-textarea" placeholder="Cuéntanos más sobre tu proyecto / Tell us about your project"></textarea>
+      <button class="form-btn" onclick="enviarFormulario()">Enviar por WhatsApp →</button>
+    </div>
+
+    <!-- Datos de contacto -->
+    <div>
+      <div class="contact-info-title">Datos de Contacto</div>
+
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Dirección</div>
+            <div class="contact-info-value">Reynosa, Tamaulipas, México</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">WhatsApp</div>
+            <div class="contact-info-value"><a href="https://wa.me/528148078309" target="_blank">+52 814 807 8309</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Correo</div>
+            <div class="contact-info-value"><a href="mailto:dramosmirele2@ramosmkt.lat">dramosmirele2@ramosmkt.lat</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Sitio Web</div>
+            <div class="contact-info-value"><a href="https://ramosmkt.lat" target="_blank">ramosmkt.lat</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-social-label">Redes Sociales</div>
+      <div class="contact-social-row">
+        <a href="https://wa.me/528148078309" target="_blank" class="contact-social-icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        </a>
+        <a href="https://instagram.com/ramos_mkt.rex" target="_blank" class="contact-social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1BCvKbkZUP/" target="_blank" class="contact-social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="4.png" alt="RamosMKT — Ramos Digital" class="footer-logo-img">
+      <p class="footer-tagline">Tecnología que crece negocios. Diseño web, sistemas y marketing digital desde Reynosa, México.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/528148078309" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        </a>
+        <a href="https://instagram.com/ramos_mkt.rex" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1BCvKbkZUP/" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navegación</div>
+      <ul class="footer-links">
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#industrias">Industrias</a></li>
+        <li><a href="index.html#proyectos">Proyectos</a></li>
+        <li><a href="index.html#paquetes">Paquetes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="aviso-privacidad.html">Aviso de Privacidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contacto</div>
+      <ul class="footer-contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Reynosa, Tamaulipas, México
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          <a href="https://wa.me/528148078309" target="_blank">+52 814 807 8309</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:dramosmirele2@ramosmkt.lat">dramosmirele2@ramosmkt.lat</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <a href="https://ramosmkt.lat" target="_blank">ramosmkt.lat</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 RamosMKT · Hecho con <span class="footer-heart">♥</span> y código</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/528148078309?text=Hola%20RamosMKT%2C%20me%20interesa%20conocer%20sus%20servicios" target="_blank" class="wa-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>

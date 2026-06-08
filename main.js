@@ -70,7 +70,6 @@ function enviarFormulario() {
 
     const txt = `Hola RamosMKT! 👋\n\nNombre: ${nombre}\nNegocio: ${negocio || '—'}\nServicio: ${servicio || '—'}\n\n${mensaje || ''}`;
     window.open('https://wa.me/528148078309?text=' + encodeURIComponent(txt), '_blank');
-    window.location.href = '/gracias';
 }
 
 // ---- HERO PARALLAX ----
