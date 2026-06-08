@@ -1,7 +1,10 @@
 // ---- CLEAN URL ----
-// Quita index.html si aparece en la barra de dirección
-if (window.location.pathname.endsWith('/index.html')) {
-  history.replaceState(null, '', window.location.pathname.replace('/index.html', '/') + window.location.search);
+// Quita la extensión .html de la URL si aparece
+if (window.location.pathname.endsWith('.html')) {
+  const clean = window.location.pathname.endsWith('/index.html')
+    ? window.location.pathname.replace('/index.html', '/')
+    : window.location.pathname.replace('.html', '');
+  history.replaceState(null, '', clean + window.location.search);
 }
 
 // Intercepta todos los links a secciones (#), hace scroll y limpia el hash
