@@ -1,3 +1,22 @@
+// ---- CLEAN URL ----
+// Quita index.html si aparece en la barra de dirección
+if (window.location.pathname.endsWith('/index.html')) {
+  history.replaceState(null, '', window.location.pathname.replace('/index.html', '/') + window.location.search);
+}
+
+// Intercepta todos los links a secciones (#), hace scroll y limpia el hash
+document.addEventListener('click', e => {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  const id = link.getAttribute('href').slice(1);
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  target.scrollIntoView({ behavior: 'smooth' });
+  history.replaceState(null, '', window.location.pathname);
+});
+
 // ---- HAMBURGER MENU ----
 const hamburger = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('navMobileMenu');
