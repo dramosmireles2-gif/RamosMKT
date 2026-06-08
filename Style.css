@@ -340,6 +340,14 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .industries-grid { grid-template-columns: repeat(5, 1fr); }
 }
 
+/* PORTFOLIO DOTS */
+.portfolio-dots { display: none; }
+@media (max-width: 768px) {
+  .portfolio-dots { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 14px; }
+  .portfolio-dot { width: 6px; height: 6px; border-radius: 50%; border: none; background: rgba(255,255,255,.15); cursor: pointer; padding: 0; transition: background .25s, width .25s, border-radius .25s; flex-shrink: 0; }
+  .portfolio-dot.active { background: var(--green); width: 20px; border-radius: 3px; }
+}
+
 /* HERO TRUST STRIP */
 .hero-trust { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 20px; }
 .hero-trust-item { font-size: 12px; font-weight: 500; color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 5px; letter-spacing: .2px; }
