@@ -101,11 +101,10 @@ document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(
   const grid = document.querySelector('.portfolio-grid');
   if (!grid) return;
 
-  const mq = window.matchMedia('(max-width: 768px)');
   let timer = null;
   let current = 0;
   let paused = false;
-  let dotsWrap = null;
+  let controls = null;
   let dots = [];
 
   function getCards() { return Array.from(grid.querySelectorAll('.portfolio-card')); }
@@ -114,85 +113,83 @@ document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(
     dots.forEach((d, i) => d.classList.toggle('active', i === index));
   }
 
+  function syncCurrent() {
+    const cards = getCards();
+    const gridLeft = grid.getBoundingClientRect().left;
+    let closest = 0, minDist = Infinity;
+    cards.forEach((c, i) => {
+      const dist = Math.abs(c.getBoundingClientRect().left - gridLeft);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    current = closest;
+    updateDots(closest);
+  }
+
   function goTo(index) {
     const cards = getCards();
     if (!cards.length) return;
     current = ((index % cards.length) + cards.length) % cards.length;
     const card = cards[current];
-    grid.scrollTo({ left: card.offsetLeft - 20, behavior: 'smooth' });
+    const isMobile = window.innerWidth <= 768;
+    grid.scrollTo({ left: card.offsetLeft - (isMobile ? 20 : 0), behavior: 'smooth' });
     updateDots(current);
   }
 
-  function buildDots() {
+  function buildControls() {
     const cards = getCards();
-    if (dotsWrap) dotsWrap.remove();
-    dotsWrap = document.createElement('div');
-    dotsWrap.className = 'portfolio-dots';
-    grid.parentElement.insertBefore(dotsWrap, grid.nextSibling);
+    if (controls) controls.remove();
+
+    controls = document.createElement('div');
+    controls.className = 'portfolio-controls';
+
+    const dotsEl = document.createElement('div');
+    dotsEl.className = 'portfolio-dots';
     dots = cards.map((_, i) => {
       const btn = document.createElement('button');
       btn.className = 'portfolio-dot' + (i === 0 ? ' active' : '');
       btn.setAttribute('aria-label', `Proyecto ${i + 1}`);
       btn.addEventListener('click', () => { goTo(i); resetTimer(); });
-      dotsWrap.appendChild(btn);
+      dotsEl.appendChild(btn);
       return btn;
     });
+
+    const arrowsEl = document.createElement('div');
+    arrowsEl.className = 'portfolio-arrows';
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'portfolio-arrow';
+    prevBtn.innerHTML = '←';
+    prevBtn.setAttribute('aria-label', 'Anterior');
+    prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'portfolio-arrow';
+    nextBtn.innerHTML = '→';
+    nextBtn.setAttribute('aria-label', 'Siguiente');
+    nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+
+    arrowsEl.appendChild(prevBtn);
+    arrowsEl.appendChild(nextBtn);
+    controls.appendChild(dotsEl);
+    controls.appendChild(arrowsEl);
+    grid.parentElement.insertBefore(controls, grid.nextSibling);
   }
 
   function startTimer() {
     clearInterval(timer);
-    timer = setInterval(() => {
-      if (!paused) goTo(current + 1);
-    }, 3500);
+    timer = setInterval(() => { if (!paused) goTo(current + 1); }, 3500);
   }
 
   function resetTimer() { clearInterval(timer); startTimer(); }
 
-  function teardown() {
-    clearInterval(timer);
-    if (dotsWrap) { dotsWrap.remove(); dotsWrap = null; dots = []; }
-  }
+  buildControls();
+  startTimer();
 
-  function setup() {
-    current = 0;
-    buildDots();
-    startTimer();
-
-    grid.addEventListener('mouseenter', () => { paused = true; });
-    grid.addEventListener('mouseleave', () => { paused = false; });
-    grid.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-    grid.addEventListener('touchend', () => {
-      setTimeout(() => {
-        paused = false;
-        const cards = getCards();
-        const gridLeft = grid.getBoundingClientRect().left;
-        let closest = 0, minDist = Infinity;
-        cards.forEach((c, i) => {
-          const dist = Math.abs(c.getBoundingClientRect().left - gridLeft);
-          if (dist < minDist) { minDist = dist; closest = i; }
-        });
-        current = closest;
-        updateDots(closest);
-        resetTimer();
-      }, 300);
-    }, { passive: true });
-
-    grid.addEventListener('scroll', () => {
-      const cards = getCards();
-      const gridLeft = grid.getBoundingClientRect().left;
-      let closest = 0, minDist = Infinity;
-      cards.forEach((c, i) => {
-        const dist = Math.abs(c.getBoundingClientRect().left - gridLeft);
-        if (dist < minDist) { minDist = dist; closest = i; }
-      });
-      current = closest;
-      updateDots(closest);
-    }, { passive: true });
-  }
-
-  if (mq.matches) setup();
-
-  mq.addEventListener('change', e => {
-    if (e.matches) setup(); else teardown();
-  });
+  grid.addEventListener('mouseenter', () => { paused = true; });
+  grid.addEventListener('mouseleave', () => { paused = false; });
+  grid.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+  grid.addEventListener('touchend', () => {
+    setTimeout(() => { paused = false; syncCurrent(); resetTimer(); }, 300);
+  }, { passive: true });
+  grid.addEventListener('scroll', syncCurrent, { passive: true });
 })();
