@@ -72,13 +72,21 @@ function enviarFormulario() {
     window.open('https://wa.me/528148078309?text=' + encodeURIComponent(txt), '_blank');
 }
 
-// ---- HERO PARALLAX ----
+// ---- HERO PARALLAX + READ PROGRESS ----
+const progressBar = document.getElementById('read-progress');
+
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const grid = document.querySelector('.hero-grid');
     const glow = document.querySelector('.hero-glow');
     if (grid) grid.style.transform = `translateY(${scrolled * 0.15}px)`;
     if (glow) glow.style.transform = `translateY(${scrolled * 0.25}px)`;
+
+    if (progressBar) {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = total > 0 ? (scrolled / total) * 100 : 0;
+        progressBar.style.width = pct + '%';
+    }
 });
 
 // ---- NAV ACTIVE STATE ----

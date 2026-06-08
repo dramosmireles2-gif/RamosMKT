@@ -12,6 +12,16 @@
 html { scroll-behavior: smooth; }
 body { background: var(--black); color: var(--white); font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
 
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black2); }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #00ee7a; }
+* { scrollbar-width: thin; scrollbar-color: var(--green) var(--black2); }
+
+/* PROGRESS BAR */
+#read-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--green); z-index: 200; transition: width 0.05s linear; box-shadow: 0 0 8px rgba(0,255,136,.5); }
+
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,255,136,0.08); }
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
