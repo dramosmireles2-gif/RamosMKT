@@ -34,9 +34,7 @@
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; background: rgba(10,10,10,.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--gray2); }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-icon { width: 32px; height: 32px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #000; font-size: 16px; font-weight: 800; }
-    .nav-logo-text { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
-    .nav-logo-text span { color: var(--green); }
+    .nav-logo-img { height: 32px; width: auto; object-fit: contain; display: block; }
     .nav-back { font-size: 14px; font-weight: 600; color: var(--gray); text-decoration: none; transition: color .2s; }
     .nav-back:hover { color: var(--green); }
 
@@ -80,8 +78,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">↗</div>
-    <div class="nav-logo-text">Ramos<span>MKT</span></div>
+    <img src="Logo RMKT transparente reducido.png" alt="RamosMKT" class="nav-logo-img">
   </a>
   <a href="index.html" class="nav-back">← Volver al sitio</a>
 </nav>
