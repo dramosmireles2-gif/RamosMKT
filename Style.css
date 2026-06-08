@@ -289,11 +289,13 @@ footer { padding: 40px; border-top: 1px solid var(--gray2); display: flex; justi
     .service-card--featured { flex: 0 0 300px; grid-template-columns: 1fr; }
     .about-values { grid-template-columns: 1fr 1fr; }
     .service-card { padding: 28px 20px; }
-    .portfolio-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .portfolio-info { padding: 14px 16px; }
-    .portfolio-desc { display: none; }
-    .portfolio-title { font-size: 15px; margin-bottom: 6px; }
-    .portfolio-btn { font-size: 12px; padding: 8px 14px; margin-top: 10px; }
+    .portfolio-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 14px; padding: 4px 20px 20px; margin: 0 -20px; scroll-padding-left: 20px; }
+    .portfolio-grid::-webkit-scrollbar { display: none; }
+    .portfolio-card { flex: 0 0 300px; scroll-snap-align: start; }
+    .portfolio-info { padding: 18px 20px; }
+    .portfolio-desc { display: block; font-size: 13px; }
+    .portfolio-title { font-size: 17px; margin-bottom: 6px; }
+    .portfolio-btn { font-size: 13px; padding: 10px 16px; margin-top: 10px; }
     .case-section { padding: 40px 24px; margin: 0 20px; }
     .case-stats { grid-template-columns: 1fr; }
     .case-header { flex-direction: column; }
