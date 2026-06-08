@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema para Gimnasios — RamosMKT | Reynosa, México</title>
+<meta name="description" content="Control de membresías, pagos recurrentes y reserva de clases para tu gimnasio. Gestiona todo desde una sola plataforma. Desde $2,500 MXN.">
+<link rel="icon" type="image/png" href="5.png">
+<script>
+  if (window.location.pathname.endsWith('.html')) {
+    history.replaceState(null, '', window.location.pathname.replace('.html', '') + window.location.search);
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">↗</div>
+    <div class="nav-logo-text">Ramos<span>MKT</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+    <li><a href="index.html#industrias" class="nav-link">Industrias</a></li>
+    <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
+    <li><a href="index.html#paquetes" class="nav-link">Paquetes</a></li>
+  </ul>
+  <a href="contacto.html" class="nav-cta">Cotiza gratis</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="index.html#nosotros">Nosotros</a>
+  <a href="index.html#servicios">Servicios</a>
+  <a href="index.html#industrias">Industrias</a>
+  <a href="index.html#proyectos">Proyectos</a>
+  <a href="index.html#paquetes">Paquetes</a>
+  <a href="contacto.html" class="nav-mobile-cta">💬 Cotiza gratis</a>
+</div>
+
+<!-- HERO -->
+<div class="ind-hero">
+  <div>
+    <div class="section-tag">// Gimnasios · Fitness</div>
+    <h1>Gestiona tu gimnasio.<br><span>Cobra sin Excel.</span></h1>
+    <p class="ind-hero-sub">Control de membresías, pagos automáticos y reserva de clases desde una sola plataforma que tu equipo domina en minutos.</p>
+    <div class="ind-hero-btns">
+      <a href="contacto.html?servicio=gimnasio" class="btn-primary">Cotiza tu sistema →</a>
+      <a href="#incluye" class="btn-secondary">Ver qué incluye</a>
+    </div>
+  </div>
+  <div>
+    <!-- IMAGEN HERO: Gimnasio moderno con equipo — pantalla o teléfono mostrando app de membresías con UI oscura -->
+    <div class="img-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <div class="img-placeholder-label">Imagen Hero</div>
+      <div class="img-placeholder-hint">Gimnasio moderno con equipo — pantalla o teléfono mostrando app de membresías con UI oscura</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="ind-wrap" id="incluye">
+  <div class="section-tag">// Incluye · Features</div>
+  <h2 class="ind-section-title">Todo lo que necesita tu gimnasio.</h2>
+  <p class="ind-section-sub">Cada herramienta está diseñada para que administres menos, cobres más y tus miembros tengan una experiencia premium.</p>
+  <div class="ind-features-grid">
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="ind-feature-name">Control de membresías</div>
+      <div class="ind-feature-desc">Alta, renovación y baja de miembros con un clic. Consulta quién está activo, vencido o en mora en tiempo real.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <div class="ind-feature-name">Pagos recurrentes</div>
+      <div class="ind-feature-desc">Cobra mensualidades de forma automática. El sistema notifica a los miembros cuando su pago está próximo a vencer.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="ind-feature-name">Reserva de clases</div>
+      <div class="ind-feature-desc">Tus miembros reservan su lugar en clases grupales desde la app. Tú ves la lista del día desde el panel.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h6"/><path d="M15 16l2 2 4-4"/></svg></div>
+      <div class="ind-feature-name">Acceso por QR</div>
+      <div class="ind-feature-desc">Cada miembro tiene un QR único para registrar su entrada. Control de acceso sin necesidad de buscar en listas.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <div class="ind-feature-name">App para miembros</div>
+      <div class="ind-feature-desc">Tus clientes ven su membresía, clases reservadas y pagos desde su celular. Experiencia premium que fideliza.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="ind-feature-name">Reportes de ingresos</div>
+      <div class="ind-feature-desc">Dashboard con ingresos del mes, membresías activas, clases más populares y proyecciones. Toma decisiones con datos.</div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGEN MID: Persona entrenando en gimnasio moderno — en pantalla lateral se ve el panel de control de membresías -->
+<div class="ind-wrap" style="padding-bottom: 80px;">
+  <div class="img-placeholder">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="img-placeholder-label">Imagen Ambiente</div>
+    <div class="img-placeholder-hint">Persona entrenando en gimnasio moderno — en pantalla lateral se ve el panel de control de membresías</div>
+  </div>
+</div>
+
+<!-- SHOWCASE: próximo proyecto -->
+<div class="ind-wrap">
+  <div class="ind-showcase">
+    <div>
+      <div class="img-placeholder" style="min-height:260px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <div class="img-placeholder-label">Próximamente</div>
+        <div class="img-placeholder-hint">Aquí irá el screenshot de tu primer proyecto de gimnasio</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-tag">// Próximo proyecto</div>
+      <h2 class="ind-showcase-title">¿Tu gimnasio podría ser el primero?</h2>
+      <p class="ind-showcase-desc">Construimos el sistema a medida de tu operación — membresías, clases, pagos y acceso QR. Sé el primer caso de éxito en el sector fitness de Reynosa.</p>
+      <a href="contacto.html?servicio=gimnasio" class="ind-showcase-cta">Hablemos de tu proyecto →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="ind-wrap">
+  <div class="ind-pricing-wrap">
+    <div class="section-tag" style="text-align:center">// Inversión · Pricing</div>
+    <h2 class="ind-section-title" style="text-align:center">Sistema para tu gimnasio</h2>
+    <div class="ind-pricing-card">
+      <div class="section-tag">PAQUETE GIMNASIO</div>
+      <div class="ind-price-amount">$2,500 <span style="font-size:22px;letter-spacing:0">MXN</span></div>
+      <div class="ind-price-sub">Pago único · Entrega en 3–4 semanas</div>
+      <ul class="ind-price-list">
+        <li>Sitio web profesional para tu gimnasio</li>
+        <li>Control de membresías completo</li>
+        <li>Cobros automáticos con recordatorios</li>
+        <li>Reserva de clases grupales</li>
+        <li>Acceso por QR personalizado</li>
+        <li>App para miembros (PWA)</li>
+        <li>Dashboard de ingresos y estadísticas</li>
+        <li>3 meses de soporte incluido</li>
+      </ul>
+      <a href="contacto.html?servicio=gimnasio" class="form-btn" style="display:block;text-align:center;text-decoration:none">Cotizar mi sistema →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="ind-cta">
+  <div class="section-tag">// ¿Listo?</div>
+  <h2>Tu gimnasio,<br><span>en piloto automático.</span></h2>
+  <p>Deja de administrar membresías en Excel. Respondemos en menos de 1 hora.</p>
+  <a href="contacto.html?servicio=gimnasio" class="btn-primary">Cotiza gratis →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="4.png" alt="RamosMKT" class="footer-logo-img">
+      <p class="footer-tagline">Tecnología que crece negocios. Diseño web, sistemas y marketing digital desde Reynosa, México.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/528148078309" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+        <a href="https://instagram.com/ramos_mkt.rex" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/share/1BCvKbkZUP/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navegación</div>
+      <ul class="footer-links">
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#industrias">Industrias</a></li>
+        <li><a href="index.html#proyectos">Proyectos</a></li>
+        <li><a href="index.html#paquetes">Paquetes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="aviso-privacidad.html">Aviso de Privacidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contacto</div>
+      <ul class="footer-contact-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Reynosa, Tamaulipas, México</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg><a href="https://wa.me/528148078309" target="_blank">+52 814 807 8309</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:dramosmirele2@ramosmkt.lat">dramosmirele2@ramosmkt.lat</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 RamosMKT · Hecho con <span class="footer-heart">♥</span> y código</span></div>
+</footer>
+
+<a href="https://wa.me/528148078309?text=Hola%20RamosMKT%2C%20me%20interesa%20un%20sistema%20para%20mi%20gimnasio" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>

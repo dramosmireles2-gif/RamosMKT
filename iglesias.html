@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitio Web para Iglesias — RamosMKT | Reynosa, México</title>
+<meta name="description" content="Plataforma digital para iglesias y ministerios: sermones, horarios, donaciones, RSVP y app para tu congregación. Desde $2,500 MXN. Reynosa, México.">
+<link rel="icon" type="image/png" href="5.png">
+<script>
+  if (window.location.pathname.endsWith('.html')) {
+    history.replaceState(null, '', window.location.pathname.replace('.html', '') + window.location.search);
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">↗</div>
+    <div class="nav-logo-text">Ramos<span>MKT</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+    <li><a href="index.html#industrias" class="nav-link">Industrias</a></li>
+    <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
+    <li><a href="index.html#paquetes" class="nav-link">Paquetes</a></li>
+  </ul>
+  <a href="contacto.html" class="nav-cta">Cotiza gratis</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="index.html#nosotros">Nosotros</a>
+  <a href="index.html#servicios">Servicios</a>
+  <a href="index.html#industrias">Industrias</a>
+  <a href="index.html#proyectos">Proyectos</a>
+  <a href="index.html#paquetes">Paquetes</a>
+  <a href="contacto.html" class="nav-mobile-cta">💬 Cotiza gratis</a>
+</div>
+
+<!-- HERO -->
+<div class="ind-hero">
+  <div>
+    <div class="section-tag">// Iglesias · Churches</div>
+    <h1>Tu iglesia,<br><span>siempre conectada.</span></h1>
+    <p class="ind-hero-sub">Plataforma digital completa para tu ministerio. Sermones, horarios, donaciones y una app para que tu congregación esté unida donde sea que esté.</p>
+    <div class="ind-hero-btns">
+      <a href="contacto.html?servicio=iglesia" class="btn-primary">Cotiza tu plataforma →</a>
+      <a href="#incluye" class="btn-secondary">Ver qué incluye</a>
+    </div>
+  </div>
+  <div>
+    <!-- IMAGEN HERO: plataforma de iglesia en pantalla, ambiente oscuro con luz dramática -->
+    <div class="img-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <div class="img-placeholder-label">Imagen Hero</div>
+      <div class="img-placeholder-hint">Mockup de la plataforma en pantalla — interior de iglesia moderna con pantallas digitales</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="ind-wrap" id="incluye">
+  <div class="section-tag">// Incluye · Features</div>
+  <h2 class="ind-section-title">Todo lo que necesita tu ministerio.</h2>
+  <p class="ind-section-sub">Cada herramienta está pensada para que tu congregación crezca y se mantenga conectada sin complicaciones técnicas.</p>
+  <div class="ind-features-grid">
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="ind-feature-name">Sermones en video</div>
+      <div class="ind-feature-desc">Sube y organiza tus prédicas en video o audio con descripción, serie y fecha. Accesibles desde cualquier dispositivo.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="ind-feature-name">Horarios y eventos</div>
+      <div class="ind-feature-desc">Calendario de servicios, retiros y eventos especiales con recordatorios automáticos por WhatsApp.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <div class="ind-feature-name">Donaciones online</div>
+      <div class="ind-feature-desc">Recibe diezmos y ofrendas en línea con métodos de pago seguros. Panel para ver reportes de ingresos.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="ind-feature-name">Directorio de miembros</div>
+      <div class="ind-feature-desc">Registro de congregantes con datos de contacto, ministerio al que pertenecen y estado de membresía.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div class="ind-feature-name">Formulario de oración</div>
+      <div class="ind-feature-desc">Los miembros envían sus peticiones de oración directamente desde el sitio o la app. Notificación al pastor en tiempo real.</div>
+    </div>
+    <div class="ind-feature">
+      <div class="ind-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <div class="ind-feature-name">App para congregación</div>
+      <div class="ind-feature-desc">Versión móvil optimizada del sitio para que tus miembros accedan a todo desde su celular sin instalar nada.</div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGEN MID: ambiente de iglesia moderna, congregación usando sus teléfonos -->
+<div class="ind-wrap" style="padding-bottom: 80px;">
+  <div class="img-placeholder">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="img-placeholder-label">Imagen Ambiente</div>
+    <div class="img-placeholder-hint">Congregación en servicio — pantalla con el sitio web, ambiente moderno</div>
+  </div>
+</div>
+
+<!-- SHOWCASE: proyecto real -->
+<div class="ind-wrap">
+  <div class="ind-showcase">
+    <div class="ind-showcase-img">
+      <img src="p-linaje.png" alt="Linaje Escogido — RamosMKT">
+    </div>
+    <div>
+      <div class="section-tag">// Caso real · Live project</div>
+      <h2 class="ind-showcase-title">Linaje Escogido</h2>
+      <p class="ind-showcase-desc">Plataforma completa para iglesia en Reynosa con CMS de sermones, galería de eventos, horarios dinámicos, formulario de oración y panel de administración para el equipo pastoral.</p>
+      <a href="https://linajeescogidoreynosa.org" target="_blank" class="ind-showcase-cta">Ver proyecto en vivo →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="ind-wrap">
+  <div class="ind-pricing-wrap">
+    <div class="section-tag" style="text-align:center">// Inversión · Pricing</div>
+    <h2 class="ind-section-title" style="text-align:center">Plataforma para tu iglesia</h2>
+    <div class="ind-pricing-card">
+      <div class="section-tag">PAQUETE MINISTERIO</div>
+      <div class="ind-price-amount">$2,500 <span style="font-size:22px;letter-spacing:0">MXN</span></div>
+      <div class="ind-price-sub">Pago único · Entrega en 3–4 semanas</div>
+      <ul class="ind-price-list">
+        <li>Sitio web profesional responsivo</li>
+        <li>CMS de sermones (video / audio / texto)</li>
+        <li>Calendario de eventos y horarios</li>
+        <li>Formulario de oración con notificaciones</li>
+        <li>Galería de fotos y eventos</li>
+        <li>Donaciones online integradas</li>
+        <li>Panel de administración completo</li>
+        <li>3 meses de soporte incluido</li>
+      </ul>
+      <a href="contacto.html?servicio=iglesia" class="form-btn" style="display:block;text-align:center;text-decoration:none">Cotizar mi plataforma →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="ind-cta">
+  <div class="section-tag">// ¿Listo?</div>
+  <h2>Digitaliza tu ministerio<br><span>sin complicaciones.</span></h2>
+  <p>Respondemos en menos de 1 hora. Platicamos tu proyecto y te damos una propuesta sin compromiso.</p>
+  <a href="contacto.html?servicio=iglesia" class="btn-primary">Cotiza gratis →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="4.png" alt="RamosMKT" class="footer-logo-img">
+      <p class="footer-tagline">Tecnología que crece negocios. Diseño web, sistemas y marketing digital desde Reynosa, México.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/528148078309" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+        <a href="https://instagram.com/ramos_mkt.rex" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/share/1BCvKbkZUP/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navegación</div>
+      <ul class="footer-links">
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#industrias">Industrias</a></li>
+        <li><a href="index.html#proyectos">Proyectos</a></li>
+        <li><a href="index.html#paquetes">Paquetes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="aviso-privacidad.html">Aviso de Privacidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contacto</div>
+      <ul class="footer-contact-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Reynosa, Tamaulipas, México</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg><a href="https://wa.me/528148078309" target="_blank">+52 814 807 8309</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:dramosmirele2@ramosmkt.lat">dramosmirele2@ramosmkt.lat</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 RamosMKT · Hecho con <span class="footer-heart">♥</span> y código</span></div>
+</footer>
+
+<a href="https://wa.me/528148078309?text=Hola%20RamosMKT%2C%20me%20interesa%20una%20plataforma%20para%20mi%20iglesia" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>
