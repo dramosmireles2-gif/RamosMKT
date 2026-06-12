@@ -85,6 +85,7 @@
     <!-- Formulario -->
     <div class="contact-form">
       <input type="text" class="form-input" placeholder="Tu nombre / Your name">
+      <input type="email" class="form-input" placeholder="Tu correo / Your email">
       <input type="text" class="form-input" placeholder="Tu negocio / Your business">
       <select class="form-select">
         <option value="" disabled selected>¿Qué necesitas? / What do you need?</option>
@@ -103,7 +104,8 @@
         <option>No sé, necesito asesoría</option>
       </select>
       <textarea class="form-textarea" placeholder="Cuéntanos más sobre tu proyecto / Tell us about your project"></textarea>
-      <button class="form-btn" onclick="enviarFormulario()">Enviar por WhatsApp →</button>
+      <button class="form-btn" onclick="enviarFormulario()">Enviar mensaje →</button>
+      <div id="form-result" class="form-result"></div>
     </div>
 
     <!-- Datos de contacto -->

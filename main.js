@@ -59,17 +59,53 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     });
 });
 
-// ---- FORMULARIO → WHATSAPP ----
-function enviarFormulario() {
-    const nombre   = document.querySelectorAll('.form-input')[0].value.trim();
-    const negocio  = document.querySelectorAll('.form-input')[1].value.trim();
+// ---- FORMULARIO → EMAIL (Web3Forms) ----
+async function enviarFormulario() {
+    const inputs   = document.querySelectorAll('.form-input');
+    const nombre   = inputs[0].value.trim();
+    const email    = inputs[1].value.trim();
+    const negocio  = inputs[2].value.trim();
     const servicio = document.querySelector('.form-select').value;
     const mensaje  = document.querySelector('.form-textarea').value.trim();
+    const btn      = document.querySelector('.form-btn');
+    const result   = document.getElementById('form-result');
 
     if (!nombre) { alert('Por favor ingresa tu nombre.'); return; }
+    if (!email)  { alert('Por favor ingresa tu correo electrónico.'); return; }
 
-    const txt = `Hola RamosMKT! 👋\n\nNombre: ${nombre}\nNegocio: ${negocio || '—'}\nServicio: ${servicio || '—'}\n\n${mensaje || ''}`;
-    window.open('https://wa.me/528148078309?text=' + encodeURIComponent(txt), '_blank');
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+    if (result) { result.className = 'form-result'; result.textContent = ''; }
+
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+                access_key: 'TU_ACCESS_KEY_AQUI',
+                name: nombre,
+                email: email,
+                replyto: email,
+                subject: `RamosMKT — ${servicio || 'Contacto nuevo'}`,
+                message: `Negocio: ${negocio || '—'}\nServicio: ${servicio || '—'}\n\n${mensaje || '(sin mensaje)'}`,
+                from_name: 'Formulario RamosMKT'
+            })
+        });
+        const json = await res.json();
+        if (json.success) {
+            if (result) { result.textContent = '¡Mensaje enviado! Te contactamos en menos de 24 h.'; result.className = 'form-result success'; }
+            inputs.forEach(i => i.value = '');
+            document.querySelector('.form-select').selectedIndex = 0;
+            document.querySelector('.form-textarea').value = '';
+        } else {
+            throw new Error(json.message);
+        }
+    } catch (_) {
+        if (result) { result.textContent = 'Algo salió mal. Escríbenos directo a dramosmirele2@ramosmkt.lat'; result.className = 'form-result error'; }
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar mensaje →';
+    }
 }
 
 // ---- HERO PARALLAX + READ PROGRESS ----

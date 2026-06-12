@@ -230,6 +230,10 @@ section { padding: 60px 40px; max-width: 1100px; margin-left: auto; margin-right
 .form-select option { background: var(--black3); }
 .form-btn { background: var(--green); color: var(--black); padding: 16px; border-radius: 100px; font-weight: 700; font-size: 16px; border: none; cursor: pointer; font-family: 'Space Grotesk', sans-serif; transition: transform 0.2s, background 0.2s; }
 .form-btn:hover { transform: translateY(-2px); background: #00ee7a; }
+.form-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.form-result { font-size: 14px; font-weight: 600; padding: 12px 16px; border-radius: 10px; display: none; }
+.form-result.success { display: block; background: rgba(0,255,136,.12); border: 1px solid rgba(0,255,136,.3); color: var(--green); }
+.form-result.error   { display: block; background: rgba(255,80,80,.1); border: 1px solid rgba(255,80,80,.3); color: #ff6b6b; }
 
 /* FAQ */
 .faq-list { max-width: 760px; margin-top: 48px; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--gray2); border-radius: 20px; overflow: hidden; }
