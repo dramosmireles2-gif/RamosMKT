@@ -82,7 +82,7 @@ async function enviarFormulario() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
             body: JSON.stringify({
-                access_key: 'TU_ACCESS_KEY_AQUI',
+                access_key: '9642a55b-eaa5-4627-83b7-67df79504214',
                 name: nombre,
                 email: email,
                 replyto: email,
