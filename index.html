@@ -880,5 +880,57 @@
 </a>
 
 <script src="main.js"></script>
+<script type="module" src="motion-effects.js"></script>
+<script type="module">
+import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@latest/+esm';
+
+// ---- 1. STAGGER CARDS ----
+function setupStagger(gridEl, childSel) {
+  const cards = [...gridEl.querySelectorAll(childSel)];
+  if (!cards.length) return;
+  gridEl.classList.remove('fade-up');
+  inView(gridEl, () => {
+    animate(cards, { opacity: [0, 1], y: [28, 0] }, {
+      duration: 0.55,
+      delay: stagger(0.08),
+      easing: [0.22, 1, 0.36, 1]
+    });
+  }, { margin: '-5% 0px' });
+}
+
+const servicesGrid = document.querySelector('.services-grid');
+const industriesGrid = document.querySelector('.industries-grid');
+if (servicesGrid) setupStagger(servicesGrid, '.service-card');
+if (industriesGrid) setupStagger(industriesGrid, '.industry-card');
+document.querySelectorAll('.packages-grid').forEach(g => setupStagger(g, '.package-card'));
+
+// ---- 2. SMOOTH PARALLAX ----
+const heroGrid = document.querySelector('.hero-grid');
+const heroGlow = document.querySelector('.hero-glow');
+if (heroGrid && heroGlow) {
+  let cur = 0, tgt = 0;
+  window.addEventListener('scroll', () => { tgt = window.scrollY; }, { passive: true });
+  (function tick() {
+    cur += (tgt - cur) * 0.12;
+    heroGrid.style.transform = `translateY(${cur * 0.15}px)`;
+    heroGlow.style.transform = `translateY(${cur * 0.25}px)`;
+    requestAnimationFrame(tick);
+  })();
+}
+
+// ---- 3. COUNTER with smooth easing ----
+document.querySelectorAll('[data-count]').forEach(el => {
+  let done = false;
+  inView(el, () => {
+    if (done) return;
+    done = true;
+    animate(0, parseInt(el.dataset.count), {
+      duration: 1.5,
+      easing: [0.22, 1, 0.36, 1],
+      onUpdate: v => { el.textContent = Math.floor(v); }
+    });
+  }, { amount: 0.5 });
+});
+</script>
 </body>
 </html>

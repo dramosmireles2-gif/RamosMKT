@@ -108,22 +108,17 @@ async function enviarFormulario() {
     }
 }
 
-// ---- HERO PARALLAX + READ PROGRESS ----
+// ---- READ PROGRESS ----
 const progressBar = document.getElementById('read-progress');
 
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
-    const grid = document.querySelector('.hero-grid');
-    const glow = document.querySelector('.hero-glow');
-    if (grid) grid.style.transform = `translateY(${scrolled * 0.15}px)`;
-    if (glow) glow.style.transform = `translateY(${scrolled * 0.25}px)`;
-
     if (progressBar) {
         const total = document.documentElement.scrollHeight - window.innerHeight;
         const pct = total > 0 ? (scrolled / total) * 100 : 0;
         progressBar.style.width = pct + '%';
     }
-});
+}, { passive: true });
 
 // ---- NAV ACTIVE STATE ----
 const navLinks = document.querySelectorAll('.nav-link');
@@ -141,25 +136,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 navSections.forEach(s => sectionObserver.observe(s));
 
-// ---- COUNTER ANIMATION ----
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.dataset.count);
-            let start = 0;
-            const step = target / (1500 / 16);
-            const timer = setInterval(() => {
-                start = Math.min(start + step, target);
-                el.textContent = Math.floor(start);
-                if (start >= target) clearInterval(timer);
-            }, 16);
-            counterObserver.unobserve(el);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+// Counter animation handled by animations.js (Motion)
 
 // ---- PORTFOLIO CAROUSEL AUTOPLAY ----
 (function () {
