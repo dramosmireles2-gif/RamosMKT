@@ -14,9 +14,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RamosMKT — Tecnología que crece negocios">
 <meta name="twitter:description" content="Construimos la tecnología que hace crecer negocios en México — sitios web, sistemas, apps y publicidad que generan resultados reales.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="Style.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18153774300"></script>
@@ -152,110 +151,37 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        Disponible · Reynosa, México
-      </div>
-      <h1>Tu negocio merece<br>más clientes,<br><span class="green">no más caos.</span></h1>
-      <p class="hero-sub">
-        Construimos la tecnología que hace crecer negocios en México —
-        sitios web, sistemas, apps y publicidad que generan resultados reales.
-      </p>
-      <div class="hero-btns">
-        <a href="https://wa.me/528148078309?text=Hola%20RamosMKT%2C%20quiero%20hacer%20crecer%20mi%20negocio" target="_blank" class="btn-primary">
-          Quiero hacer crecer mi negocio →
-        </a>
-        <a href="#proyectos" class="btn-secondary">Ver proyectos</a>
-      </div>
-      <div class="hero-trust">
-        <div class="hero-trust-item">Sin compromiso</div>
-        <div class="hero-trust-item">Cotización en 24h</div>
-        <div class="hero-trust-item">Código real, sin plantillas</div>
-        <div class="hero-trust-item">Fechas cumplidas</div>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-num"><span data-count="10">0</span>+</div>
-          <div class="hero-stat-label">Negocios<br>digitales activos</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">100%</div>
-          <div class="hero-stat-label">Fechas<br>cumplidas</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">&lt;1h</div>
-          <div class="hero-stat-label">Tiempo de<br>respuesta</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-mockup">
-        <div class="mockup-browser">
-          <div class="mockup-topbar">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <div class="mockup-url">als-dress.ramosmkt.lat/admin</div>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-sidebar">
-              <div class="mockup-s-dot active"></div>
-              <div class="mockup-s-dot"></div>
-              <div class="mockup-s-dot"></div>
-              <div class="mockup-s-dot"></div>
-              <div class="mockup-s-dot"></div>
-            </div>
-            <div class="mockup-main">
-              <div class="mockup-cards-row">
-                <div class="mockup-stat-card green">
-                  <div class="mockup-sc-label"></div>
-                  <div class="mockup-sc-val">68</div>
-                </div>
-                <div class="mockup-stat-card">
-                  <div class="mockup-sc-label"></div>
-                  <div class="mockup-sc-val">2x</div>
-                </div>
-                <div class="mockup-stat-card">
-                  <div class="mockup-sc-label"></div>
-                  <div class="mockup-sc-val">99%</div>
-                </div>
-              </div>
-              <div class="mockup-chart-area">
-                <div class="mockup-chart-bar" style="--h:40%"></div>
-                <div class="mockup-chart-bar" style="--h:60%"></div>
-                <div class="mockup-chart-bar" style="--h:45%"></div>
-                <div class="mockup-chart-bar" style="--h:75%"></div>
-                <div class="mockup-chart-bar active" style="--h:95%"></div>
-                <div class="mockup-chart-bar" style="--h:70%"></div>
-                <div class="mockup-chart-bar" style="--h:85%"></div>
-              </div>
-              <div class="mockup-rows">
-                <div class="mockup-row-item">
-                  <div class="mockup-row-line long"></div>
-                  <div class="mockup-row-tag">activo</div>
-                </div>
-                <div class="mockup-row-item">
-                  <div class="mockup-row-line med"></div>
-                  <div class="mockup-row-tag">activo</div>
-                </div>
-                <div class="mockup-row-item">
-                  <div class="mockup-row-line long"></div>
-                  <div class="mockup-row-tag muted">–</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mockup-float-1">
-          <div class="mockup-float-dot"></div>
-          Sitio en vivo
-        </div>
-        <div class="mockup-float-2">✓ Entregado a tiempo</div>
-      </div>
-    </div>
+<section class="hero" aria-labelledby="hero-titulo">
+  <div class="hero-texto">
+    <h1 id="hero-titulo">Páginas web para negocios de Reynosa, desde $1,500&nbsp;MXN.</h1>
+    <p class="hero-sub">Una página sencilla queda lista en 5 días, con tu botón de WhatsApp y hecha para verse bien en el celular. También hacemos tiendas en línea, sistemas y anuncios en Facebook y Google.</p>
+    <a href="https://wa.me/528148078309?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20para%20mi%20negocio." target="_blank" rel="noopener" class="hero-cta" id="heroWhatsapp" aria-label="Escríbenos por WhatsApp para cotizar tu página web">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Escríbenos por WhatsApp
+    </a>
+    <p class="hero-horario">814 807 8309, de lunes a sábado de 9:00&nbsp;a&nbsp;19:00</p>
+    <a href="#proyectos" class="hero-link">Ver los sitios que ya entregamos</a>
+  </div>
+
+  <div class="hero-pliego" aria-label="Sitios que RamosMKT ya entregó">
+    <ul class="pliego-lista">
+      <li class="prueba prueba--aiser">
+        <span class="prueba-marco"><img src="img/hero/pliego-aiser.webp" width="640" height="800" fetchpriority="high" decoding="async" alt="Página de inicio de Aiser Seguros, agencia de seguros en Reynosa, hecha por RamosMKT"></span>
+        <p class="prueba-pie"><a href="https://aiserseguros.com/" target="_blank" rel="noopener">aiserseguros.com</a><span>Agencia de seguros en Reynosa</span></p>
+      </li>
+      <li class="prueba prueba--alsdress">
+        <span class="prueba-marco"><img src="img/hero/pliego-alsdress.webp" width="840" height="525" decoding="async" alt="Página de inicio de Als Dress, renta de vestidos de fiesta en Reynosa, hecha por RamosMKT"></span>
+        <p class="prueba-pie"><a href="https://alsdress.com.mx/" target="_blank" rel="noopener">alsdress.com.mx</a><span>Renta de vestidos en Reynosa</span></p>
+      </li>
+      <li class="prueba prueba--linaje">
+        <span class="prueba-marco"><img src="img/hero/pliego-linaje.webp" width="440" height="586" decoding="async" alt="Página de inicio de la iglesia Linaje Escogido en Reynosa, hecha por RamosMKT"></span>
+        <p class="prueba-pie"><a href="https://linajeescogidoreynosa.org" target="_blank" rel="noopener">linajeescogidoreynosa.org</a><span>Iglesia en Reynosa</span></p>
+      </li>
+      <li class="prueba prueba--integral">
+        <span class="prueba-marco"><img src="img/hero/pliego-integralfr.webp" width="640" height="330" decoding="async" alt="Página de inicio de Integral FR, monitoreo de flotillas en Escobedo, Nuevo León, hecha por RamosMKT"></span>
+        <p class="prueba-pie"><a href="https://www.integralfr.com.mx/" target="_blank" rel="noopener">integralfr.com.mx</a><span>Monitoreo de flotillas en Escobedo, N.L.</span></p>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -527,7 +453,7 @@
 
     <div class="portfolio-card">
       <div class="portfolio-img-wrap">
-        <img loading="lazy" decoding="async" src="p-alsdress.jpg" alt="Alsdress — RamosMKT" class="portfolio-img">
+        <img loading="lazy" decoding="async" src="p-alsdress.webp" width="1280" height="720" alt="Als Dress, renta de vestidos en Reynosa — RamosMKT" class="portfolio-img">
       </div>
       <div class="portfolio-info">
         <div class="portfolio-tag">BOUTIQUE · MODA</div>
@@ -845,33 +771,13 @@ if (servicesGrid) setupStagger(servicesGrid, '.service-card');
 if (industriesGrid) setupStagger(industriesGrid, '.industry-card');
 document.querySelectorAll('.packages-grid').forEach(g => setupStagger(g, '.package-card'));
 
-// ---- 2. SMOOTH PARALLAX ----
-const heroGrid = document.querySelector('.hero-grid');
-const heroGlow = document.querySelector('.hero-glow');
-if (heroGrid && heroGlow) {
-  let cur = 0, tgt = 0;
-  window.addEventListener('scroll', () => { tgt = window.scrollY; }, { passive: true });
-  (function tick() {
-    cur += (tgt - cur) * 0.12;
-    heroGrid.style.transform = `translateY(${cur * 0.15}px)`;
-    heroGlow.style.transform = `translateY(${cur * 0.25}px)`;
-    requestAnimationFrame(tick);
-  })();
+// ---- 2. WHATSAPP DEL HERO: evento para Google Ads ----
+const heroWhatsapp = document.getElementById('heroWhatsapp');
+if (heroWhatsapp) {
+  heroWhatsapp.addEventListener('click', () => {
+    if (typeof gtag === 'function') gtag('event', 'whatsapp_click', { ubicacion: 'hero' });
+  });
 }
-
-// ---- 3. COUNTER with smooth easing ----
-document.querySelectorAll('[data-count]').forEach(el => {
-  let done = false;
-  inView(el, () => {
-    if (done) return;
-    done = true;
-    animate(0, parseInt(el.dataset.count), {
-      duration: 1.5,
-      easing: [0.22, 1, 0.36, 1],
-      onUpdate: v => { el.textContent = Math.floor(v); }
-    });
-  }, { amount: 0.5 });
-});
 </script>
 </body>
 </html>
