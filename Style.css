@@ -332,6 +332,33 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
   .pregunta p { font-size: 16px; }
 }
 
+/* CIERRE · #contacto (docs/DESIGN.md) */
+.cierre { max-width: none; margin: 0; padding: var(--e-9) var(--e-8); background: var(--papel); color: var(--carbon); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e-6); align-items: start; }
+.cierre-accion { grid-column: 1 / 8; }
+.cierre h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.08; letter-spacing: -0.015em; color: var(--carbon); max-width: 20ch; }
+.cierre .boton-wa { margin-top: var(--e-6); }
+.boton-wa--papel { border: 1px solid var(--carbon); }
+.boton-wa--papel:focus-visible, .cierre-datos a:focus-visible { outline: 3px solid var(--carbon); outline-offset: 3px; border-radius: var(--r-foco); }
+.cierre-datos { grid-column: 8 / 13; border-top: 1px solid rgba(25,28,29,.14); }
+.cierre-datos div { padding: var(--e-4) 0; border-bottom: 1px solid rgba(25,28,29,.14); }
+.cierre-datos dt { font-size: 14px; line-height: 1.45; color: var(--tinta-2); }
+.cierre-datos dd { margin-top: 2px; font-size: 19px; font-weight: 500; line-height: 1.4; }
+.cierre-datos a { color: var(--carbon); text-decoration: underline; text-decoration-color: var(--tinta-2); text-underline-offset: 4px; display: inline-flex; align-items: center; min-height: 44px; margin: -10px 0; }
+.cierre-datos a:hover { text-decoration-color: var(--carbon); }
+
+@media (max-width: 1100px) {
+  .cierre { padding: var(--e-9) var(--e-7); }
+  .cierre-accion { grid-column: 1 / 7; }
+  .cierre-datos { grid-column: 7 / 13; }
+}
+@media (max-width: 768px) {
+  .cierre { display: block; padding: var(--e-8) 20px; }
+  .cierre h2 { font-size: 28px; line-height: 1.12; }
+  .cierre .boton-wa { margin-top: var(--e-5); }
+  .cierre-datos { margin-top: var(--e-7); }
+  .cierre-datos dd { font-size: 17px; }
+}
+
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: start; }
 .about-lead { font-size: 19px; color: var(--white); line-height: 1.65; font-weight: 500; margin-bottom: 24px; }

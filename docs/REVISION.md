@@ -162,7 +162,35 @@ debajo, las demás dudas como preguntas cortas. Se entiende de un vistazo. Pasa.
 Pasó a la primera: abre y cierra sin JS, JSON-LD válido, consola sin errores. A 1440 la columna
 angosta deja aire a la derecha a propósito, para variar el ritmo frente a Servicios y Cómo trabajamos.
 
+## Sección 7 · Cierre (`#contacto`) · 2026-10-09
+
+Capturas: `cierre-375x812.webp`, `cierre-1440x900.webp`.
+
+### Qué cambió
+- Sección nueva (no existía; el footer enlazaba a `#contacto` sin destino, ya funciona).
+- "Cuéntanos de tu negocio y te cotizamos en menos de 24 horas." + un solo botón verde de WhatsApp
+  con mensaje abierto para completar ("…Mi negocio es: "), evento `cierre`. Sobre papel el botón
+  lleva filete carbón de 1px y el foco es carbón.
+- Datos reales en `<dl>`: teléfono con `tel:`, horario, Reynosa y trabajo a distancia, correo
+  `dramosmireles2@gmail.com` (decisión de David). Áreas táctiles de 44px.
+- Sin formulario: ya existe `contacto.html` y aquí solo agregaría un paso antes de WhatsApp.
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Un solo verde en la sección. Sin íconos (salvo el glifo de
+WhatsApp), sin tarjetas, sin "→", sin sombras. **Total: 1.** Frases prohibidas: 0.
+
+### Prueba de 5 segundos
+375: título con la promesa de 24 horas, botón verde de WhatsApp a ancho completo, y debajo número,
+horario y "Reynosa, Tamaulipas". Se entiende qué hacer, cuándo atienden y dónde están. Pasa.
+
+### Iteraciones (1 de 3)
+Pasó a la primera. Enlaces verificados (WhatsApp, `tel:`, `mailto:`), consola sin errores.
+
 ### Pendiente fuera de esta sección
+- Footer: el correo sigue como `dramosmirele2@ramosmkt.lat`; cambiar a `dramosmireles2@gmail.com`
+  cuando se trabaje el footer.
+- Botón flotante de WhatsApp: en la sección de cierre conviven dos verdes (flotante + botón). Quitar
+  pulso y sombra de color, y decidir si se oculta cuando el botón del cierre está a la vista.
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,
   `motion-effects.js`) ya no se usan en el home; quitar al final del rediseño si ninguna otra página
   los ocupa.

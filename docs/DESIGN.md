@@ -184,6 +184,8 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
 - 2026-10-09 (Preguntas frecuentes): pregunta frecuente construida (`.pregunta`, `<details>` nativo,
   "+"/"−" con gradientes CSS, la primera abierta). Columna única de 760px. El JSON-LD `FAQPage` se
   genera del mismo texto que la sección; si cambia una respuesta, cambian las dos.
+- 2026-10-09 (Cierre): sección `#contacto` en papel con un solo botón verde (`.boton-wa--papel`:
+  filete carbón de 1px y foco carbón sobre papel) y datos en `<dl>`. Sin formulario en el home.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).
