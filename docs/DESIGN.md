@@ -162,6 +162,10 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
   botón flotante en lugar de Phosphor.
 - 2026-10-09 (David, sitio): el sistema del hero se vuelve el del sitio; orden de `index.html`
   aprobado (ver BRIEF); fuera las demos del home; sin paquete destacado; sin foto de fundador por ahora.
+- 2026-10-09 (Servicios): fila de servicio construida (`.servicio`): nombre, descripción, "Desde",
+  nota con el segundo nivel de precio y chevron; a 375 todo apilado. Servicios se agrupa por
+  necesidad del cliente, no por tecnología. Se agrega `.solo-lector` para texto solo de lector de
+  pantalla.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).

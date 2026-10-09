@@ -33,6 +33,41 @@ Frases prohibidas: 0 (grep).
 - Iteraciones: 2 (Integral FR recortado otra vez porque asomaba el título "Catálogo"; captura de
   Aiser más grande a 1440).
 
+## Sección 4 · Servicios (`#servicios`) · 2026-10-09
+
+Capturas en `docs/revision/`: `servicios-375x812-t00..t02.webp` y `servicios-1440x900-t00..t01.webp`
+(pantallas consecutivas de la sección). Antes: rejilla de 6 tarjetas iguales con ícono (ver
+`experimentos/hero/antes/` y el historial de git).
+
+### Qué cambió
+- Fuera: las 6 tarjetas con ícono, los nombres en inglés ("WEB DEVELOPMENT"), la etiqueta
+  `// Servicios · Services`, los "Cotizar →", el escalonado animado, "Solo pagas por resultados
+  medibles" y "Responde y vende 24/7 sin contratar a nadie".
+- Dentro: 3 grupos por lo que el cliente necesita, escritos en su voz ("Quiero vender en línea",
+  "Quiero que me encuentren", "Quiero ordenar mi negocio"), con filas de servicio: nombre, qué
+  recibe, "Desde $X MXN" y una nota con el segundo nivel de precio cuando existe. Toda la fila es el
+  enlace (WhatsApp con el servicio prellenado y evento `servicios-<servicio>`; Página web va a
+  `#paquetes`).
+- Precios corregidos a la tabla oficial: tienda desde $4,500 (completa $8,000), sistema desde $5,000
+  (completo $8,000), anuncios desde $1,500 de configuración + desde $2,000 al mes.
+- La sección se movió después de `#paquetes`, como en el orden aprobado. Ninguna otra sección cambió.
+- A 1440 el título queda fijo (sticky) mientras se recorren los grupos.
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Sin verde en la sección. Sin tarjetas, sin íconos decorativos
+(solo el chevron de fila de DESIGN.md), sin eyebrows, sin "→", sin " · " visible, sin animación ni
+hover que levante, sin sombras. **Total: 1.** Frases prohibidas: 0.
+
+### Prueba de 5 segundos
+Viendo solo la primera pantalla a 375: "¿Qué necesita tu negocio?" → "Quiero vender en línea" →
+"Tienda en línea, desde $4,500 MXN" con flecha de acción. Se entiende qué ofrece, cuánto cuesta
+empezar y que la fila se toca para cotizar. Pasa.
+
+### Iteraciones (2 de 3)
+1. Primera versión: a 1440 la columna del título quedaba vacía bajo el texto y las notas de precio
+   se partían en 3 líneas.
+2. Título sticky a 1440 y notas a 30ch. Consola sin errores.
+
 ### Pendiente fuera de esta sección
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,
   `motion-effects.js`) ya no se usan en el home; quitar al final del rediseño si ninguna otra página
