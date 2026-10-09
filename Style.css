@@ -7,7 +7,7 @@
     --white: #f5f5f5;
     --gray: #9A9FA0;
     --gray2: #333333;
-    /* hero (DESIGN.md) */
+    /* sistema (docs/DESIGN.md) */
     --carbon: #191C1D;
     --papel: #E7E2E3;
     --blanco: #FFFFFF;
@@ -53,7 +53,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
 .nav-cta { background: var(--green); color: var(--black); padding: 10px 22px; border-radius: 100px; font-weight: 700; font-size: 14px; text-decoration: none; transition: background 0.2s; }
 .nav-cta:hover { background: #00EE8C; }
 
-/* HERO · "El pliego de pruebas" (ver experimentos/hero/DESIGN.md) */
+/* HERO · "El pliego de pruebas" (ver docs/DESIGN.md) */
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); min-height: 100vh; min-height: 100svh; padding: 0; margin: 0; max-width: none; width: 100%; background: var(--carbon); }
 .hero-texto { align-self: center; padding: calc(112px + var(--e-7)) var(--e-7) var(--e-8) var(--e-8); }
 .hero h1 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(34px, 3.4vw, 50px); line-height: 1.06; letter-spacing: -0.02em; color: var(--blanco); max-width: 16ch; }
@@ -115,6 +115,61 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
   .prueba--alsdress { width: 280px; }
   .prueba--linaje { width: 170px; }
   .prueba--integral { width: 250px; }
+}
+
+/* BOTÓN DE WHATSAPP (componente, docs/DESIGN.md) */
+.boton-wa { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-3); min-height: 56px; padding: var(--e-4) var(--e-6); background: var(--verde); color: var(--carbon); border-radius: var(--r-boton); font-weight: 700; font-size: 17px; text-decoration: none; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.boton-wa svg { width: 22px; height: 22px; flex-shrink: 0; }
+.boton-wa:hover { text-decoration-line: underline; }
+.boton-wa:focus-visible, .entrega-enlace:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; border-radius: var(--r-foco); }
+
+/* SITIOS ENTREGADOS · #proyectos (docs/DESIGN.md) */
+.entregas { max-width: none; margin: 0; padding: var(--e-9) var(--e-8); background: var(--carbon); }
+.entregas-cabeza { max-width: 1200px; margin: 0 auto var(--e-7); }
+.entregas h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.08; letter-spacing: -0.015em; color: var(--blanco); max-width: 22ch; }
+.entregas-cabeza p { margin-top: var(--e-4); font-size: 18px; line-height: 1.55; color: var(--gris-texto); max-width: 46ch; }
+.entregas-lista { list-style: none; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e-6); row-gap: var(--e-8); align-items: start; }
+.entrega--aiser { grid-column: 1 / 8; }
+.entrega--alsdress { grid-column: 8 / 13; margin-top: var(--e-9); }
+.entrega--linaje { grid-column: 1 / 6; }
+.entrega--integralfr { grid-column: 6 / 13; margin-top: var(--e-8); }
+.entrega-hoja { background: var(--papel); display: flex; justify-content: center; padding: var(--e-7) var(--e-6); }
+.entrega-hoja .prueba-marco { width: 100%; }
+.entrega--aiser .prueba-marco { max-width: 360px; }
+.entrega--alsdress .prueba-marco { max-width: 260px; }
+.entrega--linaje .prueba-marco { max-width: 280px; }
+.entrega--integralfr .prueba-marco { max-width: 300px; }
+.entrega-texto { margin-top: var(--e-5); max-width: 46ch; }
+.entrega h3 { font-size: 21px; font-weight: 600; line-height: 1.3; color: var(--blanco); }
+.entrega-lugar { margin-top: 2px; font-size: 14px; line-height: 1.45; color: var(--gris-texto); }
+.entrega-desc { margin-top: var(--e-3); font-size: 18px; line-height: 1.55; color: var(--blanco); }
+.entrega-enlace { margin-top: var(--e-2); display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; color: var(--blanco); text-decoration: underline; text-decoration-color: var(--gris-texto); text-underline-offset: 5px; }
+.entrega-enlace:hover { text-decoration-color: var(--blanco); }
+.entregas-cierre { max-width: 1200px; margin: var(--e-9) auto 0; padding-top: var(--e-7); border-top: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; gap: var(--e-6); flex-wrap: wrap; }
+.entregas-cierre p { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(22px, 2vw, 28px); line-height: 1.15; color: var(--blanco); }
+
+@media (max-width: 1100px) {
+  .entregas { padding: var(--e-9) var(--e-7); }
+  .entregas-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .entrega--aiser, .entrega--alsdress, .entrega--linaje, .entrega--integralfr { grid-column: auto; margin-top: 0; }
+  .entrega--alsdress, .entrega--integralfr { margin-top: var(--e-8); }
+}
+@media (max-width: 768px) {
+  .entregas { padding: var(--e-8) 0; }
+  .entregas-cabeza, .entrega-texto, .entregas-cierre { padding-left: 20px; padding-right: 20px; }
+  .entregas-cabeza { margin-bottom: var(--e-6); }
+  .entregas h2 { font-size: 28px; line-height: 1.12; }
+  .entregas-cabeza p, .entrega-desc { font-size: 17px; }
+  .entregas-lista { display: flex; flex-direction: column; gap: var(--e-8); }
+  .entrega--alsdress, .entrega--integralfr { margin-top: 0; }
+  .entrega-hoja { padding: var(--e-6) 20px; }
+  .entrega h3 { font-size: 19px; }
+  .entrega--aiser .prueba-marco { max-width: 260px; }
+  .entrega--alsdress .prueba-marco { max-width: 220px; }
+  .entrega--linaje .prueba-marco { max-width: 240px; }
+  .entrega--integralfr .prueba-marco { max-width: 250px; }
+  .entregas-cierre { margin-top: var(--e-8); flex-direction: column; align-items: stretch; gap: var(--e-4); }
+  .boton-wa { width: 100%; max-width: 420px; }
 }
 
 /* ABOUT */
