@@ -17,7 +17,9 @@ precios en `PLAN-rediseno-rmkt.md`. Lo que no está confirmado dice SUPUESTO o P
 - **Contacto:** WhatsApp y teléfono 814 807 8309 (`https://wa.me/528148078309`). Horario: lunes a
   sábado de 9:00 a 19:00. Correo visible: `dramosmireles2@gmail.com` (decisión de David, 2026-10-09,
   "por el momento"; sustituye a `dramosmirele2@ramosmkt.lat`, que tenía un error).
-- **Fundador:** sin foto ni nombre publicado (PENDIENTE). No se inventa ni se usa foto de stock.
+- **Responsable de los datos personales (aviso de privacidad):** David Eduardo Ramos Mireles, persona
+  física (David, 2026-10-09). No hay razón social.
+- **Fundador:** sin foto publicada (PENDIENTE). No se inventa ni se usa foto de stock.
 
 ## Cómo vende RMKT (clave para precios)
 Los clientes **no eligen un paquete**: RMKT les arma la cotización según lo que ocupen (David,
@@ -36,6 +38,12 @@ Dueño o dueña de una pyme en Reynosa (aseguradora, boutique, iglesia, restaura
 gimnasio, taller) que hoy vende por WhatsApp y Facebook y no tiene página, o tiene una que le da
 pena. Llega desde Meta Ads, Google Ads (hay conversión AW configurada) o por recomendación. Lo ve en
 el celular.
+
+## Medición (Google Ads, cuenta AW-18153774300)
+Decisión de David (2026-10-09, opción A): la conversión principal pasa a ser el **clic en WhatsApp**
+(evento `whatsapp_click` con `ubicacion`), con su propia acción de conversión en Google Ads y su
+`send_to` (etiqueta PENDIENTE de crear en Google Ads). `gracias/` se queda como respaldo con su
+conversión "Request quote" intacta y `noindex`.
 
 ## Tarea #1 del sitio
 Escribir por WhatsApp para cotizar. Cada CTA lleva su propio mensaje prellenado y su evento
