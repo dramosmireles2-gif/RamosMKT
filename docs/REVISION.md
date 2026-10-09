@@ -186,8 +186,34 @@ horario y "Reynosa, Tamaulipas". Se entiende qué hacer, cuándo atienden y dón
 ### Iteraciones (1 de 3)
 Pasó a la primera. Enlaces verificados (WhatsApp, `tel:`, `mailto:`), consola sin errores.
 
+## Footer (`footer.pie`, solo index.html) · 2026-10-09
+
+Capturas: `footer-375x812.webp`, `footer-1440x900.webp`.
+
+### Qué cambió
+- Tres bloques: marca (logo + "Páginas web, tiendas y sistemas para negocios de Reynosa."), Contacto
+  (WhatsApp, correo, Reynosa) y Redes (Instagram, Facebook, TikTok como texto); barra con aviso de
+  privacidad y ©. Todos los enlaces de 44px.
+- Correo corregido a `dramosmireles2@gmail.com`. Fuera: columna Navegación (repetía el nav), íconos
+  verdes, círculos de redes, "Tecnología que crece negocios", "Hecho con ♥ y código", " · ".
+- Logo: copia recortada sin márgenes transparentes (`img/logo-rmkt-recortado.png`, mismo diseño)
+  para alinearlo con el texto. El archivo original no se tocó.
+- Clase nueva `footer.pie`; las otras páginas siguen con su footer y sus estilos `.footer-*`.
+- En móvil, espacio extra al final para que el botón flotante no tape el ©.
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Sin verde fuera del logo, sin íconos, sin " · ", sin frases
+prohibidas. **Total: 1.**
+
+### Prueba de 5 segundos
+375: logo, qué hacen y dónde; WhatsApp, correo y ciudad; redes; aviso de privacidad. Pasa.
+
+### Iteraciones (2 de 3)
+1. El logo quedaba chico y corrido a la derecha por el margen transparente del PNG.
+2. Logo recortado. Enlaces verificados (6 de 44px, aviso de privacidad responde 200). Consola sin errores.
+
 ### Pendiente fuera de esta sección
-- ~~Footer: el correo sigue como `dramosmirele2@ramosmkt.lat`~~ Resuelto en el footer (abajo).
+- `<title>`, `og:title` y `twitter:title` de index.html siguen con "Tecnología que crece negocios".
 - Botón flotante de WhatsApp: en la sección de cierre conviven dos verdes (flotante + botón). Quitar
   pulso y sombra de color, y decidir si se oculta cuando el botón del cierre está a la vista.
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,
