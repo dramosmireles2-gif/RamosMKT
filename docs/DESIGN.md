@@ -181,6 +181,9 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
 - 2026-10-09 (Nosotros + Industrias): Industrias es el 4.º grupo de Servicios ("Quiero una página
   para mi giro"); Nosotros vive dentro de "Así trabajamos contigo" (pasos numerados como lista
   simple + "Quién está detrás"). Las anclas internas del nav llevan `scroll-margin-top`.
+- 2026-10-09 (Preguntas frecuentes): pregunta frecuente construida (`.pregunta`, `<details>` nativo,
+  "+"/"−" con gradientes CSS, la primera abierta). Columna única de 760px. El JSON-LD `FAQPage` se
+  genera del mismo texto que la sección; si cambia una respuesta, cambian las dos.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).

@@ -305,6 +305,33 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
   .trabajo-quien { margin-top: var(--e-7); }
 }
 
+/* PREGUNTAS FRECUENTES (docs/DESIGN.md: pregunta frecuente) */
+.preguntas { max-width: none; margin: 0; padding: var(--e-9) var(--e-8); background: var(--carbon); border-top: 1px solid rgba(255,255,255,.08); }
+.preguntas > * { max-width: 760px; }
+.preguntas h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.08; letter-spacing: -0.015em; color: var(--blanco); max-width: 22ch; margin-bottom: var(--e-7); }
+.preguntas-lista { border-top: 1px solid rgba(255,255,255,.08); }
+.pregunta { border-bottom: 1px solid rgba(255,255,255,.08); }
+.pregunta summary { list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: var(--e-5); min-height: 56px; padding: var(--e-5) 0; cursor: pointer; }
+.pregunta summary::-webkit-details-marker { display: none; }
+.pregunta summary::after { content: ''; flex: 0 0 16px; height: 16px; margin-top: 6px; background: linear-gradient(var(--gris-texto), var(--gris-texto)) center / 16px 2px no-repeat, linear-gradient(var(--gris-texto), var(--gris-texto)) center / 2px 16px no-repeat; }
+.pregunta[open] summary::after { background: linear-gradient(var(--blanco), var(--blanco)) center / 16px 2px no-repeat; }
+.pregunta summary:hover h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--gris-texto); }
+.pregunta summary:focus-visible, .preguntas-enlace:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; border-radius: var(--r-foco); }
+.pregunta h3 { font-size: 21px; font-weight: 600; line-height: 1.35; color: var(--blanco); }
+.pregunta p { padding-bottom: var(--e-5); margin-top: calc(var(--e-2) * -1); font-size: 17px; line-height: 1.6; color: var(--gris-texto); max-width: 60ch; }
+.preguntas-enlace { margin-top: var(--e-6); display: inline-flex; align-items: center; min-height: 44px; font-size: 17px; color: var(--blanco); text-decoration: underline; text-decoration-color: var(--gris-texto); text-underline-offset: 5px; }
+.preguntas-enlace:hover { text-decoration-color: var(--blanco); }
+
+@media (max-width: 1100px) {
+  .preguntas { padding: var(--e-9) var(--e-7); }
+}
+@media (max-width: 768px) {
+  .preguntas { padding: var(--e-8) 20px; }
+  .preguntas h2 { font-size: 28px; line-height: 1.12; margin-bottom: var(--e-6); }
+  .pregunta h3 { font-size: 19px; }
+  .pregunta p { font-size: 16px; }
+}
+
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: start; }
 .about-lead { font-size: 19px; color: var(--white); line-height: 1.65; font-weight: 500; margin-bottom: 24px; }

@@ -135,6 +135,33 @@ Platicamos tu idea". Pasan.
 2. Filas de giros compactas en móvil y margen de ancla. Enlaces del nav verificados; `#contacto`
    sigue sin destino hasta la sección de Cierre. Consola sin errores.
 
+## Sección 6 · Preguntas frecuentes (`#faq`) · 2026-10-09
+
+Capturas: `preguntas-375x812.webp`, `preguntas-1440x900.webp`.
+
+### Qué cambió
+- Fuera: acordeón con JS, etiqueta `// FAQ · Preguntas frecuentes`, paquetes que no existen ("Web
+  Básico", "Pro Digital", "Full Stack"), "5–7 días", "100% remoto".
+- Dentro: 6 objeciones reales en voz del dueño (ya tengo Facebook, cuánto cuesta mantenerla, si no
+  la sé usar, cuánto tarda, cómo se paga, si no me gusta), respuestas de 1 a 3 líneas con datos de
+  la tabla oficial (mantenimiento desde $500/$900/$1,500 al mes, dominio $350 al año desde el 2.º
+  año, tiempos por paquete, 50/50 o 3 pagos, 2 rondas). `<details>` nativo, la primera abierta,
+  columna de 760px. Enlace secundario "¿Otra duda? Pregúntanos por WhatsApp" (evento `faq`).
+- JSON-LD `FAQPage` regenerado desde el mismo texto: coincide palabra por palabra (verificado en el
+  navegador).
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Sin verde, sin íconos, sin "→", sin eyebrow. **Total: 1.**
+Frases prohibidas y nombres viejos de paquetes: 0.
+
+### Prueba de 5 segundos
+Primera pantalla a 375: "Lo que siempre nos preguntan" y la respuesta abierta a "Ya tengo Facebook";
+debajo, las demás dudas como preguntas cortas. Se entiende de un vistazo. Pasa.
+
+### Iteraciones (1 de 3)
+Pasó a la primera: abre y cierra sin JS, JSON-LD válido, consola sin errores. A 1440 la columna
+angosta deja aire a la derecha a propósito, para variar el ritmo frente a Servicios y Cómo trabajamos.
+
 ### Pendiente fuera de esta sección
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,
   `motion-effects.js`) ya no se usan en el home; quitar al final del rediseño si ninguna otra página
