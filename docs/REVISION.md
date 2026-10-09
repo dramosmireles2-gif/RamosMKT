@@ -212,6 +212,38 @@ prohibidas. **Total: 1.**
 1. El logo quedaba chico y corrido a la derecha por el margen transparente del PNG.
 2. Logo recortado. Enlaces verificados (6 de 44px, aviso de privacidad responde 200). Consola sin errores.
 
+## Navbar · 2026-10-09
+
+Capturas: `navbar-375x812.webp`, `navbar-375x812-abierto.webp`, `navbar-1440x900.webp`.
+
+### Qué cambió
+- Enlaces en el orden real de la página y con palabras del cliente: Trabajos, Precios, Servicios,
+  Cómo trabajamos, Preguntas (fuera Nosotros e Industrias, que viven dentro de otras secciones).
+- "Cotiza gratis" (píldora verde) → "WhatsApp 814 807 8309" sobrio con filete; evento `nav`.
+- Logo recortado de 40px; nav de 112px → 72px (64px en móvil). Hero, sticky de Servicios y anclas
+  pasan a `--alto-nav`.
+- Menú móvil: panel a pantalla completa (antes se abría en `top: 73px` y se encimaba con el nav de
+  104px), filas de 56px, un solo botón verde de WhatsApp (evento `menu`) y horario, `aria-expanded`,
+  cierra con Escape devolviendo el foco, bloquea el scroll de fondo y oculta el botón flotante.
+  Sin emoji.
+- Fuera: barra de progreso verde y su JS, subrayado verde del enlace activo (ahora blanco).
+- Enlace activo: el observador ahora vigila solo las secciones del nav y marca la que cruza la mitad
+  de la pantalla (antes, con secciones más altas que la pantalla, no se activaba o marcaba la que no era).
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Verde solo en el logo y en el botón de WhatsApp del menú abierto.
+Sin píldora, sin glassmorphism, sin glow, sin emoji. **Total: 1.**
+
+### Prueba de 5 segundos
+1440: logo, cinco destinos que se entienden y el número de WhatsApp a la vista. 375: logo y menú;
+al abrir, los cinco destinos y "Escríbenos por WhatsApp". Pasa.
+
+### Iteraciones (2 de 3)
+1. En móvil no aparecía el botón de menú: la regla base quedaba después del media query.
+2. Orden corregido; botón flotante oculto con el menú abierto. Verificado: abre/cierra,
+   `aria-expanded`, Escape con retorno de foco, cierre al tocar un enlace, enlace activo en
+   Precios. Consola sin errores.
+
 ### Pendiente fuera de esta sección
 - `<title>`, `og:title` y `twitter:title` de index.html siguen con "Tecnología que crece negocios".
 - Botón flotante de WhatsApp: en la sección de cierre conviven dos verdes (flotante + botón). Quitar

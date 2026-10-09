@@ -24,16 +24,18 @@ document.addEventListener('click', e => {
 const hamburger = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('navMobileMenu');
 
-hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-});
+function setMenu(open) {
+    mobileMenu.classList.toggle('open', open);
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    document.documentElement.classList.toggle('menu-abierto', open);
+}
 
-mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('open');
-    });
+hamburger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) { setMenu(false); hamburger.focus(); }
 });
 
 // ---- SCROLL ANIMATIONS ----
@@ -108,21 +110,10 @@ async function enviarFormulario() {
     }
 }
 
-// ---- READ PROGRESS ----
-const progressBar = document.getElementById('read-progress');
-
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    if (progressBar) {
-        const total = document.documentElement.scrollHeight - window.innerHeight;
-        const pct = total > 0 ? (scrolled / total) * 100 : 0;
-        progressBar.style.width = pct + '%';
-    }
-}, { passive: true });
-
 // ---- NAV ACTIVE STATE ----
+// Marca el enlace de la sección que cruza la mitad de la pantalla.
 const navLinks = document.querySelectorAll('.nav-link');
-const navSections = document.querySelectorAll('section[id], div[id]');
+const navSections = [...navLinks].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
 
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -132,7 +123,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
             });
         }
     });
-}, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+}, { threshold: 0, rootMargin: '-50% 0px -50% 0px' });
 
 navSections.forEach(s => sectionObserver.observe(s));
 

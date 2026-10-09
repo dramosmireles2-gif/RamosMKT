@@ -134,7 +134,12 @@ servicio prellenado.
 el FAQ del JSON-LD.
 
 ### Nav (construido)
-Fondo carbón sólido, sin `backdrop-filter`, filete neutro. Logo y enlaces sin cambios.
+Fondo carbón sólido, 72px (`--alto-nav`; 64px a ≤900px), filete neutro, logo recortado de 40px.
+Enlaces en el orden de la página: Trabajos, Precios, Servicios, Cómo trabajamos, Preguntas; activo en
+blanco subrayado. A la derecha, "WhatsApp 814 807 8309" en versión sobria (filete, sin verde). En
+≤900px: botón de menú de 44px con `aria-expanded`, panel a pantalla completa con filas de 56px, un solo
+botón verde de WhatsApp y el horario; cierra con Escape y oculta el botón flotante. Sin barra de
+progreso.
 
 ### Botón flotante de WhatsApp (heredado)
 Se queda, pero sin pulso ni sombra de color (pendiente de ajustar cuando se trabaje el cierre).
@@ -153,7 +158,7 @@ y foco, píldoras de 100px, contadores animados, tarjetas con icono arriba, anim
 scroll, demos presentadas como clientes, testimonios o fotos inventados.
 
 ## Valores fuera de escala (documentados)
-Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · botón 56px · enlace
+Marcas de corte (8px, 12px, 1px) · alto del nav `--alto-nav` (72px; 64px a ≤900px) · botón 56px · enlace
 44px · `max-width` del pliego (760px) y del botón en tableta (420px) · filetes de 1px.
 
 ## Historial de decisiones
@@ -189,6 +194,8 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
 - 2026-10-09 (Footer): `footer.pie` en index.html: marca, Contacto, Redes (texto, sin íconos) y barra
   legal. Logo recortado `img/logo-rmkt-recortado.png` (40px de alto, 36px en móvil). Correo visible:
   `dramosmireles2@gmail.com`.
+- 2026-10-09 (Navbar): nav nuevo (ver componente). El hero, el título sticky de Servicios y las
+  anclas usan `--alto-nav` en lugar de 112px/104px fijos (aprobado por David).
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).
