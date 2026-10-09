@@ -376,74 +376,81 @@
   </div>
 </section>
 
-<!-- PACKAGES -->
-<section id="paquetes">
-  <div class="section-tag">// Paquetes · Packages</div>
-  <h2 class="section-title">Precios claros,<br>resultados reales.</h2>
-  <p class="section-sub">Sin sorpresas ni letras chicas. Sabes exactamente cuánto pagas, qué recibes y cuándo lo tienes.</p>
-  <div class="packages-grid fade-up">
-    <div class="package-card">
-      <div class="package-name">Landing Express</div>
-      <div class="package-name-en">STARTER</div>
-      <div class="package-price">$1,500</div>
-      <div class="package-price-note">MXN · Pago único · Entrega en 5 días</div>
-      <ul class="package-features">
-        <li>Página diseñada para convertir visitas en clientes</li>
-        <li>Sección de servicios o productos</li>
-        <li>Galería de fotos</li>
-        <li>Botón de WhatsApp directo</li>
-        <li>Formulario de contacto + Google Maps</li>
-        <li>Optimizado para móvil</li>
-      </ul>
-      <a href="https://wa.me/528148078309?text=Hola%20RMKT%2C%20me%20interesa%20el%20paquete%20Landing%20Express" target="_blank" class="package-btn outline">Cotizar →</a>
-    </div>
-    <div class="package-card">
-      <div class="package-name">Web Profesional</div>
-      <div class="package-name-en">PROFESSIONAL WEB</div>
-      <div class="package-price">$3,500</div>
-      <div class="package-price-note">MXN · Pago único · Entrega en 10 días</div>
-      <ul class="package-features">
-        <li>Diseño multipágina profesional</li>
-        <li>Catálogo de servicios o productos</li>
-        <li>Galería + sección Nosotros + testimonios</li>
-        <li>WhatsApp + formulario de contacto</li>
-        <li>Dominio y hosting 1 año incluido</li>
-        <li>Optimizado para móvil</li>
-      </ul>
-      <a href="https://wa.me/528148078309?text=Hola%20RMKT%2C%20me%20interesa%20el%20paquete%20Web%20Profesional" target="_blank" class="package-btn outline">Cotizar →</a>
-    </div>
-    <div class="package-card featured">
-      <div class="package-badge">POPULAR</div>
-      <div class="package-name">Web Empresarial</div>
-      <div class="package-name-en">BUSINESS WEB</div>
-      <div class="package-price">$7,500</div>
-      <div class="package-price-note">MXN · Pago único · Entrega en 15–20 días</div>
-      <ul class="package-features">
-        <li>Todo lo del Web Profesional</li>
-        <li>CMS: actualiza contenido sin programar</li>
-        <li>Blog o sección de noticias</li>
-        <li>Analytics + SEO técnico configurado</li>
-        <li>Integraciones y formularios avanzados</li>
-        <li>Soporte técnico 2 meses incluido</li>
-      </ul>
-      <a href="https://wa.me/528148078309?text=Hola%20RMKT%2C%20me%20interesa%20el%20paquete%20Web%20Empresarial" target="_blank" class="package-btn solid">Cotizar →</a>
-    </div>
-    <div class="package-card">
-      <div class="package-name">Solución a la Medida</div>
-      <div class="package-name-en">CUSTOM SOLUTION</div>
-      <div class="package-price">Desde $8,000</div>
-      <div class="package-price-note">MXN · Cotización personalizada</div>
-      <ul class="package-features">
-        <li>Ecommerce completo con pagos en línea</li>
-        <li>Sistema administrativo a la medida</li>
-        <li>App móvil para iOS y Android</li>
-        <li>CRM y dashboards de negocio</li>
-        <li>Integraciones con sistemas existentes</li>
-        <li>Soporte prioritario incluido</li>
-      </ul>
-      <a href="https://wa.me/528148078309?text=Hola%20RMKT%2C%20necesito%20una%20soluci%C3%B3n%20a%20la%20medida" target="_blank" class="package-btn outline">Solicitar cotización →</a>
-    </div>
+<!-- PAQUETES · hoja de cotización (docs/DESIGN.md: tarjeta de precio) -->
+<section id="paquetes" class="paquetes" aria-labelledby="paquetes-titulo">
+  <div class="paquetes-cabeza">
+    <h2 id="paquetes-titulo">Cuánto cuesta empezar tu página.</h2>
+    <p>Son puntos de partida. Tu cotización se arma con lo que tu negocio ocupe, y te la mandamos en menos de 24 horas.</p>
   </div>
+  <ol class="paquetes-lista">
+    <li class="paquete paquete--landing">
+      <h3>Landing Express</h3>
+      <p class="paquete-precio"><span class="paquete-desde">Desde</span> <span class="paquete-cifra">$1,500</span> <span class="paquete-mxn">MXN</span></p>
+      <p class="paquete-entrega">Lista en 5 días</p>
+      <ul class="paquete-incluye">
+        <li>Una sola página con lo esencial de tu negocio</li>
+        <li>Botón de WhatsApp directo</li>
+        <li>Formulario de contacto y mapa de Google</li>
+        <li>Hecha para verse bien en el celular</li>
+      </ul>
+      <p class="paquete-confianza">50% al iniciar y 50% al entregar. 2 rondas de cambios incluidas.</p>
+      <a href="https://wa.me/528148078309?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20Landing%20Express%20%28desde%20%241%2C500%20MXN%29%20para%20mi%20negocio." target="_blank" rel="noopener" class="boton-wa boton-wa--sobrio" data-ubicacion="paquetes-landing" aria-label="Cotizar Landing Express por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Cotizar
+      </a>
+    </li>
+    <li class="paquete paquete--profesional">
+      <h3>Web Profesional</h3>
+      <p class="paquete-precio"><span class="paquete-desde">Desde</span> <span class="paquete-cifra">$3,500</span> <span class="paquete-mxn">MXN</span></p>
+      <p class="paquete-entrega">Lista en 10 días</p>
+      <ul class="paquete-incluye">
+        <li>Varias páginas</li>
+        <li>Catálogo de productos o servicios</li>
+        <li>Galería, Nosotros y testimonios</li>
+        <li>WhatsApp y formulario de contacto</li>
+        <li>Dominio y hosting el primer año</li>
+      </ul>
+      <p class="paquete-confianza">50% al iniciar y 50% al entregar. 2 rondas de cambios incluidas.</p>
+      <a href="https://wa.me/528148078309?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20Web%20Profesional%20%28desde%20%243%2C500%20MXN%29%20para%20mi%20negocio." target="_blank" rel="noopener" class="boton-wa boton-wa--sobrio" data-ubicacion="paquetes-profesional" aria-label="Cotizar Web Profesional por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Cotizar
+      </a>
+    </li>
+    <li class="paquete paquete--empresarial">
+      <h3>Web Empresarial</h3>
+      <p class="paquete-precio"><span class="paquete-desde">Desde</span> <span class="paquete-cifra">$7,500</span> <span class="paquete-mxn">MXN</span></p>
+      <p class="paquete-entrega">Lista en 15 a 20 días</p>
+      <ul class="paquete-incluye">
+        <li>Todo lo de Web Profesional</li>
+        <li>Panel para cambiar textos y fotos tú mismo</li>
+        <li>Blog o sección de noticias</li>
+        <li>Analytics y SEO técnico</li>
+        <li>Soporte técnico 2 meses</li>
+      </ul>
+      <p class="paquete-confianza">50% al iniciar y 50% al entregar, o en 3 pagos. 2 rondas de cambios incluidas.</p>
+      <a href="https://wa.me/528148078309?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20Web%20Empresarial%20%28desde%20%247%2C500%20MXN%29%20para%20mi%20negocio." target="_blank" rel="noopener" class="boton-wa boton-wa--sobrio" data-ubicacion="paquetes-empresarial" aria-label="Cotizar Web Empresarial por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Cotizar
+      </a>
+    </li>
+    <li class="paquete paquete--medida">
+      <h3>Solución a la medida</h3>
+      <p class="paquete-precio"><span class="paquete-desde">Desde</span> <span class="paquete-cifra">$8,000</span> <span class="paquete-mxn">MXN</span></p>
+      <p class="paquete-entrega">Fecha según tu cotización</p>
+      <ul class="paquete-incluye">
+        <li>Tienda en línea completa con pagos</li>
+        <li>Sistema administrativo a tu medida</li>
+        <li>App para iOS y Android</li>
+        <li>Conexión con lo que ya usas</li>
+        <li>Soporte prioritario</li>
+      </ul>
+      <p class="paquete-confianza">50% al iniciar y 50% al entregar, o en 3 pagos. 2 rondas de cambios incluidas.</p>
+      <a href="https://wa.me/528148078309?text=Hola%2C%20quiero%20cotizar%20una%20soluci%C3%B3n%20a%20la%20medida%20%28desde%20%248%2C000%20MXN%29%20para%20mi%20negocio." target="_blank" rel="noopener" class="boton-wa boton-wa--sobrio" data-ubicacion="paquetes-medida" aria-label="Cotizar Solución a la medida por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.5.5 0 00.606.65l6.337-1.697A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.271-1.504l-.362-.215-3.759 1.007 1.006-3.668-.234-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Cotizar
+      </a>
+    </li>
+  </ol>
 </section>
 
 <!-- SERVICIOS · por necesidad (docs/DESIGN.md) -->

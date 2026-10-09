@@ -68,6 +68,35 @@ empezar y que la fila se toca para cotizar. Pasa.
    se partían en 3 líneas.
 2. Título sticky a 1440 y notas a 30ch. Consola sin errores.
 
+## Sección 3 · Paquetes (`#paquetes`) · 2026-10-09
+
+Capturas en `docs/revision/`: `paquetes-375x812-t00..t03.webp` y `paquetes-1440x900-t00..t01.webp`.
+
+### Qué cambió
+- Fuera: tarjetas de vidrio (`backdrop-filter`), glow verde de fondo, insignia "POPULAR", nombres en
+  inglés (STARTER, BUSINESS WEB), cifras sin "Desde", "Precios claros, resultados reales", "→",
+  hover que levanta y escalonado animado.
+- Dentro: "Cuánto cuesta empezar tu página." + la aclaración de que son puntos de partida y que la
+  cotización llega en menos de 24 horas (compromiso del paso "Propuesta"). Cuatro hojas de cotización
+  iguales (en precios la simetría ayuda a comparar): nombre, "Desde", cifra, entrega, lo que incluye
+  (tabla oficial), condiciones de pago y cambios, y "Cotizar" por WhatsApp con el paquete y su precio
+  en el mensaje (evento `paquetes-<paquete>`). Ninguna destacada.
+- Web Empresarial y Solución a la medida dicen "o en 3 pagos" (política oficial para proyectos grandes).
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Cuatro tarjetas iguales, pero sin ícono y con contenido de precio
+que se compara: no cuenta como la señal "3 o 6 tarjetas idénticas con ícono". Sin verde, sin glow,
+sin sombras, sin "→", sin badge. **Total: 1.** Frases prohibidas: 0.
+
+### Prueba de 5 segundos
+Primera pantalla a 375: "Cuánto cuesta empezar tu página", "Landing Express, desde $1,500 MXN, lista
+en 5 días", condiciones de pago y "Cotizar". Se entiende el precio de entrada y qué hacer. Pasa.
+
+### Iteraciones (2 de 3)
+1. Primera versión con un tinte verde en el fondo: venía de `#paquetes::before` (regla vieja de
+   glassmorphism).
+2. Regla eliminada. Consola sin errores.
+
 ### Pendiente fuera de esta sección
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,
   `motion-effects.js`) ya no se usan en el home; quitar al final del rediseño si ninguna otra página

@@ -166,6 +166,11 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
   nota con el segundo nivel de precio y chevron; a 375 todo apilado. Servicios se agrupa por
   necesidad del cliente, no por tecnología. Se agrega `.solo-lector` para texto solo de lector de
   pantalla.
+- 2026-10-09 (Paquetes): tarjeta de precio construida (`.paquete`). Sección en papel; cada tarjeta es
+  una hoja **blanca** sobre el papel (el blanco se usa aquí como superficie, no solo como texto),
+  texto carbón (17.1:1) y secundario `--tinta-2`. Cifra Syne 700 44px (36px a 375), "Desde" encima.
+  Botón `.boton-wa--sobrio` (carbón con texto blanco); sobre papel el anillo de foco es carbón,
+  porque el verde no contrasta con el papel. Se quitó el glow verde heredado de `#paquetes`.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).
