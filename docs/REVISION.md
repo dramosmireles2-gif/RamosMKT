@@ -187,8 +187,7 @@ horario y "Reynosa, Tamaulipas". Se entiende qué hacer, cuándo atienden y dón
 Pasó a la primera. Enlaces verificados (WhatsApp, `tel:`, `mailto:`), consola sin errores.
 
 ### Pendiente fuera de esta sección
-- Footer: el correo sigue como `dramosmirele2@ramosmkt.lat`; cambiar a `dramosmireles2@gmail.com`
-  cuando se trabaje el footer.
+- ~~Footer: el correo sigue como `dramosmirele2@ramosmkt.lat`~~ Resuelto en el footer (abajo).
 - Botón flotante de WhatsApp: en la sección de cierre conviven dos verdes (flotante + botón). Quitar
   pulso y sombra de color, y decidir si se oculta cuando el botón del cierre está a la vista.
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,

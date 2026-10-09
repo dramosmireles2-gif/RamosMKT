@@ -359,6 +359,34 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
   .cierre-datos dd { font-size: 17px; }
 }
 
+/* FOOTER · index.html (docs/DESIGN.md). Las demás páginas siguen con .footer-* */
+footer.pie { border-top: 0; padding: var(--e-8) var(--e-8) 0; background: var(--carbon); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e-6); row-gap: var(--e-7); }
+.pie-marca { grid-column: 1 / 5; }
+.pie-logo { display: block; height: 40px; width: auto; }
+.pie-marca p { margin-top: var(--e-3); font-size: 16px; line-height: 1.55; color: var(--gris-texto); max-width: 30ch; }
+.pie-bloque { grid-column: span 4; }
+.pie-bloque h2 { font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--gris-texto); margin-bottom: var(--e-2); }
+.pie-bloque ul { list-style: none; }
+.pie-bloque li { display: flex; align-items: center; min-height: 44px; font-size: 17px; line-height: 1.4; color: var(--blanco); }
+.pie a { color: var(--blanco); text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); text-underline-offset: 4px; display: inline-flex; align-items: center; min-height: 44px; }
+.pie a:hover { text-decoration-color: var(--blanco); }
+.pie a:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; border-radius: var(--r-foco); }
+.pie-legal { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: var(--e-4); flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.08); padding: var(--e-3) 0 var(--e-5); font-size: 14px; color: var(--gris-texto); }
+.pie-legal a { font-size: 14px; }
+
+@media (max-width: 1100px) {
+  footer.pie { padding: var(--e-8) var(--e-7) 0; }
+  .pie-marca { grid-column: 1 / -1; }
+  .pie-bloque { grid-column: span 6; }
+}
+@media (max-width: 768px) {
+  footer.pie { display: block; padding: var(--e-8) 20px 0; }
+  .pie-logo { height: 36px; }
+  .pie-bloque { margin-top: var(--e-6); }
+  .pie-bloque li { font-size: 16px; }
+  .pie-legal { margin-top: var(--e-7); flex-direction: column; align-items: flex-start; gap: 0; padding-bottom: calc(var(--e-5) + 72px); }
+}
+
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: start; }
 .about-lead { font-size: 19px; color: var(--white); line-height: 1.65; font-weight: 500; margin-bottom: 24px; }

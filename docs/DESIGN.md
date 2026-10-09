@@ -186,6 +186,9 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
   genera del mismo texto que la sección; si cambia una respuesta, cambian las dos.
 - 2026-10-09 (Cierre): sección `#contacto` en papel con un solo botón verde (`.boton-wa--papel`:
   filete carbón de 1px y foco carbón sobre papel) y datos en `<dl>`. Sin formulario en el home.
+- 2026-10-09 (Footer): `footer.pie` en index.html: marca, Contacto, Redes (texto, sin íconos) y barra
+  legal. Logo recortado `img/logo-rmkt-recortado.png` (40px de alto, 36px en móvil). Correo visible:
+  `dramosmireles2@gmail.com`.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).
