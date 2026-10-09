@@ -1,8 +1,10 @@
 # BRIEF · ramosmkt.lat (sitio completo)
 
 Alcance: todo el sitio de RMKT. Se trabaja **una sección a la vez**, empezando por `index.html`.
-El hero de `index.html` ya está terminado y aprobado (2026-10-08). Las páginas de industria, `ads.html`,
-`meta-ads.html`, `contacto.html`, `tarjeta.html` y `flyer-ig.html` van después, con este mismo brief.
+El hero de `index.html` ya está terminado y aprobado (2026-10-08). El sitio queda en tres páginas
+(decisión de David, 2026-10-09): `index.html`, `aviso-privacidad.html` y `gracias/`. Las páginas de
+industria, `ads.html`, `meta-ads.html`, `contacto.html`, `tarjeta.html` y `flyer-ig.html` se
+eliminaron; los giros se cotizan por WhatsApp desde Servicios.
 
 Datos: `experimentos/hero/CONTENIDO.md` (datos verificados con su fuente) y la tabla oficial de
 precios en `PLAN-rediseno-rmkt.md`. Lo que no está confirmado dice SUPUESTO o PENDIENTE.
