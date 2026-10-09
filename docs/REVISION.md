@@ -97,6 +97,44 @@ en 5 días", condiciones de pago y "Cotizar". Se entiende el precio de entrada y
    glassmorphism).
 2. Regla eliminada. Consola sin errores.
 
+## Carruseles en móvil · 2026-10-09 (pedido de David)
+Sitios entregados, Paquetes y los grupos de Servicios pasan a tira horizontal a ≤768px. Altura en
+375 aproximada: Sitios entregados de ~3,300px a ~1,200px; Paquetes de ~2,350px a ~1,000px;
+Servicios (con los giros) de ~2,700px a ~980px. En Servicios la tira toma la altura del grupo más
+alto, así que las filas de giros en móvil muestran solo nombre, precio y entrega.
+
+## Industrias (dentro de `#servicios`) y Cómo trabajamos (`#proceso` + `#nosotros`) · 2026-10-09
+
+Capturas: `industrias-375x812.webp`, `industrias-1440x900.webp`, `como-trabajamos-375x812.webp`,
+`como-trabajamos-1440x900.webp`.
+
+### Qué cambió
+- Industrias: la rejilla de 5 tarjetas con ícono se vuelve el 4.º grupo de Servicios, "Quiero una
+  página para mi giro", con filas que llevan a cada página de giro: "Desde $2,500 MXN" y su tiempo
+  de entrega (de cada página de industria); Iglesias dice "Por ofrenda" y que el dominio corre por
+  cuenta de la iglesia (PLAN §5). El grupo conserva `id="industrias"` para el nav.
+- Nosotros + Proceso: una sola sección "Así trabajamos contigo." Los 4 pasos son una secuencia real
+  (lista numerada simple, sin íconos ni tarjetas), con las condiciones de pago arriba y "Quién está
+  detrás" con la historia real (negocio de los papás, 2024, Reynosa). Fuera: "Fechas cumplidas,
+  siempre", los 4 valores con ícono, el bloque "2024" con borde verde, las etiquetas bilingües y el
+  conector entre pasos. El bloque conserva `id="nosotros"`.
+- `scroll-margin-top` en `#industrias` y `#nosotros` para que no queden bajo el nav fijo.
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Pasos 1 a 4: es una secuencia real, no cuenta. Sin verde, sin
+íconos decorativos, sin tarjetas con ícono, sin eyebrows, sin "→". **Total: 1.** Frases prohibidas: 0.
+
+### Prueba de 5 segundos
+Giros (375): "Quiero una página para mi giro, Restaurantes, desde $2,500 MXN, lista en 2 a 3
+semanas". Cómo trabajamos (375): "Así trabajamos contigo, 50% al iniciar y 50% al entregar, 1
+Platicamos tu idea". Pasan.
+
+### Iteraciones (2 de 3)
+1. Con los giros, Servicios en móvil medía ~2,700px; se pasó a carrusel y quedaba un hueco por la
+   altura del grupo de giros.
+2. Filas de giros compactas en móvil y margen de ancla. Enlaces del nav verificados; `#contacto`
+   sigue sin destino hasta la sección de Cierre. Consola sin errores.
+
 ### Pendiente fuera de esta sección
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,
   `motion-effects.js`) ya no se usan en el home; quitar al final del rediseño si ninguna otra página

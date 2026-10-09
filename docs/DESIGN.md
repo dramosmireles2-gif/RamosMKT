@@ -176,7 +176,11 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
   ancho para que el siguiente asome a la derecha, sin barra visible, sin JS, sin flechas ni puntos.
   Solo a ≤768px; en escritorio cada sección conserva su retícula. Aplicado a Sitios entregados
   (capturas a la misma altura, 400px de hoja) y a Paquetes. Las listas cortas (filas de Servicios)
-  se quedan en vertical.
+  se quedan en vertical. Después se aplicó también a los grupos de Servicios (cuando entraron los
+  giros), con filas de giro compactas en móvil.
+- 2026-10-09 (Nosotros + Industrias): Industrias es el 4.º grupo de Servicios ("Quiero una página
+  para mi giro"); Nosotros vive dentro de "Así trabajamos contigo" (pasos numerados como lista
+  simple + "Quién está detrás"). Las anclas internas del nav llevan `scroll-margin-top`.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).
