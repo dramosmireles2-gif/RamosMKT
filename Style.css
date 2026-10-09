@@ -156,11 +156,17 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
 }
 @media (max-width: 768px) {
   .entregas { padding: var(--e-8) 0; }
-  .entregas-cabeza, .entrega-texto, .entregas-cierre { padding-left: 20px; padding-right: 20px; }
+  .entregas-cabeza, .entregas-cierre { padding-left: 20px; padding-right: 20px; }
   .entregas-cabeza { margin-bottom: var(--e-6); }
   .entregas h2 { font-size: 28px; line-height: 1.12; }
   .entregas-cabeza p, .entrega-desc { font-size: 17px; }
-  .entregas-lista { display: flex; flex-direction: column; gap: var(--e-8); }
+  /* carrusel horizontal en móvil: el siguiente sitio asoma a la derecha */
+  .entregas-lista { display: flex; gap: var(--e-4); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 20px; padding: 0 20px var(--e-1); scrollbar-width: none; overscroll-behavior-x: contain; }
+  .entregas-lista::-webkit-scrollbar { display: none; }
+  .entrega { flex: 0 0 84%; scroll-snap-align: start; }
+  .entrega-hoja { height: 400px; align-items: center; }
+  .entrega-hoja .prueba-marco { width: auto; }
+  .entrega-hoja .prueba-marco img { width: auto; max-width: 100%; max-height: 336px; }
   .entrega--alsdress, .entrega--integralfr { margin-top: 0; }
   .entrega-hoja { padding: var(--e-6) 20px; }
   .entrega h3 { font-size: 19px; }
@@ -199,11 +205,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40
   .paquetes-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 768px) {
-  .paquetes { padding: var(--e-8) 20px; }
+  .paquetes { padding: var(--e-8) 0; }
+  .paquetes-cabeza { padding: 0 20px; }
   .paquetes-cabeza { margin-bottom: var(--e-6); }
   .paquetes h2 { font-size: 28px; line-height: 1.12; }
   .paquetes-cabeza p { font-size: 17px; }
-  .paquetes-lista { grid-template-columns: minmax(0, 1fr); gap: var(--e-4); }
+  /* carrusel horizontal en móvil: el siguiente paquete asoma a la derecha */
+  .paquetes-lista { display: flex; gap: var(--e-4); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 20px; padding: 0 20px var(--e-1); scrollbar-width: none; overscroll-behavior-x: contain; }
+  .paquetes-lista::-webkit-scrollbar { display: none; }
+  .paquete { flex: 0 0 84%; scroll-snap-align: start; }
   .paquete { padding: var(--e-5) 20px; }
   .paquete h3 { font-size: 19px; }
   .paquete-cifra { font-size: 36px; }

@@ -171,6 +171,12 @@ Marcas de corte (8px, 12px, 1px) · alto del nav (112px a 1440, 104px a 375) · 
   texto carbón (17.1:1) y secundario `--tinta-2`. Cifra Syne 700 44px (36px a 375), "Desde" encima.
   Botón `.boton-wa--sobrio` (carbón con texto blanco); sobre papel el anillo de foco es carbón,
   porque el verde no contrasta con el papel. Se quitó el glow verde heredado de `#paquetes`.
+- 2026-10-09 (David, móvil): **lo que ocupa mucho alto en el celular va en carrusel horizontal.**
+  Patrón: `display: flex; overflow-x: auto; scroll-snap-type: x mandatory`, cada elemento al 84% del
+  ancho para que el siguiente asome a la derecha, sin barra visible, sin JS, sin flechas ni puntos.
+  Solo a ≤768px; en escritorio cada sección conserva su retícula. Aplicado a Sitios entregados
+  (capturas a la misma altura, 400px de hoja) y a Paquetes. Las listas cortas (filas de Servicios)
+  se quedan en vertical.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).
