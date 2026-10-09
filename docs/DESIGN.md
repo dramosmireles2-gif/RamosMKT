@@ -204,6 +204,9 @@ Marcas de corte (8px, 12px, 1px) · alto del nav `--alto-nav` (72px; 64px a ≤9
   `dramosmireles2@gmail.com`.
 - 2026-10-09 (Navbar): nav nuevo (ver componente). El hero, el título sticky de Servicios y las
   anclas usan `--alto-nav` en lugar de 112px/104px fijos (aprobado por David).
+- 2026-10-09 (Aviso de privacidad): componente **documento legal** (`.legal`): papel, columna de 68ch,
+  H1 Syne, índice con filas de 44px, H2 Syne 24px (22px en móvil) sin borde, texto 17px/1.6, viñetas de
+  guion, datos en `<dl class="legal-datos">`. La regla del nav fijo es `body > nav`.
 
 Aprobado por: David · Hero: 2026-10-08 · Extensión al sitio: 2026-10-09 (los componentes nuevos se
 validan con capturas al construir su sección).

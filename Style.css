@@ -37,7 +37,7 @@ body { background: var(--black); color: var(--white); font-family: 'Space Grotes
 
 /* PROGRESS BAR */
 /* NAV (docs/DESIGN.md) */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--alto-nav); padding: 0 var(--e-8); display: flex; align-items: center; justify-content: space-between; gap: var(--e-6); background: var(--carbon); border-bottom: 1px solid rgba(255,255,255,.08); }
+body > nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--alto-nav); padding: 0 var(--e-8); display: flex; align-items: center; justify-content: space-between; gap: var(--e-6); background: var(--carbon); border-bottom: 1px solid rgba(255,255,255,.08); }
 .nav-logo { display: inline-flex; align-items: center; min-height: 44px; }
 .nav-logo-img { display: block; height: 40px; width: auto; }
 .nav-links { display: flex; gap: var(--e-6); list-style: none; margin-left: auto; }
@@ -47,7 +47,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--al
 .nav-cta { display: inline-flex; align-items: center; gap: var(--e-2); min-height: 44px; padding: 0 var(--e-4); border: 1px solid rgba(255,255,255,.3); border-radius: var(--r-boton); color: var(--blanco); font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .nav-cta:hover { border-color: var(--blanco); }
 .nav-wa-glifo { width: 18px; height: 18px; flex-shrink: 0; }
-nav a:focus-visible, .nav-hamburger:focus-visible, .nav-mobile-menu a:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; border-radius: var(--r-foco); }
+body > nav a:focus-visible, .nav-hamburger:focus-visible, .nav-mobile-menu a:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; border-radius: var(--r-foco); }
 
 /* HERO · "El pliego de pruebas" (ver docs/DESIGN.md) */
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); min-height: 100vh; min-height: 100svh; padding: 0; margin: 0; max-width: none; width: 100%; background: var(--carbon); }
@@ -383,6 +383,46 @@ footer.pie { border-top: 0; padding: var(--e-8) var(--e-8) 0; background: var(--
   .pie-legal { margin-top: var(--e-7); flex-direction: column; align-items: flex-start; gap: 0; padding-bottom: calc(var(--e-5) + 72px); }
 }
 
+/* DOCUMENTO LEGAL · aviso-privacidad.html (docs/DESIGN.md) */
+.legal { background: var(--papel); color: var(--carbon); padding: calc(var(--alto-nav) + var(--e-8)) var(--e-8) var(--e-9); }
+.legal-cuerpo { max-width: 68ch; }
+.legal-cabeza h1 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(34px, 3.4vw, 50px); line-height: 1.06; letter-spacing: -0.02em; }
+.legal-cabeza p { margin-top: var(--e-3); font-size: 14px; line-height: 1.45; color: var(--tinta-2); }
+.legal-indice { margin-top: var(--e-7); }
+.legal-indice h2 { font-size: 14px; font-weight: 500; color: var(--tinta-2); margin-bottom: var(--e-2); }
+.legal-indice ol { list-style: none; border-top: 1px solid rgba(25,28,29,.14); }
+.legal-indice li { border-bottom: 1px solid rgba(25,28,29,.14); }
+.legal-indice a { display: flex; align-items: center; min-height: 44px; font-size: 16px; color: var(--carbon); text-decoration: none; }
+.legal-indice a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--tinta-2); }
+.legal-texto section { max-width: none; padding: 0; margin: var(--e-8) 0 0; scroll-margin-top: calc(var(--alto-nav) + var(--e-4)); }
+.legal-texto h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: var(--e-4); }
+.legal-texto h3 { font-size: 17px; font-weight: 600; line-height: 1.4; margin: var(--e-5) 0 var(--e-2); }
+.legal-texto p, .legal-texto li { font-size: 17px; line-height: 1.6; }
+.legal-texto p + p, .legal-texto ul + p, .legal-texto p + ul { margin-top: var(--e-3); }
+.legal-texto ul { list-style: none; display: flex; flex-direction: column; gap: var(--e-2); }
+.legal-texto li { position: relative; padding-left: var(--e-5); }
+.legal-texto li::before { content: '-'; position: absolute; left: 0; color: var(--tinta-2); }
+.legal-texto a, .legal-datos a { color: var(--carbon); text-decoration: underline; text-decoration-color: var(--tinta-2); text-underline-offset: 4px; }
+.legal-texto a:hover { text-decoration-color: var(--carbon); }
+.legal a:focus-visible { outline: 3px solid var(--carbon); outline-offset: 3px; border-radius: var(--r-foco); }
+.legal-datos { margin-top: var(--e-5); border-top: 1px solid rgba(25,28,29,.14); }
+.legal-datos div { display: grid; grid-template-columns: 14ch minmax(0, 1fr); column-gap: var(--e-4); padding: var(--e-3) 0; border-bottom: 1px solid rgba(25,28,29,.14); }
+.legal-datos dt { font-size: 14px; line-height: 1.6; color: var(--tinta-2); }
+.legal-datos dd { font-size: 17px; line-height: 1.45; font-weight: 500; overflow-wrap: anywhere; }
+
+@media (max-width: 1100px) {
+  .legal { padding: calc(var(--alto-nav) + var(--e-7)) var(--e-7) var(--e-9); }
+}
+@media (max-width: 768px) {
+  .legal { padding: calc(var(--alto-nav) + var(--e-6)) 20px var(--e-8); }
+  .legal-cabeza h1 { font-size: 34px; line-height: 1.08; }
+  .legal-texto section { padding: 0; margin-top: var(--e-7); }
+  .legal-texto h2 { font-size: 22px; }
+  .legal-texto p, .legal-texto li { font-size: 16px; }
+  .legal-datos div { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
+  .legal-datos dd { font-size: 16px; }
+}
+
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: start; }
 .about-lead { font-size: 19px; color: var(--white); line-height: 1.65; font-weight: 500; margin-bottom: 24px; }
@@ -652,12 +692,12 @@ footer { border-top: 1px solid var(--gray2); padding: 56px 40px 0; }
 html.menu-abierto { overflow: hidden; }
 html.menu-abierto .wa-float { display: none; }
 @media (max-width: 1100px) {
-  nav { padding: 0 var(--e-7); }
+  body > nav { padding: 0 var(--e-7); }
   .nav-links { gap: var(--e-5); }
 }
 @media (max-width: 900px) {
   :root { --alto-nav: 64px; }
-  nav { padding: 0 20px; }
+  body > nav { padding: 0 20px; }
   .nav-links, .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
   .nav-logo-img { height: 36px; }

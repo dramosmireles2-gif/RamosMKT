@@ -252,6 +252,42 @@ al abrir, los cinco destinos y "Escríbenos por WhatsApp". Pasa.
 - Home: `<title>`, description, `og:*` y `twitter:*` sin "Tecnología que crece negocios" ni
   "resultados reales"; `og:image` con URL absoluta.
 
+## Aviso de privacidad (`aviso-privacidad.html`) · 2026-10-09
+
+Capturas: `aviso-375x812.webp`, `aviso-375x812-arco.webp`, `aviso-1440x900.webp`.
+
+### Qué cambió
+- Contenido: responsable David Eduardo Ramos Mireles (persona física, nombre comercial RamosMKT);
+  correo `dramosmireles2@gmail.com` (antes con error, 4 veces); los datos se recaban por WhatsApp,
+  correo o teléfono (ya no hay formulario); cookies reescrito: la home y `gracias/` usan gtag de
+  Google Ads para medir clics en WhatsApp, cómo bloquearlas y adssettings; marco legal sin nombrar al
+  INAI ("autoridad competente en la materia"). Tratamiento de usted. Actualizado en octubre de 2026.
+- Diseño: documento en papel, columna de 68ch, H1 Syne, índice de 9 apartados con filas de 44px,
+  H2 sin borde verde, viñetas de guion en tinta, datos en `<dl>` con filetes.
+- Comparte nav, `footer.pie`, botón flotante, `Style.css` y `main.js` con la home. Fuera: CSS propio,
+  Google Fonts por CDN, barra de progreso, `motion-effects.js`, `// Legal · Privacidad`,
+  "← Volver al sitio".
+- `Style.css`: la regla del nav fijo pasa a `body > nav` (el índice del aviso es un `<nav>` y heredaba
+  `position: fixed`); las secciones del documento anulan el `section` global heredado.
+
+### Auditoría de señales
+Syne/Space Grotesk (aceptada) = 1. Verde solo en el logo y el botón flotante. Sin eyebrow, sin borde
+lateral de color, sin "→", sin " · ". **Total: 1.** Frases prohibidas: 0.
+
+### Prueba de 5 segundos
+375: "Aviso de privacidad", fecha y el índice de lo que contiene. Se entiende qué es y cómo llegar a
+cada apartado. Pasa.
+
+### Iteraciones (2 de 3)
+1. Antes de capturar: el `nav` global habría vuelto fijo el índice y el `section` global le metía
+   padding; se corrigió el selector.
+2. Capturas a 375 y 1440; 9 anclas del índice válidas, menú móvil funciona, enlaces internos 200,
+   sin el correo viejo. (Local: recargar `/aviso-privacidad` sin `.html` da 404 solo en el servidor
+   de desarrollo; GitHub Pages sí sirve la URL limpia.)
+
+### Pendiente
+- **Revisión legal** del texto por alguien con cédula (marco legal tras la reforma de 2025 y autoridad).
+
 ### Pendiente fuera de esta sección
 - ~~`<title>`, `og:title` y `twitter:title` de index.html~~ Resuelto en Componentes compartidos.
 - Botón flotante de WhatsApp: en la sección de cierre conviven dos verdes (flotante + botón). Quitar
