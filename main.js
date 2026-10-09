@@ -113,13 +113,15 @@ async function enviarFormulario() {
 // ---- NAV ACTIVE STATE ----
 // Marca el enlace de la sección que cruza la mitad de la pantalla.
 const navLinks = document.querySelectorAll('.nav-link');
-const navSections = [...navLinks].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+// Acepta "#seccion" (home) y "/#seccion" (otras páginas); solo observa las que existen aquí.
+const idDe = link => (link.getAttribute('href').split('#')[1] || '');
+const navSections = [...navLinks].map(l => idDe(l) && document.getElementById(idDe(l))).filter(Boolean);
 
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             navLinks.forEach(link => {
-                link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                link.classList.toggle('active', idDe(link) === entry.target.id);
             });
         }
     });

@@ -244,8 +244,16 @@ al abrir, los cinco destinos y "Escríbenos por WhatsApp". Pasa.
    `aria-expanded`, Escape con retorno de foco, cierre al tocar un enlace, enlace activo en
    Precios. Consola sin errores.
 
+## Componentes compartidos · 2026-10-09
+- Botón flotante: de verde WhatsApp #25d366 con pulso y sombra de color a `--verde` con filete carbón,
+  sin animación; foco con anillo doble; mensaje de cotización y evento `flotante`.
+- `main.js`: el enlace activo del nav acepta `#seccion` y `/#seccion`, así el mismo nav sirve en todas
+  las páginas.
+- Home: `<title>`, description, `og:*` y `twitter:*` sin "Tecnología que crece negocios" ni
+  "resultados reales"; `og:image` con URL absoluta.
+
 ### Pendiente fuera de esta sección
-- `<title>`, `og:title` y `twitter:title` de index.html siguen con "Tecnología que crece negocios".
+- ~~`<title>`, `og:title` y `twitter:title` de index.html~~ Resuelto en Componentes compartidos.
 - Botón flotante de WhatsApp: en la sección de cierre conviven dos verdes (flotante + botón). Quitar
   pulso y sombra de color, y decidir si se oculta cuando el botón del cierre está a la vista.
 - CSS y JS del portafolio viejo (`.portfolio-*` en `Style.css`, carrusel en `main.js`,

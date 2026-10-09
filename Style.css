@@ -631,10 +631,9 @@ footer { border-top: 1px solid var(--gray2); padding: 56px 40px 0; }
 }
 
 /* WHATSAPP FLOAT */
-.wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 56px; height: 56px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s, box-shadow 0.2s; animation: wa-pulse 3s infinite; }
-.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); animation: none; }
+.wa-float { position: fixed; bottom: var(--e-6); right: var(--e-6); z-index: 90; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--verde); color: var(--carbon); border: 1px solid var(--carbon); }
 .wa-float svg { width: 28px; height: 28px; }
-@keyframes wa-pulse { 0%,100%{ box-shadow: 0 4px 20px rgba(37,211,102,0.4); } 50%{ box-shadow: 0 4px 32px rgba(37,211,102,0.7); } }
+.wa-float:focus-visible { outline: 3px solid var(--blanco); outline-offset: 2px; box-shadow: 0 0 0 8px var(--carbon); } /* anillo doble: se ve sobre carbón y sobre papel */
 
 /* NAV · menú móvil */
 .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 6px; width: 44px; height: 44px; margin-right: -10px; padding: 10px; background: none; border: 0; cursor: pointer; }
@@ -707,9 +706,8 @@ html.menu-abierto .wa-float { display: none; }
     .paso-name { font-size: 17px; margin-bottom: 6px; text-align: left; }
     .paso-desc { max-width: 100%; margin: 0; text-align: left; }
     .case-features { grid-template-columns: 1fr 1fr; }
-    .wa-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    .wa-float { bottom: 20px; right: 20px; }
     #industrias .section-sub { margin-bottom: 36px; }
-    .wa-float svg { width: 24px; height: 24px; }
 }
 
 /* INDUSTRIES — mobile first */

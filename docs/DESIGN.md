@@ -141,8 +141,16 @@ blanco subrayado. A la derecha, "WhatsApp 814 807 8309" en versión sobria (file
 botón verde de WhatsApp y el horario; cierra con Escape y oculta el botón flotante. Sin barra de
 progreso.
 
-### Botón flotante de WhatsApp (heredado)
-Se queda, pero sin pulso ni sombra de color (pendiente de ajustar cuando se trabaje el cierre).
+### Botón flotante de WhatsApp (componente compartido)
+Círculo de 56px, `--verde` con glifo carbón y filete carbón de 1px (se distingue sobre papel y sobre
+carbón). Sin pulso, sin sombra, sin escala en hover. Foco: anillo blanco + carbón (visible en ambas
+superficies). Mensaje prellenado de cotización y evento `flotante`. Se oculta con el menú móvil abierto.
+
+### Componentes compartidos entre páginas
+Nav, `footer.pie` y botón flotante usan **el mismo HTML** en `index.html`, `aviso-privacidad.html` y
+`gracias/`. Única diferencia: en la home los enlaces del nav son `#seccion`; en las demás páginas,
+`/#seccion`, y las rutas de recursos son absolutas (`/Style.css`, `/img/...`, `/main.js`) para que
+funcionen desde subcarpetas. Si cambias uno, cambia los tres.
 
 ## Copy
 - Tú. Datos concretos: precio con "Desde", días de entrega, ciudad, horario, número.
